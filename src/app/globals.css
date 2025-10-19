@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme inline {
+  --breakpoint-xs: 390px;
+
+
+  /* --font-default: var(--font-libre-franklin);
+  --font-title: var(--font-rethink-sans); */
+  --font-default: var(--font-radio-canada);
+  --font-title: var(--font-merriweather-sans);
+
+  
+  --color-primary-100: #f5f8fe;
+  --color-primary-200: #c8d5f8;
+  --color-primary-300: #9bb2f2;
+  --color-primary-400: #6e8fec;
+  --color-primary: #1c4ed8;
+  --color-primary-600: #163eab;
+  --color-primary-700: #102d7e;
+  --color-primary-800: #0a1d51;
+  --color-primary-900: #050d23;
+}
