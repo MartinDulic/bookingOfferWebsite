@@ -1,12 +1,14 @@
 import React from 'react'
 import Title from "@/components/Title";
 import RenterTypeCard from '@/components/RenterTypeCard';
-import { GiFamilyHouse } from "react-icons/gi";
+import { BsFillHousesFill } from "react-icons/bs";
+import { BsFillHouseFill } from "react-icons/bs";
+import { MdApartment } from "react-icons/md";
 
 
 const RenterTypeSection = () => {
   return (
-    <div className="font-default bg-primary-100 min-h-svh w-svw sm:bg-red-300 xs:py-8 xs:px-4">
+    <div className="font-default bg-primary-100 min-h-svh w-svw xs:py-8 xs:px-4">
       <div className="max-w-4xl mx-auto">
         <Title className={"text-primary-800 xs:text-center mb-2 xs:mb-6"}>Neka vaš smještaj radi za vas</Title>
         <p className="mx-4 mt-2 xs:mt-4 xs:mb-12 text-primary-800 xs:text-center text-xl">
@@ -17,7 +19,7 @@ const RenterTypeSection = () => {
             subtitleText={"Novi Iznajmljivač"}
             bodyText={"Želim iznajmiti svoj prvi smještaj."}
             href={"/noviIznajmljivac"}
-            icon={<GiFamilyHouse/>}
+            icon={<BsFillHouseFill/>}
             iconBgColor={"bg-green-200"}
             iconColor={"text-green-700"}
             cardBgColor={"bg-green-50"}
@@ -29,7 +31,7 @@ const RenterTypeSection = () => {
             subtitleText={"Iskusni Iznajmljivač"}
             bodyText={"Već iznajmljujem smještaj i želim bolje rezultate."}
             href={"/iskusniIznajmljivac"}
-            icon={<GiFamilyHouse/>}
+            icon={<BsFillHousesFill/>}
             iconBgColor={"bg-blue-200"}
             iconColor={"text-blue-700"}
             cardBgColor={"bg-blue-50"}
@@ -41,7 +43,7 @@ const RenterTypeSection = () => {
             subtitleText={"Investitor"}
             bodyText={"Imam smještaj i ne želim nikakvu brigu o njemu."}
             href={"/investitor"}
-            icon={<GiFamilyHouse/>}
+            icon={<MdApartment />}
             iconBgColor={"bg-purple-200"}
             iconColor={"text-purple-700"}
             cardBgColor={"bg-purple-50"}

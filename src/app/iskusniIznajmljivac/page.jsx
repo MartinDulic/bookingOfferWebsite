@@ -2,7 +2,13 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <main className="font-default">
+      <HeroSection
+        titleText={"Ostvarite makismalnu zaradu i popunjenost svog smještaja"}
+        
+      
+      />
+    </main>
   )
 }
 
