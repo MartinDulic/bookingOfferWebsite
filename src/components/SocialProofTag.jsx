@@ -4,7 +4,7 @@ import { FaAirbnb } from "react-icons/fa";
 
 const SocialProofTag = ({className}) => {
   return (
-    <div className={`${className} max-w-sm p-2 flex justify-between items-center gap-4 bg-primary-100/90 rounded border border-neutral-300 shadow-md shadow-black/40 `}>
+    <div className={`${className} sm:max-w-sm p-2 flex justify-between items-center gap-4 bg-primary-50/90 rounded border border-neutral-300 shadow-md shadow-black/40 `}>
       <div className='flex items-center gap-1 '>
         <div className='flex gap-1 text-amber-400 '>
           <FaStar />

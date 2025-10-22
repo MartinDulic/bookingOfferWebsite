@@ -8,7 +8,7 @@ import { MdApartment } from "react-icons/md";
 
 const RenterTypeSection = () => {
   return (
-    <div className="font-default bg-primary-100 min-h-svh w-svw xs:py-8 xs:px-4">
+    <div className="font-default bg-primary-50 min-h-svh w-full xs:py-8 xs:px-4">
       <div className="max-w-4xl mx-auto">
         <Title className={"text-primary-800 xs:text-center mb-2 xs:mb-6"}>Neka vaš smještaj radi za vas</Title>
         <p className="mx-4 mt-2 xs:mt-4 xs:mb-12 text-primary-800 xs:text-center text-xl">

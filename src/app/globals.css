@@ -10,13 +10,14 @@
   --font-title: var(--font-merriweather-sans);
 
   
-  --color-primary-100: #f5f8fe;
-  --color-primary-200: #c8d5f8;
-  --color-primary-300: #9bb2f2;
-  --color-primary-400: #6e8fec;
-  --color-primary: #1c4ed8;
-  --color-primary-600: #163eab;
-  --color-primary-700: #102d7e;
-  --color-primary-800: #0a1d51;
-  --color-primary-900: #050d23;
+  --color-primary-50: #f5f8fe;
+  --color-primary-100: #b2b7ff;
+  --color-primary-200: #7f88ff;
+  --color-primary-300: #4c58ff;
+  --color-primary-400: #1929ff;
+  --color-primary: #000cb2;
+  --color-primary-600: #00097f;
+  --color-primary-700: #00054c;
+  --color-primary-800: #000219;
+  --color-primary-900: #000000;
 }
