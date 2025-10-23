@@ -4,8 +4,8 @@ import { FaAirbnb } from "react-icons/fa";
 
 const SocialProofTag = ({className}) => {
   return (
-    <div className={`${className} sm:max-w-sm p-2 flex justify-between items-center gap-4 bg-primary-50/90 rounded border border-neutral-300 shadow-md shadow-black/40 `}>
-      <div className='flex items-center gap-1 '>
+    <div className={`${className} max-w-md mr-4 xs:mr-6 p-2 sm:px-4 sm:py-3 flex justify-between items-center gap-4 bg-primary-50/95 rounded-r-xs border border-neutral-300 shadow-md shadow-black/40 `}>
+      <div className='flex items-center gap-1 sm:text-xl'>
         <div className='flex gap-1 text-amber-400 '>
           <FaStar />
           <FaStar />
@@ -18,7 +18,7 @@ const SocialProofTag = ({className}) => {
           4.9/5
         </p>
       </div>
-      <p className='font-bold text-md text-primary-700 mt-0.5'>
+      <p className='font-bold text-md text-primary-700 mt-0.5 sm:text-xl'>
         115+ Recenzija
       </p>
 

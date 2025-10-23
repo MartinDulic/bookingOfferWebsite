@@ -1,8 +1,11 @@
 import React from 'react'
 import HeroSection from "@/sections/HeroSection";
 import HeroSection2 from '@/sections/HeroSection2';
+import GoogleSheetsLeadForm from '@/components/GoogleSheetsLeadForm';
 
 const page = () => {
+
+
   return (
     <main className="font-default">
       <HeroSection
@@ -13,8 +16,7 @@ const page = () => {
         mobileImgSrc="/images/temp/HeroImageTemp.jpg"
         desktopImgSrc="/images/temp/HeroImageTemp.jpg"
         imgAlt="Hero Background"
-        imgClassName="object-[51%-50%] lg:object-[0_44%] "
-
+        imgClassName="object-[51%-50%] md:object-[65%_50%] lg:object-center "
       />
       {/* <HeroSection2
         titleText={"Pokrenite iznajmljivanje bez stresa i gubitka vremena"}
