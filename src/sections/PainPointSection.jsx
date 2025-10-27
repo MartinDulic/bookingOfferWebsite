@@ -10,7 +10,7 @@ const PainPointSection = () => {
   const icon =<PiDiamondsFourFill className='text-primary-600 text-2xl'/>;
   return (
     <section className='w-full bg-primary-50 px-4 sm:px-8 flex justify-center'>
-      <div className='max-w-5xl lg:py-8 xl:py-12'>
+      <div className='max-w-4xl lg:py-8 xl:py-12'>
         <Title >Želite iznajmiti smještaj ali ne znate gdje početi? <div className='text-primary-600 mt-2'>Osigurat ćemo vam jednostavan i lagan početak.</div> </Title>
         
         <BodyText className={"font-semibold"}>
@@ -27,8 +27,8 @@ const PainPointSection = () => {
         
         <div className='my-12 flex flex-col gap-8'>
           <IconedText icon={icon} text={"Ušteda 16+ sati"} textClassName={"text-lg sm:text-xl"}/>
-          <IconedText icon={icon} text={"Pristup svim informacijama na jednom mjestu"} textClassName={"text-lg "}/>
-          <IconedText icon={icon} text={"Stručno savjetovanje"} textClassName={"text-lg"}/>
+          <IconedText icon={icon} text={"Pristup svim informacijama na jednom mjestu"} textClassName={"text-lg sm:text-xl"}/>
+          <IconedText icon={icon} text={"Stručno savjetovanje"} textClassName={"text-lg sm:text-xl"}/>
         </div>
         
         <CtaFudReduced className={"text-neutral-700 mt-8"} />
