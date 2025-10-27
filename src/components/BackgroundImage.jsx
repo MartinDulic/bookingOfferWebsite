@@ -9,7 +9,7 @@ const BackgroundImage = ({mobileSrc, desktopSrc, alt, loading, imgClassName, cla
         mobileSrc={mobileSrc}
         desktopSrc={desktopSrc}
         loading={loading}
-        className={`object-cover ${imgClassName}`}
+        className={`${imgClassName}`}
       />
       <div className='absolute inset-0 bg-black/40'/>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent from-60% to-zinc-900"/>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>Segmentiraj input fieldove, neka se vidi 1 pa tek kad upisu nesto u njega neka se pokazu ostali</div>
   )
 }
 

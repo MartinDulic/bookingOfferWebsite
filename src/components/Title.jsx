@@ -2,7 +2,7 @@ import React from 'react'
 
 const Title = ({children, className}) => {
   return (
-    <div className={`uppercase mx-4 pt-4 text-3xl xs:text-4xl sm:text-5xl font-title font-bold text-neutral-800 ${className}`}>
+    <div className={`uppercase pb-4 pt-8 text-3xl sm:text-4xl lg:text-5xl font-title font-semibold text-neutral-800 ${className}`}>
       {children}
     </div>
   )

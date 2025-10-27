@@ -3,11 +3,11 @@ import Cta from '@/components/Cta'
 import IconedText from '@/components/IconedText'
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
 
-const CtaFudReduced = ({className}) => {
+const CtaFudReduced = ({className, ctaClassName}) => {
   return (
     <div className={`${className} flex flex-col items-center`}>
-      <Cta className="mb-2 w-fit" />
-      <div className="flex gap-4 px-4 text-neutral-200">
+      <Cta className={`${ctaClassName} mb-2 w-fit`} />
+      <div className="flex gap-4 px-4 ">
         <IconedText 
           icon={<IoCheckmarkDoneSharp className='text-xl sm:text-3xl'/>} 
           text={"100% Besplatno"} 

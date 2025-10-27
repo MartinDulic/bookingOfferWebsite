@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${merriweatherSans.variable} ${radioCanada.variable} antialiased`}
+        className={`${merriweatherSans.variable} ${radioCanada.variable} antialiased font-default`}
       >
         {children}
       </body>
