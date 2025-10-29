@@ -1,8 +1,8 @@
 import React from 'react'
-import BackgroundImage from '@/components/BackgroundImage'
-import SocialProofTag from '@/components/SocialProofTag'
-import DataPoint from '@/components/DataPoint'
-import CtaFudReduced from '@/components/CtaFudReduced'
+import BackgroundImage from '@/components/ui-lib/common/BackgroundImage'
+import SocialProofTag from '@/components/ui-lib/common/SocialProofTag'
+import DataPoint from '@/components/ui-lib/common/DataPoint'
+import CtaFudReduced from '@/components/ui-lib/common/CtaFudReduced'
 
 
 const HeroSection2 = ({titleText, subtitleText, mobileImgSrc, desktopImgSrc, imgAlt, imgClassName }) => {

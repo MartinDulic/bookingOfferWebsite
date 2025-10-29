@@ -1,5 +1,5 @@
 import React from 'react'
-import ResponsiveImage from '@/components/ResponsiveImage'
+import ResponsiveImage from '@/components/ui-lib/common/ResponsiveImage'
 
 const BackgroundImage = ({mobileSrc, desktopSrc, alt, loading, imgClassName, className}) => {
   return (

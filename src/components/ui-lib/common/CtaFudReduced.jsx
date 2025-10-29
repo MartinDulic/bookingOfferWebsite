@@ -1,6 +1,6 @@
 import React from 'react'
-import Cta from '@/components/Cta'
-import IconedText from '@/components/IconedText'
+import Cta from '@/components/ui-lib/common/Cta'
+import IconedText from '@/components/ui-lib/common/IconedText'
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
 
 const CtaFudReduced = ({className, ctaClassName}) => {

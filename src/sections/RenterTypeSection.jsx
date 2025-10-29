@@ -1,5 +1,5 @@
 import React from 'react'
-import Title from "@/components/Title";
+import Title from "@/components/ui-lib/common/Title";
 import RenterTypeCard from '@/components/RenterTypeCard';
 import { BsFillHousesFill } from "react-icons/bs";
 import { BsFillHouseFill } from "react-icons/bs";

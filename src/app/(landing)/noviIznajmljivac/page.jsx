@@ -1,6 +1,6 @@
 import React from 'react'
 import HeroSection from "@/sections/HeroSection";
-import Testimonial from '@/components/Testimonial';
+import Testimonial from '@/components/ui-lib/common/Testimonial';
 import PainPointSection from '@/sections/PainPointSection';
 
 const page = () => {

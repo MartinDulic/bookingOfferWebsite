@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from '@/components/Card';
+import Card from '@/components/ui-lib/common/Card';
 import Link from 'next/link';
 
 const RenterTypeCard = ({subtitleText, bodyText, href, icon, iconBgColor, iconColor, cardBgColor, 

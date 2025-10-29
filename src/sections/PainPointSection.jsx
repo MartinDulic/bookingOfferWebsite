@@ -1,7 +1,7 @@
-import BodyText from '@/components/BodyText'
-import CtaFudReduced from '@/components/CtaFudReduced'
-import IconedText from '@/components/IconedText';
-import Title from '@/components/Title'
+import BodyText from '@/components/ui-lib/common/BodyText'
+import CtaFudReduced from '@/components/ui-lib/common/CtaFudReduced'
+import IconedText from '@/components/ui-lib/common/IconedText';
+import Title from '@/components/ui-lib/common/Title'
 import React from 'react'
 import { PiDiamondsFourFill } from "react-icons/pi";
 
