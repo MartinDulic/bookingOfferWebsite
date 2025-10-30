@@ -10,18 +10,22 @@ const DropdownMenu = ({text, children, className}) => {
       {/* Category header that toggles the dropdown */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="pl-4 w-full min-h-20 flex items-center cursor-pointer text-neutral-900 font-semibold uppercase
+        className="pl-4 w-full min-h-12 flex items-center cursor-pointer text-neutral-700 font-semibold
           transition-colors duration-300 hover:text-primary"
       >
-        {text} <IoMdArrowDropdown className='ml-2 text-xl' />
+        {text} <IoMdArrowDropdown className={`ml-2 text-xl transition-transform duration-400 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       
-      {/* Dropdown content */}
-      <div className={`overflow-hidden transition-all duration-400 ${isOpen ? "max-h-96" : "max-h-0"}`}>
-        {children} 
+      {/* Dropdown content using grid */}
+      <div className={`grid transition-all duration-400 ease-in-out ${
+        isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+      }`}>
+        <div className="overflow-hidden">
+          {children}
+        </div>
       </div>
     </div>
   )
 }
 
-export default DropdownMenu
+export default DropdownMenu;

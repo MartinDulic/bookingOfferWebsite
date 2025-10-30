@@ -1,13 +1,18 @@
 import React from 'react'
 import Link from 'next/link'
-const NavigationLink = ({href, text, className}) => {
 
+const NavigationLink = ({ href, text, className = "", icon, ...props }) => {
   return (
     <Link 
       href={href} 
-      className={`pl-4 w-full min-h-20 flex items-center cursor-pointer text-neutral-900 font-semibold
-      transition-transform transform duration-300 hover:scale-110 hover:text-primary ${className}`}
+      className={`
+        inline-flex items-center cursor-pointer text-neutral-700 font-semibold 
+        transition-all duration-200 hover:text-primary active:scale-95
+        ${className}
+      `}
+      {...props}
     >
+      {icon && <span className="mr-2 text-lg">{icon}</span>}
       {text} 
     </Link>
   )

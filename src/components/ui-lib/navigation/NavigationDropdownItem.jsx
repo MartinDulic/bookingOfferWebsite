@@ -7,18 +7,27 @@ const DropdownNavigationItem = ({navigationObject}) => {
 
   if(!navigationObject.children && navigationObject.to) {
     return (
-      <NavigationLink href={navigationObject.url} text={navigationObject.to}/>
+      <NavigationLink href={navigationObject.url} text={navigationObject.to} className={"min-h-12 pl-4"}/>
     );
   }
 
-  const links = navigationObject.children.map(link => (
-    <NavigationLink 
-      key={link.to} 
-      href={link.url} 
-      text={link.to}
-      className="pl-8" // Add indentation for subitems
-    />
-  ));
+  const links = navigationObject.children.map(link => {
+    
+      const IconComponent = link.icon;
+
+    return (
+      <div key={link.to} className='flex gap-2 items-center'>
+        <div className='text-xl bg-primary-100/50 rounded-xs p-2 ml-2 text-primary'>
+          {link.icon}
+        </div>
+        <NavigationLink 
+          href={link.url} 
+          text={link.to}
+          className="min-h-12 " // Add indentation for subitems
+        />
+      </div>
+    )
+  });
   
   // Dropdown case
   return (
