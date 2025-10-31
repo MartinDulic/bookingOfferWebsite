@@ -2,33 +2,34 @@ import React, { useState, useRef, useEffect } from 'react'
 import NavigationLink from './NavigationLink'
 import HoveringCard from '../common/HoveringCard';
 import { IoMdArrowDropdown } from "react-icons/io";
+import isTouchScreen from '@/lib/isTouchScreen';
+import { useClickOutside } from '@/hooks/useClickOutside';
 
 const HeaderNavigationItem = ({navigationObject}) => {
   const [isOpen, setIsOpen] = useState(false);
   const timeoutRef = useRef(null);
   const cardRef = useRef(null);
 
-    // Close when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (cardRef.current && !cardRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+  useClickOutside(cardRef, () => { setIsOpen(false) });
   
-  // Handle hover with delay to prevent accidental triggers
   const handleMouseEnter = () => {
+    if(isTouchScreen()) return
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setIsOpen(true);
   };
 
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => setIsOpen(false), 150);
+    if(isTouchScreen()) return
+    timeoutRef.current = setTimeout(() => setIsOpen(false), 250);
   };
+
+  const handleClick = (e) => {
+    // Detect touch or small screens
+    if (window.matchMedia("(hover: none)").matches || window.innerWidth < 1024) {
+      e.stopPropagation();
+      setIsOpen(prev => !prev);
+    }
+  }
 
   if(!navigationObject.children && navigationObject.to) {
     return (
@@ -53,7 +54,6 @@ const HeaderNavigationItem = ({navigationObject}) => {
 
   // Calculate grid columns based on number of items
   let gridColsClass = "grid-cols-1"; // default for less than 6 items
-  console.log(links.length)
   if (links.length >= 9) {
     gridColsClass = "grid-cols-3";
   } else if (links.length >= 6) {
@@ -61,8 +61,12 @@ const HeaderNavigationItem = ({navigationObject}) => {
   }
   
   return (
-    <div ref={cardRef}         onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave} className="relative flex justify-center">
+    <div 
+      ref={cardRef}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick} 
+      className="relative flex justify-center">
       <div
 
         className={`min-h-20 text-neutral-700 font-semibold flex items-center cursor-pointer

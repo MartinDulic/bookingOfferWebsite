@@ -12,9 +12,6 @@ const DropdownNavigationItem = ({navigationObject}) => {
   }
 
   const links = navigationObject.children.map(link => {
-    
-      const IconComponent = link.icon;
-
     return (
       <div key={link.to} className='flex gap-2 items-center'>
         <div className='text-xl bg-primary-100/50 rounded-xs p-2 ml-2 text-primary'>
