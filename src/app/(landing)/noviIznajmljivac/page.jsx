@@ -45,7 +45,7 @@ const page = () => {
   const airbnbIcon = <FaAirbnb className='text-red-700'/>;
   const bookingIcon = <TbBrandBooking className='text-blue-800'/>;
 
-  const reviewClass = "bg-primary-50 border-primary-100";
+  const reviewClass = "bg-neutral-50 border-neutral-300 shadow-md";
   const guestReviews = [
     <Review
       key={1} 
@@ -53,19 +53,30 @@ const page = () => {
       image="/images/temp/Marcelina.avif"
       guestName="Joanna" 
       guestCountry="Poljska" 
-      apartment="Dammi" 
+      apartment="Apartman Dammi, Makarska" 
       text="... Osjećali smo se tamo kao kod kuće. Vlasnica je na nas ostavila poseban dojam - izuzetno srdačna, prijateljska i puna topline. Zahvaljujući njoj, naš boravak je poprimio osoban, obiteljski karakter. Takvi ljudi i takva mjesta su nezaboravni!" 
       sourceIcon={bookingIcon}
       className={reviewClass}
     />,
     <Review 
       key={2} 
-      href="https://www.booking.com/hotel/hr/sea-view-apartments-with-free-parking.hr.html?#tab-reviews" 
+      href="https://hr.airbnb.com/rooms/1466694189284549431/reviews" 
       image="/images/temp/Marcelina.avif"
       guestName="Marcelina" 
       guestCountry="Velika Britanija" 
-      apartment="A-Frame Nova Bila" 
-      text="... Komunikacija s domaćinom bila je izvrsna – uvijek prijateljski nastrojen i uslužan. Zaista smo uživali u svakom trenutku i sigurno ćemo se vratiti:)" 
+      apartment="A-Frame, Nova Bila" 
+      text="... Komunikacija s domaćinom bila je izvrsna – uvijek prijateljski nastrojen i uslužan. Zaista smo uživali u svakom trenutku i sigurno ćemo se vratiti :)" 
+      sourceIcon={airbnbIcon}
+      className={reviewClass}
+    />,
+    <Review
+      key={3}
+      href="https://hr.airbnb.com/rooms/1335608579174658673/reviews?scroll_to_review=1520203340752553642"
+      image="/images/temp/Marcelina.avif"
+      guestName="Lejla"
+      guestCountry="Hrvatska"
+      apartment="Apartment Dammi, Makarska"
+      text="Sve pohvale za apartman kao i za domaćine. Od čistoće apartmana, sadržaja-imate sve što je potrebno. Vaše je samo da dođete sa dobrim raspoloženjem i uživate u odmoru. Sigurno se vraćamo i slijedeće godine."
       sourceIcon={airbnbIcon}
       className={reviewClass}
     />

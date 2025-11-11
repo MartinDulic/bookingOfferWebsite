@@ -21,8 +21,8 @@ const PainPointSection = ({title, boldedText, bodyText, icon, bulletPointText}) 
   );
 
   return (
-    <Section className='bg-primary-50 flex justify-center'>
-      <div className='max-w-4xl lg:py-8 xl:py-12'>
+    <Section className='bg-primary-50 flex justify-center '>
+      <div className='max-w-4xl '>
         <Title >{title} </Title>
         
         <BodyText className={"font-semibold"}>
