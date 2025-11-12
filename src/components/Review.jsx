@@ -3,6 +3,23 @@ import { FaStar } from "react-icons/fa6";
 import Image from 'next/image';
 
 const Review = ({href, image=null, guestName, guestCountry, apartment, text, sourceIcon, className}) => {
+
+  const avatar = image ? 
+    <Image
+      src={image}
+      alt="Guest Image"
+      width={0}
+      height={0}
+      className="object-contain h-full w-auto rounded-full "
+    /> :
+    <div 
+      className='bg-neutral-900 flex items-center justify-center text-center h-full w-full rounded-full 
+      text-white sm:text-2xl'
+    >
+      {guestName[0]}
+    </div>
+
+
   return (
     <a 
       href={href} 
@@ -14,13 +31,7 @@ const Review = ({href, image=null, guestName, guestCountry, apartment, text, sou
       <div className='flex gap-4 justify-between'>
         <div className=' flex gap-2 '>
           <div className="size-16 sm:size-20 border-4 border-white rounded-full">
-            <Image
-              src={image}
-              alt="Guest Image"
-              width={0}
-              height={0}
-              className="object-contain h-full w-auto rounded-full "
-            />
+            {avatar}
           </div>
           <div className='flex flex-col justify-center '>
             <div className='font-semibold text-lg sm:text-xl text-neutral-800'>{guestName}</div>

@@ -7,6 +7,8 @@ import SocialProofSection from '@/sections/landing/SocialProofSection';
 import Review from '@/components/Review';
 import { FaAirbnb } from "react-icons/fa";
 import { TbBrandBooking } from "react-icons/tb";
+import ValuePropSection from '@/sections/landing/ValuePropSection';
+import ValuePropWithImage from '@/components/ui-lib/common/ValuePropWithImage';
 
 
 
@@ -45,16 +47,16 @@ const page = () => {
   const airbnbIcon = <FaAirbnb className='text-red-700'/>;
   const bookingIcon = <TbBrandBooking className='text-blue-800'/>;
 
-  const reviewClass = "bg-neutral-50 border-neutral-300 shadow-md";
+  const reviewClass = "bg-neutral-50 border-neutral-200 shadow-md";
   const guestReviews = [
     <Review
       key={1} 
       href="https://www.booking.com/hotel/hr/sea-view-apartments-with-free-parking.hr.html?#tab-reviews" 
-      image="/images/temp/Marcelina.avif"
+      // image="/images/temp/Marcelina.avif"
       guestName="Joanna" 
       guestCountry="Poljska" 
       apartment="Apartman Dammi, Makarska" 
-      text="... Osjećali smo se tamo kao kod kuće. Vlasnica je na nas ostavila poseban dojam - izuzetno srdačna, prijateljska i puna topline. Zahvaljujući njoj, naš boravak je poprimio osoban, obiteljski karakter. Takvi ljudi i takva mjesta su nezaboravni!" 
+      text="Jedinstveno mjesto gdje je sve dizajnirano s velikom pažnjom - apartman je bio besprijekorno čist, vrlo udoban i savršeno opremljen. Osjećali smo se tamo kao kod kuće. Vlasnica je na nas ostavila poseban dojam - izuzetno srdačna, prijateljska i puna topline. Zahvaljujući njoj, naš boravak je poprimio osoban, obiteljski karakter. Takvi ljudi i takva mjesta su nezaboravni!" 
       sourceIcon={bookingIcon}
       className={reviewClass}
     />,
@@ -65,14 +67,14 @@ const page = () => {
       guestName="Marcelina" 
       guestCountry="Velika Britanija" 
       apartment="A-Frame, Nova Bila" 
-      text="... Komunikacija s domaćinom bila je izvrsna – uvijek prijateljski nastrojen i uslužan. Zaista smo uživali u svakom trenutku i sigurno ćemo se vratiti :)" 
+      text="Divno smo se proveli! Kuća je apsolutno lijepa, moderna i savršeno opremljena svime što vam može zatrebati. Jacuzzi je bio nevjerojatan i učinio je naš boravak još opuštenijim. Komunikacija s domaćinom bila je izvrsna – uvijek prijateljski nastrojen i uslužan. Zaista smo uživali u svakom trenutku i sigurno ćemo se vratiti :)" 
       sourceIcon={airbnbIcon}
       className={reviewClass}
     />,
     <Review
       key={3}
       href="https://hr.airbnb.com/rooms/1335608579174658673/reviews?scroll_to_review=1520203340752553642"
-      image="/images/temp/Marcelina.avif"
+      // image="/images/temp/Marcelina.avif"
       guestName="Lejla"
       guestCountry="Hrvatska"
       apartment="Apartment Dammi, Makarska"
@@ -82,6 +84,40 @@ const page = () => {
     />
   ]
 
+  const valueProps = [
+    <ValuePropWithImage
+      key={1}
+      mobileImageSrc={"/images/temp/Hedonist_Statistika_1.PNG"}
+      desktopImageSrc={"/images/temp/Hedonist_Statistika_1.PNG"}
+      alt={"Full Calendar"}
+      summary={"Zaradite Više Bezbrižno"}
+      text={"Stalnim poboljšanjem strategije iznajmljivanja naš provjereni pristup izvlači maksimalnu zaradu iz vašeg smještaja. "}
+      className={"object-left"}
+    >
+      Ostvarite Maksimalnu <span className='text-primary-600'>Popunjenost i Zaradu </span>
+    </ValuePropWithImage>,
+    <ValuePropWithImage
+      key={2}
+      mobileImageSrc={"spot_800px.webp"}
+      desktopImageSrc={"spot_1200px.webp"}
+      alt={"Boat"}
+      summary={"Prepustite svu brigu nama"}
+      text={"Tu smo kako bi vam pomogli u svemu, od kategorizacije i fotografiranja do oglašavanja i komunikacije s gostima."}
+      reverse = {true}
+    >
+      Riješite se obveza, <span className='text-primary-600'> Uštedite Vrijeme</span>
+    </ValuePropWithImage>,
+    <ValuePropWithImage
+      key={3}
+      mobileImageSrc={"dolphinSunset.jpg"}
+      desktopImageSrc={"dolphinSunset.jpg"}
+      alt={"Boat"}
+      summary={"Enjoy timeless moments"}
+      text={"We'll create a custom trip plan tailored to you to make sure you have the best day of your life."}
+    >
+      Create lifelong <span className='text-primary-600'>memories</span>
+    </ValuePropWithImage>
+  ];
 
   return (
     <>
@@ -118,7 +154,7 @@ const page = () => {
         title={"Nadmašujemo očekivanja vaših gostiju"}
         reviews={guestReviews}
       />
-
+      <ValuePropSection children={valueProps} />
     </>
   )
 }
