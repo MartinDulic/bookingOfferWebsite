@@ -91,7 +91,7 @@ const page = () => {
       desktopImageSrc={"/images/temp/Hedonist_Statistika_1.PNG"}
       alt={"Full Calendar"}
       summary={"Zaradite Više Bezbrižno"}
-      text={"Stalnim poboljšanjem strategije iznajmljivanja naš provjereni pristup izvlači maksimalnu zaradu iz vašeg smještaja. "}
+      text={"Kontinuiranom analizom tržišta svakodnevno unaprjeđujemo strategiju iznajmljivanja vašeg smještaja kako bi vam ostvarili maksimalnu zaradu. To uključuje optimizaciju cijena, promjenu restrikcija (npr. min. noćenja po rezervaciji) i naplatu dodatnih usluga (npr. čišćenje, raniji ulazak)."}
       className={"object-left"}
     >
       Ostvarite Maksimalnu <span className='text-primary-600'>Popunjenost i Zaradu </span>
@@ -102,7 +102,7 @@ const page = () => {
       desktopImageSrc={"spot_1200px.webp"}
       alt={"Boat"}
       summary={"Prepustite svu brigu nama"}
-      text={"Tu smo kako bi vam pomogli u svemu, od kategorizacije i fotografiranja do oglašavanja i komunikacije s gostima."}
+      text={"Tu smo kako bi vam pomogli u svemu, od kategorizacije i fotografiranja do oglašavanja i komunikacije s gostima. Nudimo vam kompletnu uslugu kako biste bili potpuno bezbrižni."}
       reverse = {true}
     >
       Riješite se obveza, <span className='text-primary-600'> Uštedite Vrijeme</span>
