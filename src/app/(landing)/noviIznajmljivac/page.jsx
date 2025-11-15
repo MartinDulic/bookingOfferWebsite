@@ -16,17 +16,17 @@ const page = () => {
 
   const heroTestimonialsElement = 
   (
-    <div className='py-12 2xl:py-0 mx-4 xs:mx-8 2xl:mx-0 2xl:mr-8 flex flex-col items-center gap-8 2xl:gap-16 w-4xl 2xl:w-full'>
+    <div className='h-full w-4xl 2xl:w-full py-12 2xl:py-0 xs:mx-8 2xl:mx-0 2xl:mr-8 flex flex-col items-center gap-8 2xl:gap-0 2xl:justify-evenly'>
       <Testimonial
-        className={"max-w-2xl mx-4 min-[850px]:self-start"}
-        image={"/images/temp/ANJA.PNG"}
+        className={"max-w-3xl  min-[850px]:self-start"}
+        image={"/images/temp/Tihomir_J.PNG"}
         alt={"User 1"}
-        name={"Anja Vrljičak"}
-        info={"Apartman, Makarska"}
-        text={"Full Beds mi je uštedio toliko vremena i truda. Njihov sistem je jednostavan za korištenje, a podrška je uvijek tu kad mi zatreba."}
+        name={"Tihomir J."}
+        info={"Zagreb"}
+        text={"Odlučio sam dati priliku PrimeStay-u jer sam htio da netko stručan vodi brigu o oglašavanju moje kuće. Vidio sam da su novi na tržištu i da će dati sve od sebe. Prvi gosti su došli 2 dana nakon početka suradnje i tada sam znao da sam donio ispravnu odluku."}
       />
       <Testimonial 
-        className={"max-w-2xl mx-4 min-[850px]:self-end"}
+        className={"max-w-3xl  min-[850px]:self-end"}
         image={"/images/temp/ANJA.PNG"}
         alt={"User 1"}
         name={"Anja Vrljičak"}
@@ -34,7 +34,7 @@ const page = () => {
         text={"Full Beds mi je uštedio toliko vremena i truda. Njihov sistem je jednostavan za korištenje, a podrška je uvijek tu kad mi zatreba. asda sd asd asd asd as das dasdr asdf asdf afas yxasklid has kljhdčlasčdlkjahfčkljhgaskljd fhčasklj hsčakljfa "}
       />
       <Testimonial 
-        className={"max-w-2xl mx-4 min-[850px]:self-start"}
+        className={"max-w-3xl  min-[850px]:self-start"}
         image={"/images/temp/ANJA.PNG"}
         alt={"User 1"}
         name={"Anja Vrljičak"}
@@ -87,35 +87,36 @@ const page = () => {
   const valueProps = [
     <ValuePropWithImage
       key={1}
-      mobileImageSrc={"/images/temp/Hedonist_Statistika_1.PNG"}
-      desktopImageSrc={"/images/temp/Hedonist_Statistika_1.PNG"}
-      alt={"Full Calendar"}
-      summary={"Zaradite Više Bezbrižno"}
-      text={"Kontinuiranom analizom tržišta svakodnevno unaprjeđujemo strategiju iznajmljivanja vašeg smještaja kako bi vam ostvarili maksimalnu zaradu. To uključuje optimizaciju cijena, promjenu restrikcija (npr. min. noćenja po rezervaciji) i naplatu dodatnih usluga (npr. čišćenje, raniji ulazak)."}
-      className={"object-left"}
+      mobileImageSrc={"/images/temp/Data4.png"}
+      desktopImageSrc={"/images/temp/Data4.png"}
+      alt={"Earning Statistics"}
+      summary={"Zaradite Više"}
+      text={"Kontinuiranom analizom tržišta svakodnevno unaprijeđujemo strategiju iznajmljivanja smještaja kako bi  iskoristili sve vaše kapacitete i povećali zaradu."} //To uključuje optimizaciju cijena, promjenu restrikcija (npr. min. noćenja po rezervaciji) i naplatu dodatnih usluga (npr. čišćenje, raniji ulazak).
+      imageClassName={"object-left"}
     >
       Ostvarite Maksimalnu <span className='text-primary-600'>Popunjenost i Zaradu </span>
     </ValuePropWithImage>,
     <ValuePropWithImage
       key={2}
-      mobileImageSrc={"spot_800px.webp"}
-      desktopImageSrc={"spot_1200px.webp"}
-      alt={"Boat"}
+      mobileImageSrc={"/images/temp/ManAtPool.jpeg"}
+      desktopImageSrc={"/images/temp/ManAtPool.jpeg"}
+      alt={"A Relaxed Host"}
       summary={"Prepustite svu brigu nama"}
       text={"Tu smo kako bi vam pomogli u svemu, od kategorizacije i fotografiranja do oglašavanja i komunikacije s gostima. Nudimo vam kompletnu uslugu kako biste bili potpuno bezbrižni."}
       reverse = {true}
+      imageClassName={"object-right"}
     >
       Riješite se obveza, <span className='text-primary-600'> Uštedite Vrijeme</span>
     </ValuePropWithImage>,
     <ValuePropWithImage
       key={3}
-      mobileImageSrc={"dolphinSunset.jpg"}
-      desktopImageSrc={"dolphinSunset.jpg"}
-      alt={"Boat"}
-      summary={"Enjoy timeless moments"}
-      text={"We'll create a custom trip plan tailored to you to make sure you have the best day of your life."}
+      mobileImageSrc={"/images/temp/FamilyEntering.png"}
+      desktopImageSrc={"/images/temp/FamilyEntering.png"}
+      alt={"Excited family at a house"}
+      summary={"Poslujte Profesionalno"}
+      text={"Zadovoljni gosti promoviraju smještaj, vraćaju se i plaćaju više. Mi poznajemo očekivanja i želje gostiju i znamo kako ih nadmašiti."}
     >
-      Create lifelong <span className='text-primary-600'>memories</span>
+      Osigurajte <span className='text-primary-600'>idealno iskustvo</span> svojim gostima
     </ValuePropWithImage>
   ];
 

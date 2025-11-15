@@ -39,14 +39,13 @@
 // export default Testimonial
 
 import React from 'react'
-import { FaStar } from "react-icons/fa6";
 import { FaQuoteLeft } from "react-icons/fa";
 import { FaQuoteRight } from "react-icons/fa";
 
 const Testimonial = ({ className = "", image, alt, name, info, text }) => {
   return (
     <div
-      className={`${className} relative p-10 flex flex-col sm:flex-row items-center gap-8
+      className={`${className} relative p-8 min-[1700px]:p-10 flex flex-col sm:flex-row items-center gap-8
       bg-gradient-to-br from-primary-50 to-white border border-neutral-200/70 
       rounded shadow-lg hover:shadow-xl transition-shadow duration-300`}
     >
@@ -63,7 +62,7 @@ const Testimonial = ({ className = "", image, alt, name, info, text }) => {
 
         <div className='mt-2'>
           <div className="text-xl font-semibold text-primary-700">{name}</div>
-          <p className="text-primary-600 text-sm">{info}</p>
+          <p className="text-primary-600 text-md ">{info}</p>
         </div>
 {/* 
         <div className="mt-1 flex gap-1 text-amber-400 text-xl ">
