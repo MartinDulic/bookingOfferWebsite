@@ -3,10 +3,10 @@ import Image from 'next/image'
 
 const HeaderLogo = () => {
   return (
-    <div className="flex items-center h-full">
-      <div className="h-12 sm:h-20">
+    <div className="flex items-center h-full pl-2 pr-4 sm:px-4">
+      <div className="h-8">
         <Image
-          src="/images/temp/logo.png"
+          src="/images/logo/logo_blue.svg"
           alt="Logo"
           width={0}
           height={0}

@@ -23,7 +23,7 @@ const page = () => {
         alt={"User 1"}
         name={"Tihomir J."}
         info={"Zagreb"}
-        text={"Odlučio sam dati priliku PrimeStay-u jer sam htio da netko stručan vodi brigu o oglašavanju moje kuće. Vidio sam da su novi na tržištu i da će dati sve od sebe. Prvi gosti su došli 2 dana nakon početka suradnje i tada sam znao da sam donio ispravnu odluku."}
+        text={"Odlučio sam dati priliku PrimeBooker-u jer sam htio da netko stručan vodi brigu o oglašavanju moje kuće. Vidio sam da su novi na tržištu i da će dati sve od sebe. Prvi gosti su došli 2 dana nakon početka suradnje i tada sam znao da sam donio ispravnu odluku."}
       />
       <Testimonial 
         className={"max-w-3xl  min-[850px]:self-end"}
