@@ -33,19 +33,19 @@ const HeaderNavigationItem = ({navigationObject}) => {
 
   if(!navigationObject.children && navigationObject.to) {
     return (
-      <NavigationLink href={navigationObject.url} text={navigationObject.to} className={"hover:scale-110"}/>
+      <NavigationLink href={navigationObject.url} text={navigationObject.to} className={"py-2.5 px-4 rounded-xs hover:scale-110 text-neutral-200 hover:bg-neutral-200 hover:text-primary"}/>
     );
   }
 
   const links = navigationObject.children.map(link => (
     <div key={link.to} className='min-w-fit flex gap-4 items-center p-3 rounded hover:bg-white hover:shadow-sm transition-all duration-200 group'>
-      <div className='text-2xl bg-primary-100/40 rounded p-2 text-primary group-hover:scale-110 transition-transform duration-200'>
+      <div className='text-2xl bg-neutral-700 group-hover:bg-primary-100/40 rounded p-2 text-neutral-200 group-hover:text-primary group-hover:scale-110 transition-transform duration-200'>
         {link.icon}
       </div>
       <NavigationLink
         href={link.url}
         text={link.to}
-        className="max-h-fit whitespace-nowrap group-hover:text-primary after:content-[''] after:absolute after:bottom-0 after:left-0 relative
+        className="max-h-fit whitespace-nowrap text-neutral-200  group-hover:text-primary after:content-[''] after:absolute after:bottom-0 after:left-0 relative
           after:h-0.5 after:bg-primary after:transition-all after:duration-500 after:ease-out
           after:w-0 group-hover:after:w-full" // Add indentation for subitems
       />
@@ -69,9 +69,9 @@ const HeaderNavigationItem = ({navigationObject}) => {
       className="relative flex justify-center">
       <div
 
-        className={`min-h-20 text-neutral-700 font-semibold flex items-center cursor-pointer
-        transition-transform transform duration-300 
-        ${isOpen ? "text-primary scale-105" : "hover:text-primary"}`}
+        className={`px-4 py-2.5 rounded-xs text-neutral-200 font-semibold flex items-center cursor-pointer
+        transition-all transform duration-300 
+        ${isOpen ? "text-primary scale-105 bg-neutral-200" : "hover:text-primary  hover:bg-neutral-200"}`}
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
@@ -85,7 +85,7 @@ const HeaderNavigationItem = ({navigationObject}) => {
       >
         <div
           className={`w-fit grid ${gridColsClass} items-center gap-y-10 p-4
-          text-lg bg-primary-50 rounded-xs shadow-md border border-neutral-200 shadow-black/20`}
+          text-lg bg-neutral-900 rounded-xs shadow-md border border-neutral-700 shadow-black/20`}
         >
           {links}
         </div>

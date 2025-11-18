@@ -14,11 +14,11 @@ const SocialProofTag = ({className}) => {
           <FaStar />
         </div>
         <FaAirbnb className='text-2xl xs:text-3xl text-red-700'/>
-        <p className='font-bold text-md text-primary-700 mt-0.5'>
+        <p className='font-bold text-md text-neutral-900 mt-0.5'>
           4.9/5
         </p>
       </div>
-      <p className='font-bold text-md text-primary-700 mt-0.5 sm:text-xl'>
+      <p className='font-bold text-md text-neutral-900 mt-0.5 sm:text-xl'>
         115+ Recenzija
       </p>
 

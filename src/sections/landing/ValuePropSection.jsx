@@ -2,7 +2,7 @@ import React from 'react'
 
 const ValuePropSection = ({children}) => {
   return (
-    <section className="bg-primary-50 w-full border-t border-neutral-100">
+    <section className="bg-white w-full">
       {children}
     </section>
   )

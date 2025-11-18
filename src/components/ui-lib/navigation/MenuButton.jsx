@@ -15,9 +15,9 @@ const MenuButton = ({className, isOpen, onToggle, ref}) => {
       onClick={handleClick}
     >
       {isOpen ? (
-        <IoMdClose className="text-4xl text-neutral-800 transition-all duration-500 rotate-180" />
+        <IoMdClose className="text-4xl text-neutral-200 transition-all duration-500 rotate-180" />
       ) : (
-        <RiMenu3Fill className="text-4xl text-neutral-800 transition-all duration-500 rotate-0" />
+        <RiMenu3Fill className="text-4xl text-neutral-200 transition-all duration-500 rotate-0" />
       )}
     </div>
   )

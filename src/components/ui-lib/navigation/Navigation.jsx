@@ -53,7 +53,7 @@ const Navigation = ({navigationData}) => {
       <div
         aria-label="Main navigation"
         className={`z-20 fixed top-0 h-20 w-full grid grid-cols-[auto_1fr_auto_auto] items-center
-          bg-primary-50 shadow-md transition-all ease-in-out duration-1000
+          bg-neutral-900 shadow-md transition-all ease-in-out duration-1000
           ${isHeaderVisible ? "translate-y-0" : "-translate-y-full"}
         `}
       >
@@ -62,7 +62,7 @@ const Navigation = ({navigationData}) => {
         <nav className="flex justify-end items-center">
 
           {/* Navigation links */}
-          <div className="pr-16 hidden lg:flex justify-center items-center gap-16 text-xl text-white ">
+          <div className="pr-16 hidden lg:flex justify-center items-center gap-12 text-xl text-white ">
             {desktopNavigation}
           </div>
 

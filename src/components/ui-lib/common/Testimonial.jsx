@@ -46,7 +46,7 @@ const Testimonial = ({ className = "", image, alt, name, info, text }) => {
   return (
     <div
       className={`${className} relative p-8 min-[1700px]:p-10 flex flex-col sm:flex-row items-center gap-8
-      bg-gradient-to-br from-primary-50 to-white border border-neutral-200/70 
+      bg-gradient-to-br from-neutral-100 to-white border border-neutral-200/70 
       rounded shadow-lg hover:shadow-xl transition-shadow duration-300`}
     >
       {/* Image + Info */}
@@ -61,29 +61,16 @@ const Testimonial = ({ className = "", image, alt, name, info, text }) => {
         </div>
 
         <div className='mt-2'>
-          <div className="text-xl font-semibold text-primary-700">{name}</div>
-          <p className="text-primary-600 text-md ">{info}</p>
+          <div className="text-xl font-semibold text-neutral-900">{name}</div>
+          <p className="text-neutral-800 text-md ">{info}</p>
         </div>
-{/* 
-        <div className="mt-1 flex gap-1 text-amber-400 text-xl ">
-          {[...Array(5)].map((_, i) => (
-            <FaStar key={i} />
-          ))}
-        </div> */}
       </div>
 
-      {/* Text + Stars */}
       <div className="flex-1 flex flex-col gap-4">
-        {/* <div className="hidden sm:flex gap-1 text-amber-400 text-xl">
-          {[...Array(5)].map((_, i) => (
-            <FaStar key={i} />
-          ))}
-        </div> */}
-
-        <div className="relative text-primary-700 italic text-lg leading-relaxed">
-          <FaQuoteLeft className="absolute -top-4 -left-3 text-primary-600 text-2xl" />
+        <div className="relative text-neutral-900 italic text-lg leading-relaxed">
+          <FaQuoteLeft className="absolute -top-4 -left-3 text-neutral-800 text-2xl" />
           <p className="pl-6">{text}</p>
-          <FaQuoteRight className="absolute -bottom-2 -right-3 text-primary-600 text-2xl"/>
+          <FaQuoteRight className="absolute -bottom-2 -right-3 text-neutral-800 text-2xl"/>
         </div>
       </div>
     </div>

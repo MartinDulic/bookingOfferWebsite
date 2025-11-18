@@ -21,7 +21,7 @@ const PainPointSection = ({title, boldedText, bodyText, icon, bulletPointText}) 
   );
 
   return (
-    <Section className='bg-primary-50 flex justify-center '>
+    <Section className='bg-neutral-50 flex justify-center '>
       <div className='max-w-4xl '>
         <Title >{title} </Title>
         

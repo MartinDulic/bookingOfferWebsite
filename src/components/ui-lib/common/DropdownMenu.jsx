@@ -6,12 +6,12 @@ const DropdownMenu = ({text, children, className}) => {
   const [isOpen, setIsOpen] = useState(false);
   
   return (
-    <div className={`${className} w-full`}>
+    <div className={`${className} w-full bg-neutral-900`}>
       {/* Category header that toggles the dropdown */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="pl-4 w-full min-h-12 flex items-center cursor-pointer text-neutral-700 font-semibold
-          transition-colors duration-300 hover:text-primary"
+        className="pl-4 w-full min-h-12 flex items-center cursor-pointer text-neutral-200 font-semibold
+          transition-colors duration-300"
       >
         {text} <IoMdArrowDropdown className={`ml-2 text-xl transition-transform duration-400 ${isOpen ? 'rotate-180' : ''}`} />
       </button>

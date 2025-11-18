@@ -34,8 +34,8 @@ const Review = ({href, image=null, guestName, guestCountry, apartment, text, sou
             {avatar}
           </div>
           <div className='flex flex-col justify-center '>
-            <div className='font-semibold text-lg sm:text-xl text-neutral-800'>{guestName}</div>
-            <div className='text-neutral-600 text-sm sm:text-md'>{guestCountry}</div>
+            <div className='font-semibold text-lg sm:text-xl text-neutral-900'>{guestName}</div>
+            <div className='text-neutral-800 text-sm sm:text-md'>{guestCountry}</div>
           </div>
         </div>
         
@@ -50,11 +50,11 @@ const Review = ({href, image=null, guestName, guestCountry, apartment, text, sou
               <FaStar />
             </div>
           </div>
-          <div className='text-sm sm:text-md text-center'>{apartment}</div>
+          <div className='text-sm sm:text-md text-center text-neutral-800'>{apartment}</div>
         </div>
       </div>
 
-      <p className='h-full py-4 sm:py-0 sm:pt-4 text-lg italic text-primary-700 text-justify  '>
+      <p className='h-full py-4 sm:py-0 sm:pt-4 text-lg italic text-neutral-900 text-justify  '>
         "{text}"
       </p>
       <div className='absolute text-3xl self-end bottom-2 right-2'>{sourceIcon}</div>

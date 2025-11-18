@@ -6,8 +6,8 @@ const NavigationLink = ({ href, text, className = "", icon, ...props }) => {
     <Link 
       href={href} 
       className={`
-        inline-flex items-center cursor-pointer text-neutral-700 font-semibold 
-        transition-all duration-200 hover:text-primary active:scale-95
+        inline-flex items-center cursor-pointer font-semibold 
+        transition-all duration-200  active:scale-95
         ${className}
       `}
       {...props}

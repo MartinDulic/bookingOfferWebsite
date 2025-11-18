@@ -5,7 +5,7 @@ import React from 'react'
 
 const SocialProofSection = ({ title, reviews }) => {
   return (
-    <Section className="">
+    <Section className="bg-neutral-100">
       <Title className="sm:text-center">{title}</Title>
       <div className="mt-4 sm:mt-8 md:mt-12 lg:mt-16 flex flex-wrap justify-center gap-8 sm:gap-12 ">
         {reviews}

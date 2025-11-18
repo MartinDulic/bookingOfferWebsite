@@ -4,11 +4,12 @@ import Testimonial from '@/components/ui-lib/common/Testimonial';
 import PainPointSection from '@/sections/landing/PainPointSection';
 import { PiDiamondsFourFill } from "react-icons/pi";
 import SocialProofSection from '@/sections/landing/SocialProofSection';
-import Review from '@/components/Review';
+import Review from '@/components/ui-lib/common/Review';
 import { FaAirbnb } from "react-icons/fa";
 import { TbBrandBooking } from "react-icons/tb";
 import ValuePropSection from '@/sections/landing/ValuePropSection';
 import ValuePropWithImage from '@/components/ui-lib/common/ValuePropWithImage';
+import CaseStudySection from '@/sections/landing/CaseStudySection';
 
 
 
@@ -47,7 +48,7 @@ const page = () => {
   const airbnbIcon = <FaAirbnb className='text-red-700'/>;
   const bookingIcon = <TbBrandBooking className='text-blue-800'/>;
 
-  const reviewClass = "bg-neutral-50 border-neutral-200 shadow-md";
+  const reviewClass = "bg-white border-neutral-200 shadow-md";
   const guestReviews = [
     <Review
       key={1} 
@@ -87,14 +88,14 @@ const page = () => {
   const valueProps = [
     <ValuePropWithImage
       key={1}
-      mobileImageSrc={"/images/temp/Data4.png"}
-      desktopImageSrc={"/images/temp/Data4.png"}
-      alt={"Earning Statistics"}
+      mobileImageSrc={"/images/temp/Calendar2.png"}
+      desktopImageSrc={"/images/temp/Calendar2.png"}
+      alt={"Filled Calendar"}
       summary={"Zaradite Više"}
       text={"Kontinuiranom analizom tržišta svakodnevno unaprijeđujemo strategiju iznajmljivanja smještaja kako bi  iskoristili sve vaše kapacitete i povećali zaradu."} //To uključuje optimizaciju cijena, promjenu restrikcija (npr. min. noćenja po rezervaciji) i naplatu dodatnih usluga (npr. čišćenje, raniji ulazak).
       imageClassName={"object-left"}
     >
-      Ostvarite Maksimalnu <span className='text-primary-600'>Popunjenost i Zaradu </span>
+      Ostvarite <span className='text-primary-600'>Maksimalnu Popunjenost </span> i Zaradu
     </ValuePropWithImage>,
     <ValuePropWithImage
       key={2}
@@ -115,8 +116,9 @@ const page = () => {
       alt={"Excited family at a house"}
       summary={"Poslujte Profesionalno"}
       text={"Zadovoljni gosti promoviraju smještaj, vraćaju se i plaćaju više. Mi poznajemo očekivanja i želje gostiju i znamo kako ih nadmašiti."}
+      imageClassName={"object-top"}
     >
-      Osigurajte <span className='text-primary-600'>idealno iskustvo</span> svojim gostima
+      <span className='text-primary-600'>Osigurajte idealno iskustvo</span> svojim gostima
     </ValuePropWithImage>
   ];
 
@@ -134,7 +136,7 @@ const page = () => {
         children={heroTestimonialsElement}
       />
       <PainPointSection
-        title={<>Želite iznajmiti smještaj ali ne znate gdje početi? <div className='text-primary-600 mt-2'>Osigurat ćemo vam jednostavan i lagan početak.</div></>}
+        title={<>Želite iznajmiti smještaj ali ne znate gdje početi? <div className='text-primary-600 mt-2'>Osigurajte si jednostavan i lagan početak.</div></>}
         boldedText={"Imate nekretninu koju želite iznajmiti, ali ne znate ništa o kategorizaciji, oglašavanju, porezima i naknadama?"}
         bodyText={
           [
@@ -152,10 +154,11 @@ const page = () => {
         }
       />
       <SocialProofSection
-        title={"Nadmašujemo očekivanja vaših gostiju"}
+        title={<><span className='text-primary-600'>Nadmašite očekivanja</span> svojih gostiju</>}
         reviews={guestReviews}
       />
       <ValuePropSection children={valueProps} />
+      <CaseStudySection />
     </>
   )
 }
