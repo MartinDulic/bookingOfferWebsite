@@ -3,7 +3,7 @@ import Card from './Card'
 
 const StatBouble = ({stat, text, className}) => {
   return (
-    <div className={`p-4 flex flex-col items-cneter justify-evenly text-center
+    <div className={`p-3 flex flex-col items-cneter justify-evenly text-center
       font-default bg-white border-neutral-200 rounded-sm shadow-md border 
       ${className}`}
     >
