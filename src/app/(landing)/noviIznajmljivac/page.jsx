@@ -10,6 +10,8 @@ import { TbBrandBooking } from "react-icons/tb";
 import ValuePropSection from '@/sections/landing/ValuePropSection';
 import ValuePropWithImage from '@/components/ui-lib/common/ValuePropWithImage';
 import CaseStudySection from '@/sections/landing/CaseStudySection';
+import DifferentiatorsSection from '@/sections/landing/DifferentiatorsSection';
+import HowItWorkSection from '@/sections/landing/HowItWorkSection';
 
 
 
@@ -159,6 +161,8 @@ const page = () => {
       />
       <ValuePropSection children={valueProps} />
       <CaseStudySection />
+      <DifferentiatorsSection />
+      <HowItWorkSection />
     </>
   )
 }
