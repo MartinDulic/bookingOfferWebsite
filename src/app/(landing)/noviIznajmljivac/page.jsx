@@ -12,6 +12,12 @@ import ValuePropWithImage from '@/components/ui-lib/common/ValuePropWithImage';
 import CaseStudySection from '@/sections/landing/CaseStudySection';
 import DifferentiatorsSection from '@/sections/landing/DifferentiatorsSection';
 import HowItWorkSection from '@/sections/landing/HowItWorkSection';
+import ToolsSection from '@/sections/landing/ToolsSection';
+import FaqSection from '@/sections/landing/FaqSection';
+import FaqItem from '@/components/ui-lib/common/FaqItem';
+import { GoDotFill } from "react-icons/go";
+import IconedText from '@/components/ui-lib/common/IconedText';
+import RecapSection from '@/sections/landing/RecapSection';
 
 
 
@@ -124,6 +130,76 @@ const page = () => {
     </ValuePropWithImage>
   ];
 
+  const dot = <GoDotFill />;
+
+  const faqItems = [
+    <FaqItem 
+      key={1}
+      question={"Je li ovo dobra opcija ako tek počinjem?"}
+      text={
+        <>
+          Da — novim iznajmljivačima je najviše potrebna profesionalna pomoć.
+          Bez znanja i prave strategije, većina novih iznajmljivača gubi novac.
+        </>
+      }
+    />,
+    <FaqItem 
+      key={2}
+      question={"Hoću li izgubiti kontrolu nad svojim smještajem?"}
+      text={
+        <>
+          Ne. Vi ste i dalje vlasnik smještaja i imate puni uvid u sve: 
+          <span className='py-4 flex flex-col gap-2'>
+            <IconedText icon={dot} text="Raspored rezervacija" />
+            <IconedText icon={dot} text="Cijene" />
+            <IconedText icon={dot} text="Troškove i prihode" />
+            <IconedText icon={dot} text="Statistiku popunjenosti" />
+          </span>
+          Naša uloga je samo da radimo ono što vam štedi vrijeme i donosi više zarade.
+        </>
+      }
+    />,
+    <FaqItem 
+      key={3}
+      question={"Koliko vaša usluga košta?"}
+      text={
+        <>
+          Naša usluga se naplaćuje kao postotak od ostvarene zarade. 
+          Zbog toga ste sigurni da ćemo dati sve od sebe kako bi Vam ostvarili što veću zaradu.
+          Točan postotak se određuje prema uslugama koje odaberete.
+        </>
+      }
+    />,
+    <FaqItem 
+      key={4}
+      question={"Kako funkcioniraju isplate?"}
+      text={
+        <>
+          Mi obavljamo sve računovodstvene obveze i plaćamo sve naknade, a Vi svaki mjesec dobivate detaljan izvještaj o prihodima i troškovima. Isplata zarade na vaš račun se vrši do 5. u mjesecu za prethodni mjesec.
+        </>
+      }
+    />,
+    <FaqItem 
+      key={5}
+      question={"Moram li se brinuti o čišćenju i održavanju?"}
+      text={
+        <>
+          Ne morate — osim ako želite.
+          Surađujemo s provjerenim partnerima i organiziramo sve za vas kako bi vaš smještaj uvijek bio spreman za goste.
+        </>
+      }
+    />,
+    <FaqItem 
+      key={6}
+      question={"Koliko vremena je potrebno za početak suradnje?"}
+      text={
+        <>
+          Ukoliko je smještaj spreman za iznajmljivanje potrebno je nekoliko dana za fotografiranje, uređivanje fotografija i objavu oglasa na platforme.
+        </>
+      }
+    />
+  ];
+
   return (
     <>
       <HeroSection
@@ -163,6 +239,9 @@ const page = () => {
       <CaseStudySection />
       <DifferentiatorsSection />
       <HowItWorkSection />
+      <ToolsSection />
+      <FaqSection faqItems={faqItems} />
+      <RecapSection />
     </>
   )
 }

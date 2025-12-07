@@ -44,10 +44,11 @@ const HeroSection = ({titleText, subtitleText, mobileImgSrc, desktopImgSrc, imgA
           </div>
         </div>
       </section>
-      <section className='2xl:hidden w-full h-fit flex justify-center'>
+      <section className='2xl:hidden w-full h-fit flex justify-center px-4 xs:px-0'>
         {children}
       </section>
-    </>)
+    </>
+  )
 }
 
 export default HeroSection

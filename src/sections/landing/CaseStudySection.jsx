@@ -103,7 +103,7 @@ const CaseStudySection = () => {
             <LabeledBenefit 
               number={4} 
               subtitle={"Osiguranje Kvalitete"} 
-              text={"Suradnja sa provjerenim partenrima za čišćenje i održavanje smještaja kako bi osigurali besprijekornu čistoću."}
+              text={"Suradnja sa provjerenim partenrima za čišćenje i održavanje smještaja kako bi osigurali besprijekornu čistoću i zadovoljstvo gostiju."}
               className={"text-sm sm:text-base"}
               />
           </div>
