@@ -25,13 +25,13 @@ const PainPointSection = ({title, boldedText, bodyText, icon, bulletPointText}) 
       <div className='max-w-4xl '>
         <Title >{title} </Title>
         
-        <BodyText className={"font-semibold"}>
+        <BodyText className={"font-semibold text-neutral-800"}>
           {boldedText}
         </BodyText>
         
         {body}
         
-        <div className='my-12 flex flex-col gap-8'>
+        <div className='my-12 flex flex-col gap-8 font-semibold text-neutral-800'>
           {bulletPoints}
         </div>
         

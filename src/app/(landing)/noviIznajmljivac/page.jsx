@@ -28,7 +28,7 @@ const page = () => {
     <div className='h-full w-4xl 2xl:w-full py-12 2xl:py-0 xs:mx-8 2xl:mx-0 2xl:mr-8 flex flex-col items-center gap-8 2xl:gap-0 2xl:justify-evenly'>
       <Testimonial
         className={"max-w-3xl  min-[850px]:self-start"}
-        image={"/images/temp/Tihomir_J.PNG"}
+        image={"/images/people/Tihomir_J.webp"}
         alt={"User 1"}
         name={"Tihomir J."}
         info={"Zagreb"}
@@ -72,7 +72,7 @@ const page = () => {
     <Review 
       key={2} 
       href="https://hr.airbnb.com/rooms/1466694189284549431/reviews" 
-      image="/images/temp/Marcelina.avif"
+      image="/images/people/Marcelina.avif"
       guestName="Marcelina" 
       guestCountry="Velika Britanija" 
       apartment="A-Frame, Nova Bila" 
@@ -96,8 +96,8 @@ const page = () => {
   const valueProps = [
     <ValuePropWithImage
       key={1}
-      mobileImageSrc={"/images/temp/Calendar2.png"}
-      desktopImageSrc={"/images/temp/Calendar2.png"}
+      mobileImageSrc={"/images/general/Calendar_w1274.avif"}
+      desktopImageSrc={"/images/general/Calendar_w1274.avif"}
       alt={"Filled Calendar"}
       summary={"Zaradite Više"}
       text={"Kontinuiranom analizom tržišta svakodnevno unaprijeđujemo strategiju iznajmljivanja smještaja kako bi  iskoristili sve vaše kapacitete i povećali zaradu."} //To uključuje optimizaciju cijena, promjenu restrikcija (npr. min. noćenja po rezervaciji) i naplatu dodatnih usluga (npr. čišćenje, raniji ulazak).
@@ -107,8 +107,8 @@ const page = () => {
     </ValuePropWithImage>,
     <ValuePropWithImage
       key={2}
-      mobileImageSrc={"/images/temp/ManAtPool.jpeg"}
-      desktopImageSrc={"/images/temp/ManAtPool.jpeg"}
+      mobileImageSrc={"/images/general/ManAtPool_w800.avif"}
+      desktopImageSrc={"/images/general/ManAtPool_w1920.avif"}
       alt={"A Relaxed Host"}
       summary={"Prepustite svu brigu nama"}
       text={"Tu smo kako bi vam pomogli u svemu, od kategorizacije i fotografiranja do oglašavanja i komunikacije s gostima. Nudimo vam kompletnu uslugu kako biste bili potpuno bezbrižni."}
@@ -119,8 +119,8 @@ const page = () => {
     </ValuePropWithImage>,
     <ValuePropWithImage
       key={3}
-      mobileImageSrc={"/images/temp/FamilyEntering.png"}
-      desktopImageSrc={"/images/temp/FamilyEntering.png"}
+      mobileImageSrc={"/images/general/FamilyEntering-w800.avif"}
+      desktopImageSrc={"/images/general/FamilyEntering_w1100.avif"}
       alt={"Excited family at a house"}
       summary={"Poslujte Profesionalno"}
       text={"Zadovoljni gosti promoviraju smještaj, vraćaju se i plaćaju više. Mi poznajemo očekivanja i želje gostiju i znamo kako ih nadmašiti."}
@@ -194,7 +194,7 @@ const page = () => {
       question={"Koliko vremena je potrebno za početak suradnje?"}
       text={
         <>
-          Ukoliko je smještaj spreman za iznajmljivanje potrebno je nekoliko dana za fotografiranje, uređivanje fotografija i objavu oglasa na platforme.
+          Ukoliko je smještaj spreman za iznajmljivanje potrebno je nekoliko dana za fotografiranje, uređivanje fotografija i objavu oglasa.
         </>
       }
     />
@@ -207,8 +207,8 @@ const page = () => {
         // subtitleText={"Sve što ti treba za uspješan početak iznajmljivanja nalazi se na jednom mjestu — mi radimo, ti zarađuješ."}
         // subtitleText={"Neznate kako funkcioniraju kategorizacija, porezi i online oglašavanje? Naš jedinstveni sistem osigurava jednostavan i bezbrižan početak iznajmljivanja."}
         subtitleText={"Naš jedinstveni sistem vodi vas kroz sve, od kategorizacije do poreza i oglašavanja, za bezbrižan početak."}
-        mobileImgSrc="/images/temp/HeroImageTemp.jpg"
-        desktopImgSrc="/images/temp/HeroImageTemp.jpg"
+        mobileImgSrc="/images/general/HeroImage_w1920.avif"
+        desktopImgSrc="/images/general/HeroImage_w1920.avif"
         imgAlt="Hero Background"
         imgClassName="object-[51%-50%] md:object-[65%_50%] lg:object-center "
         children={heroTestimonialsElement}

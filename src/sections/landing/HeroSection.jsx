@@ -8,7 +8,7 @@ import CtaFudReduced from '@/components/ui-lib/common/CtaFudReduced'
 const HeroSection = ({titleText, subtitleText, mobileImgSrc, desktopImgSrc, imgAlt, imgClassName, children}) => {
   return (
     <>
-      <section className='h-svh w-full'>
+      <section id='atf' className='h-svh w-full'>
         <BackgroundImage
           mobileSrc={mobileImgSrc}
           desktopSrc={desktopImgSrc}

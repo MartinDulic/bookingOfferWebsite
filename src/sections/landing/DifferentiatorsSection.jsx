@@ -6,7 +6,7 @@ import React from 'react'
 
 const DifferentiatorsSection = () => {
   return (
-    <Section >
+    <Section id={"whyus"}>
       <div className='max-w-7xl mx-auto'>
         <Title className={"text-center mb-12 md:mb-16"}>
           <span className='text-primary-600'> Osigurajte Dugoročan Uspjeh </span> S Našim Jedinstvenim Pristupom Upravljanju Smještajem

@@ -1,6 +1,7 @@
 import React from 'react'
 import ResponsiveImage from './ResponsiveImage'
 import Cta from './Cta'
+import BodyText from './BodyText'
 
 const ValuePropWithImage = ({mobileImageSrc, desktopImageSrc, alt, imageClassName,
   summary, children, text, reverse = false, className
@@ -19,7 +20,7 @@ const ValuePropWithImage = ({mobileImageSrc, desktopImageSrc, alt, imageClassNam
         <div className='flex flex-col xl:items-start justify-center max-w-2xl lg:max-w-4xl'>
           <p className='uppercase font-bold text-xl text-neutral-600 my-4 sm:mt-6'>{summary}</p>
           <h2 className='text-3xl lg:text-4xl text-neutral-800 uppercase font-bold font-title'>{children}</h2>
-          <p className='text-xl text-justify mb-8 mt-4'>{text}</p>
+          <BodyText className='text-xl text-justify mb-8 mt-4'>{text}</BodyText>
           <div className='flex'>
             <Cta/>
           </div>

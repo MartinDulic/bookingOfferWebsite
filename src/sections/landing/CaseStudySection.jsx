@@ -24,8 +24,8 @@ const CaseStudySection = () => {
         <div className='relative lg:col-span-2 mt-4 w-full flex justify-center items-center'>
           <ResponsiveImage
             alt={"Earning Statistics"}
-            mobileSrc={"/images/temp/DataCompactScaled.png"}
-            desktopSrc={"/images/temp/DataCompact.png"}
+            mobileSrc={"/images/general/DataCompactScaled_w900.avif"}
+            desktopSrc={"/images/general/DataCompact_w900.avif"}
             className={`!static shadow-md`}
           />
         </div>

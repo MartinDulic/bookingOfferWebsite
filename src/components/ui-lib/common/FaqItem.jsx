@@ -1,6 +1,7 @@
 "use client";
 import React, {useState, useRef} from 'react'
 import { MdKeyboardArrowRight } from "react-icons/md";
+import BodyText from './BodyText';
 
 const FaqItem = ({className, question, text}) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -26,11 +27,11 @@ const FaqItem = ({className, question, text}) => {
       </div>
       <div
         ref={contentRef}
-        className={`transition-all duration-300 ease-in-out overflow-hidden bg-white ${
-          isExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        className={`transition-all duration-500 ease-in-out overflow-hidden bg-white ${
+          isExpanded ? "max-h-[500px]" : "max-h-0"
         }`}
       >
-        <div className="p-4 text-neutral-800 text-xl">{text}</div>
+        <BodyText className="p-4 text-neutral-800 text-xl">{text}</BodyText>
       </div>
     </div>
   );

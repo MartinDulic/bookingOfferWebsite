@@ -7,6 +7,7 @@ import DropdownNavbar from "./DropdownNavbar";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import HeaderNavigationItem from "./HeaderNavigationItem";
 import HeaderLogo from "./HeaderLogo";
+import SmoothScrollLink from "./SmoothScrollLink";
 
 const Navigation = ({navigationData}) => {
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
@@ -30,29 +31,29 @@ const Navigation = ({navigationData}) => {
 
   useClickOutside(dropdownRef, () => {setIsMenuOpen(false)}, [menuButtonRef]);
 
-  const mobileNavigation = navigationData.map(navigationObject => {
-    return (
-      <DropdownNavigationItem 
-        key={navigationObject.to} 
-        navigationObject={navigationObject}
-      />
-    );
-  });
+  // const mobileNavigation = navigationData.map(navigationObject => {
+  //   return (
+  //     <DropdownNavigationItem 
+  //       key={navigationObject.to} 
+  //       navigationObject={navigationObject}
+  //     />
+  //   );
+  // });
 
-  const desktopNavigation = navigationData.map(navigationObject => {
-    return (
-      <HeaderNavigationItem
-        key={navigationObject.to} 
-        navigationObject={navigationObject}
-      />
-    )
-  });
+  // const desktopNavigation = navigationData.map(navigationObject => {
+  //   return (
+  //     <HeaderNavigationItem
+  //       key={navigationObject.to} 
+  //       navigationObject={navigationObject}
+  //     />
+  //   )
+  // });
 
   return (
     <>
       <div
         aria-label="Main navigation"
-        className={`z-20 fixed top-0 h-20 w-full grid grid-cols-[auto_1fr_auto_auto] items-center
+        className={`z-20 fixed top-0 h-20 w-full grid grid-cols-[auto_1fr_auto] items-center 
           bg-neutral-900 shadow-md transition-all ease-in-out duration-1000
           ${isHeaderVisible ? "translate-y-0" : "-translate-y-full"}
         `}
@@ -62,17 +63,22 @@ const Navigation = ({navigationData}) => {
         <nav className="flex justify-end items-center">
 
           {/* Navigation links */}
-          <div className="pr-16 hidden lg:flex justify-center items-center gap-12 text-xl text-white ">
-            {desktopNavigation}
+          <div className="pr-16 w-full hidden lg:flex justify-center items-center gap-12 text-xl text-white ">
+            {/* {desktopNavigation} */}
+            
+            <SmoothScrollLink href={"#atf"}>Početna</SmoothScrollLink>
+            <SmoothScrollLink href={"#valueprop"}>Što Nudimo?</SmoothScrollLink>
+            <SmoothScrollLink href={"#whyus"}>Zašto Mi?</SmoothScrollLink>
+            <SmoothScrollLink href={"#faq"}>Česta Pitanja</SmoothScrollLink>
           </div>
 
-          <HeaderCta className={"lg:mr-6"}/>
+          <HeaderCta className={"mx-6 "}/>
         </nav>
 
         {/* Mobile menu icon */}
-        <MenuButton isOpen={isMenuOpen} onToggle={()=> {setIsMenuOpen(!isMenuOpen)}} ref={menuButtonRef}/>
+        {/* <MenuButton isOpen={isMenuOpen} onToggle={()=> {setIsMenuOpen(!isMenuOpen)}} ref={menuButtonRef}/> */}
       </div>
-      <DropdownNavbar isOpen={isMenuOpen} ref={dropdownRef} children={mobileNavigation}/>
+      {/* <DropdownNavbar isOpen={isMenuOpen} ref={dropdownRef} children={mobileNavigation}/> */}
     </>
   );
 };
