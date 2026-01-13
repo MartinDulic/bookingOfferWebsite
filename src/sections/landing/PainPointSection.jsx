@@ -31,11 +31,11 @@ const PainPointSection = ({title, boldedText, bodyText, icon, bulletPointText}) 
         
         {body}
         
-        <div className='my-12 flex flex-col gap-8 font-semibold text-neutral-800'>
+        {/* <div className='my-12 flex flex-col gap-8 font-semibold text-neutral-800'>
           {bulletPoints}
         </div>
-        
-        <CtaFudReduced className={"text-neutral-700 mt-8"} />
+         */}
+        <CtaFudReduced className={"text-neutral-700 mt-20"} />
       </div>
     </Section>
   )

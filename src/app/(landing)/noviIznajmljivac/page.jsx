@@ -26,29 +26,29 @@ const page = () => {
   const heroTestimonialsElement = 
   (
     <div className='h-full w-4xl 2xl:w-full py-12 2xl:py-0 xs:mx-8 2xl:mx-0 2xl:mr-8 flex flex-col items-center gap-8 2xl:gap-0 2xl:justify-evenly'>
+      <Testimonial 
+        className={"max-w-3xl min-[850px]:self-start"}
+        image={"/images/people/Matija_T.avif"}
+        alt={"Klijent"}
+        name={"Matija T."}
+        info={"Pula"}
+        text={"Moj apartman u Istri godinama je stajao prazan jer jednostavno nisam imao vremena baviti se iznajmljivanjem. Tek kad sam angažirao PrimeBooker shvatio sam koliko sam zarade propuštao. Od početka umjesto mene rade sve i skoro pa nemam nikakvog posla oko iznajmljivanja."}
+      />
+      <Testimonial 
+        className={"max-w-3xl min-[850px]:self-end"}
+        image={"/images/people/Ana_V.avif"}
+        alt={"User 1"}
+        name={"Ana V."}
+        info={"Zadar"}
+        text={"Nakon što sam umjesto podstanara odlučila prijeći na kratkoročni najam, shvatila sam da mi treba pomoć. Nisam imala pojma odakle krenuti – trebalo je renovirati stan,  rješiti papire i napraviti kategorizaciju, sve mi je to bilo novo. PrimeBooker me vodio kroz sve korake i stvarno mi olakšao početak."}
+      />
       <Testimonial
         className={"max-w-3xl  min-[850px]:self-start"}
         image={"/images/people/Tihomir_J.webp"}
-        alt={"User 1"}
+        alt={"Klijent"}
         name={"Tihomir J."}
         info={"Zagreb"}
-        text={"Odlučio sam dati priliku PrimeBooker-u jer sam htio da netko stručan vodi brigu o oglašavanju moje kuće. Vidio sam da su novi na tržištu i da će dati sve od sebe. Prvi gosti su došli 2 dana nakon početka suradnje i tada sam znao da sam donio ispravnu odluku."}
-      />
-      <Testimonial 
-        className={"max-w-3xl  min-[850px]:self-end"}
-        image={"/images/temp/ANJA.PNG"}
-        alt={"User 1"}
-        name={"Anja Vrljičak"}
-        info={"Villa, Makarska"}
-        text={"Full Beds mi je uštedio toliko vremena i truda. Njihov sistem je jednostavan za korištenje, a podrška je uvijek tu kad mi zatreba. asda sd asd asd asd as das dasdr asdf asdf afas yxasklid has kljhdčlasčdlkjahfčkljhgaskljd fhčasklj hsčakljfa "}
-      />
-      <Testimonial 
-        className={"max-w-3xl  min-[850px]:self-start"}
-        image={"/images/temp/ANJA.PNG"}
-        alt={"User 1"}
-        name={"Anja Vrljičak"}
-        info={"Soba, Makarska"}
-        text={"Full Beds mi je uštedio toliko vremena i truda. Njihov sistem je jednostavan za korištenje, a podrška je uvijek tu kad mi zatreba."}
+        text={"Kada sam počinjao s iznajmljivanjem odlučio sam dati priliku PrimeBooker-u jer sam htio da netko stručan vodi brigu o oglašavanju moje kuće. Vidio sam da su novi na tržištu i da će dati sve od sebe. Prvi gosti su došli 2 dana nakon početka suradnje i tada sam znao da sam donio ispravnu odluku."}
       />
     </div>
   );
@@ -225,9 +225,9 @@ const page = () => {
         icon={<PiDiamondsFourFill className='text-primary-600 text-2xl'/>}
         bulletPointText={
           [
-            "Ušteda 16+ sati",
-            "Pristup svim informacijama na jednom mjestu",
-            "Neograničeno stručno savjetovanje"
+            "Brz i jednostavan početak iznajmljivanja",
+            "100% legalno",
+            "Osobni savjetnik",
           ]
         }
       />

@@ -31,7 +31,7 @@ const DifferentiatorsSection = () => {
             />
             <Differentiator 
               title={"Besplatno Fotografiranje"} 
-              text={"Profesionalne fotografije su ključ za privlačenje gostiju. Nudimo besplatno profesionalno fotografiranje i uređivanje fotografija kako bi osigurali usitinu besplatan početak suradnje s nama."} 
+              text={"Profesionalne fotografije su ključ za privlačenje gostiju. Nudimo besplatno profesionalno fotografiranje i uređivanje fotografija kako bi osigurali potpuno besplatan početak suradnje s nama."} 
             />
             <Differentiator 
               title={"Transparentnost"} 

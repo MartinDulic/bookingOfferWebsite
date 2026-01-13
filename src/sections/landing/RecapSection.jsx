@@ -15,7 +15,7 @@ const RecapSection = () => {
         <ResponsiveImage
           alt = {"Guests Arriving"}
           mobileSrc = {"/images/general/RecapImage_w1100.avif"}
-          desktopSrc = {"/images/general/RecapImage_w1100.avif"}
+          desktopSrc = {"/images/general/RecapImage_w1600.avif"}
           className=' object-[50%_30%] lg:object-center  '
         />
       </div>
