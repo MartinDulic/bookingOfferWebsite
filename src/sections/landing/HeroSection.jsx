@@ -21,7 +21,7 @@ const HeroSection = ({titleText, subtitleText, mobileImgSrc, desktopImgSrc, imgA
           <div className='w-full 2xl:w-auto'>
             <SocialProofTag className={"mt-4 sm:mt-6"}/>
             <div className='p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 xl:pr-0'>
-              <h1 className={` xs:mt-4 max-w-4xl text-3xl xs:text-4xl sm:text-5xl font-title font-bold text-white text-shadow-lg text-shadow-black/30 uppercase`}>
+              <h1 className={` xs:mt-4 max-w-4xl text-3xl xs:text-4xl sm:text-5xl sm:leading-14 font-title font-bold text-white text-shadow-lg text-shadow-black/30 uppercase`}>
                 {titleText}
               </h1>
               <p className={`mt-2 leading-relaxed max-w-2xl xs:text-lg sm:text-2xl text-neutral-50 text-shadow-lg text-shadow-black/30`}>

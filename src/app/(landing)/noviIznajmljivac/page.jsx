@@ -175,7 +175,7 @@ const page = () => {
       question={"Kako funkcioniraju isplate?"}
       text={
         <>
-          Mi obavljamo sve računovodstvene obveze i plaćamo sve naknade, a Vi svaki mjesec dobivate detaljan izvještaj o prihodima i troškovima. Isplata zarade na vaš račun se vrši do 5. u mjesecu za prethodni mjesec.
+          Mi obavljamo sve računovodstvene obveze i plaćamo sve naknade, a Vi svaki mjesec dobivate detaljan izvještaj o prihodima i troškovima. Isplata zarade na vaš račun se vrši do 5. dana u mjesecu za prethodni mjesec.
         </>
       }
     />,
