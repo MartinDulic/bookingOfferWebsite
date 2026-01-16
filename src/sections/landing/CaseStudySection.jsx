@@ -14,7 +14,7 @@ const CaseStudySection = () => {
       <Title className={"text-center"}>
         <div className='max-w-5xl mx-auto'>
           <div className='text-primary-600'>Sa 11000 € na 25000 €</div> 
-          Transformacija Apartmana Hedonist
+          Optimizacija Jednosobnog Apartmana
         </div>
       </Title>
 

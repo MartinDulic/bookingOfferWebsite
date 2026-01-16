@@ -18,7 +18,8 @@ import FaqItem from '@/components/ui-lib/common/FaqItem';
 import { GoDotFill } from "react-icons/go";
 import IconedText from '@/components/ui-lib/common/IconedText';
 import RecapSection from '@/sections/landing/RecapSection';
-
+import { IoCheckmarkDoneSharp } from 'react-icons/io5'
+import BodyText from '@/components/ui-lib/common/BodyText';
 
 
 const page = () => {
@@ -241,7 +242,21 @@ const page = () => {
       <HowItWorkSection />
       <ToolsSection />
       <FaqSection faqItems={faqItems} />
-      <RecapSection />
+      <RecapSection
+        title={<>Sve Na Jednom Mjestu za <span className='text-primary-600'>Bezbržno Iznajmljivanje</span></>}
+        body={
+          <>
+            <BodyText className='text-lg text-neutral-800 '>Pokretanje iznajmljivanja ne mora biti komplicirano. Naš sustav vodi vas kroz sve — od pripreme i kategorizacije do oglašavanja i komunikacije s gostima. Preuzimamo sve obveze kako biste bez stresa ostvarili maksimalnu popunjenost i zaradu. Vi imate potpuni uvid, a mi radimo sve ostalo.</BodyText>
+            <div className='flex flex-col mt-8 xl:mt-12 '>
+              <div className='flex flex-col gap-4 xl:gap-6'>
+                <IconedText icon={<IoCheckmarkDoneSharp className='text-2xl sm:text-3xl text-primary'/>} textClassName={"text-neutral-800 font-semibold text-lg md:text-xl xl:text-2xl"} text={"Besplatno Fotografiranje"}/>
+                <IconedText icon={<IoCheckmarkDoneSharp className='text-2xl sm:text-3xl text-primary'/>} textClassName={"text-neutral-800 font-semibold text-lg md:text-xl xl:text-2xl"} text={"100% Transparentno"}/>
+                <IconedText icon={<IoCheckmarkDoneSharp className='text-2xl sm:text-3xl text-primary'/>} textClassName={"text-neutral-800 font-semibold text-lg md:text-xl xl:text-2xl"} text={"Sveobuhvatna Usluga"}/>
+              </div>
+            </div>
+          </>
+        }
+      />
     </>
   )
 }

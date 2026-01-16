@@ -18,13 +18,22 @@ import FaqItem from '@/components/ui-lib/common/FaqItem';
 import { GoDotFill } from "react-icons/go";
 import IconedText from '@/components/ui-lib/common/IconedText';
 import RecapSection from '@/sections/landing/RecapSection';
-
+import { IoCheckmarkDoneSharp } from 'react-icons/io5'
+import BodyText from '@/components/ui-lib/common/BodyText';
 
 const page = () => {
 
   const heroTestimonialsElement = 
   (
     <div className='h-full w-4xl 2xl:w-full py-12 2xl:py-0 xs:mx-8 2xl:mx-0 2xl:mr-8 flex flex-col items-center gap-8 2xl:gap-0 2xl:justify-evenly'>
+      <Testimonial 
+        className={"max-w-3xl min-[850px]:self-end"}
+        image={"/images/people/.avif"}
+        alt={"Klijent"}
+        name={"Marija L."}
+        info={"Zadar"}
+        text={"Nakon nekoliko sezona iznajmljivanja odlučila sam unajmiti agenciju jer je moj apartman skupio dosta loših recenzija, što je jako utjecalo na zaradu. Nakon što sam počela surađivati s PrimeBooker-om to se brzo popravilo i počela sam dobivati puno više rezervacija."}
+      />
       <Testimonial 
         className={"max-w-3xl min-[850px]:self-start"}
         image={"/images/people/.avif"}
@@ -33,16 +42,8 @@ const page = () => {
         info={"Split"}
         text={"Godinama sam svoje apartmane iznajmljivala sama i to mi je oduzimalo puno vremena i energije. Odlučila sam iznajmljivanje prepustiti PrimeBooker-u kako bi imala više slobodnog vremena. Od tada zarađujem znatno više, a oko iznajmljivanja se uopće ne brinem. "}
       />
-      <Testimonial 
-        className={"max-w-3xl min-[850px]:self-end"}
-        image={"/images/people/Ana_V.avif"}
-        alt={"User 1"}
-        name={"Ana V."}
-        info={"Zadar"}
-        text={"Nakon što sam umjesto podstanara odlučila prijeći na kratkoročni najam, shvatila sam da mi treba pomoć. Nisam imala pojma odakle krenuti – trebalo je renovirati stan,  rješiti papire i napraviti kategorizaciju, sve mi je to bilo novo. PrimeBooker me vodio kroz sve korake i stvarno mi olakšao početak."}
-      />
       <Testimonial
-        className={"max-w-3xl  min-[850px]:self-start"}
+        className={"max-w-3xl min-[850px]:self-start"}
         image={"/images/people/Tihomir_J.webp"}
         alt={"Klijent"}
         name={"Tihomir J."}
@@ -99,7 +100,7 @@ const page = () => {
       desktopImageSrc={"/images/general/Calendar_w1274.avif"}
       alt={"Filled Calendar"}
       summary={"Zaradite Više"}
-      text={"Kontinuiranom analizom tržišta svakodnevno unaprijeđujemo strategiju iznajmljivanja smještaja kako bi iskoristili sve vaše kapacitete i povećali zaradu."} //To uključuje optimizaciju cijena, promjenu restrikcija (npr. min. noćenja po rezervaciji) i naplatu dodatnih usluga (npr. čišćenje, raniji ulazak).
+      text={"Kontinuiranom analizom tržišta, svakodnevno unaprijeđujemo strategiju iznajmljivanja vašeg smještaja, kako bi popunili sve vaše kapacitete po najvišoj mogućoj cijeni."} //To uključuje optimizaciju cijena, promjenu restrikcija (npr. min. noćenja po rezervaciji) i naplatu dodatnih usluga (npr. čišćenje, raniji ulazak).
       imageClassName={"object-left"}
     >
       Ostvarite <span className='text-primary-600'>Maksimalnu Popunjenost </span>
@@ -110,7 +111,7 @@ const page = () => {
       desktopImageSrc={"/images/general/ManAtPool_w1920.avif"}
       alt={"A Relaxed Host"}
       summary={"Prepustite svu brigu nama"}
-      text={"Tu smo kako bi vam pomogli u svemu, od kategorizacije i fotografiranja do oglašavanja i komunikacije s gostima. Nudimo vam kompletnu uslugu kako biste bili potpuno bezbrižni."}
+      text={"Tu smo kako bi vam pomogli u svemu, od oglašavanja i komunikacije s gostima do prijave gostiju, računa i čišćenja. Nudimo vam kompletnu uslugu kako biste bili potpuno bezbrižni."}
       reverse = {true}
       imageClassName={"object-right"}
     >
@@ -227,12 +228,20 @@ const page = () => {
         children={heroTestimonialsElement}
       />
       <PainPointSection
-        title={<>Želite iznajmiti smještaj ali ne znate gdje početi? <div className='text-primary-600 mt-2'>Osigurajte si jednostavan i lagan početak.</div></>}
-        boldedText={"Imate nekretninu koju želite iznajmiti, ali ne znate ništa o kategorizaciji, oglašavanju, porezima i naknadama?"}
+        title={<>Znate da vaš apartman može zaraditi više? <div className='text-primary-600 mt-2'> </div></>}
+        boldedText={"Iznajmljujete već neko vrijeme. Apartman se rezervira, gosti dolaze... ali: "}
         bodyText={
           [
-            "Informacije su često zbunjujuće i teško ih je pronaći, što čini početak iznajmljivanja stresnim i kompliciranim. Dok pokušavate razumjeti sve te informacije, vrijeme prolazi, a vi GUBITE potencijalnu zaradu.",
-            "Tu smo da vam pomognemo! Naš jedinstveni sistem vodi vas kroz sve korake, od opremanja i kategorizacije do oglašavanja i poreza, kako biste bezbrižno započeli svoje iznajmljivanje."
+            <div className='flex flex-col gap-4'>
+              <div><PiDiamondsFourFill className='text-primary-600 text-2xl inline mr-2'/>Niste sigurni jesu li vam cijene preniske ili previsoke</div> 
+              <div><PiDiamondsFourFill className='text-primary-600 text-2xl inline mr-2'/>Stalno nešto mijenjate, ali bez jasne strategije</div> 
+              <div><PiDiamondsFourFill className='text-primary-600 text-2xl inline mr-2'/>Bojite se dizati cijene jer ne želite ostati prazni</div>
+            </div>,
+            <div>Na kraju se pitate: "<span className='font-bold'>Radim sve, a zarađujem li stvarno koliko bih mogao?</span>"</div>,
+            <div>Većina iznajmljivača cijene postavljaja “od oka” i onda naglo spušta cjene kada shvate da je ostalo par dana do praznog termina.</div>,
+            <div>Radi toga ne znate koliki je stvarni potencijal vašeg apartmana, a niste sigurni što radite krivo. </div>,
+            <div>Postoji bolji način od stalnog nagađanja i paničnih sniženja. Način gdje se cijene određuju smisleno, kalendar se puni strateški, način koji vam donosi veću zaradu.</div>,
+            <div>Mi upravljamo vašim smještajem kako bi ste ostvarili makismalnu zaradu, imali manje obaveza i stresa i konačno imali konretan plan.</div>
           ]
         }
         icon={<PiDiamondsFourFill className='text-primary-600 text-2xl'/>}
@@ -254,7 +263,21 @@ const page = () => {
       <HowItWorkSection />
       <ToolsSection />
       <FaqSection faqItems={faqItems} />
-      <RecapSection />
+      <RecapSection
+        title={<>Sve Na Jednom Mjestu za <span className='text-primary-600'>Bezbržno Iznajmljivanje</span></>}
+        body={
+          <>
+            <BodyText className='text-lg text-neutral-800 '>Pokretanje iznajmljivanja ne mora biti komplicirano. Naš sustav vodi vas kroz sve — od pripreme i kategorizacije do oglašavanja i komunikacije s gostima. Preuzimamo sve obveze kako biste bez stresa ostvarili maksimalnu popunjenost i zaradu. Vi imate potpuni uvid, a mi radimo sve ostalo.</BodyText>
+            <div className='flex flex-col mt-8 xl:mt-12 '>
+              <div className='flex flex-col gap-4 xl:gap-6'>
+                <IconedText icon={<IoCheckmarkDoneSharp className='text-2xl sm:text-3xl text-primary'/>} textClassName={"text-neutral-800 font-semibold text-lg md:text-xl xl:text-2xl"} text={"Besplatno Fotografiranje"}/>
+                <IconedText icon={<IoCheckmarkDoneSharp className='text-2xl sm:text-3xl text-primary'/>} textClassName={"text-neutral-800 font-semibold text-lg md:text-xl xl:text-2xl"} text={"100% Transparentno"}/>
+                <IconedText icon={<IoCheckmarkDoneSharp className='text-2xl sm:text-3xl text-primary'/>} textClassName={"text-neutral-800 font-semibold text-lg md:text-xl xl:text-2xl"} text={"Sveobuhvatna Usluga"}/>
+              </div>
+            </div>
+          </>
+        }  
+      />
     </main>
   )
 }
