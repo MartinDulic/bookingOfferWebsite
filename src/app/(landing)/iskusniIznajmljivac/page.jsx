@@ -228,7 +228,7 @@ const page = () => {
         children={heroTestimonialsElement}
       />
       <PainPointSection
-        title={<>Znate da vaš apartman može zaraditi više? <div className='text-primary-600 mt-2'> </div></>}
+        title={<>Iznajmljujete i znate da možete zaraditi više? <div className='text-primary-600 mt-2'>Iskoristite sav potencijal svog smještaja.</div></>}
         boldedText={"Iznajmljujete već neko vrijeme. Apartman se rezervira, gosti dolaze... ali: "}
         bodyText={
           [
@@ -264,10 +264,10 @@ const page = () => {
       <ToolsSection />
       <FaqSection faqItems={faqItems} />
       <RecapSection
-        title={<>Sve Na Jednom Mjestu za <span className='text-primary-600'>Bezbržno Iznajmljivanje</span></>}
+        title={<><span className='text-primary-600'>Prestanite propuštati zaradu</span> i gubiti vrijeme</>}
         body={
           <>
-            <BodyText className='text-lg text-neutral-800 '>Pokretanje iznajmljivanja ne mora biti komplicirano. Naš sustav vodi vas kroz sve — od pripreme i kategorizacije do oglašavanja i komunikacije s gostima. Preuzimamo sve obveze kako biste bez stresa ostvarili maksimalnu popunjenost i zaradu. Vi imate potpuni uvid, a mi radimo sve ostalo.</BodyText>
+            <BodyText className='text-lg text-neutral-800 '></BodyText>
             <div className='flex flex-col mt-8 xl:mt-12 '>
               <div className='flex flex-col gap-4 xl:gap-6'>
                 <IconedText icon={<IoCheckmarkDoneSharp className='text-2xl sm:text-3xl text-primary'/>} textClassName={"text-neutral-800 font-semibold text-lg md:text-xl xl:text-2xl"} text={"Besplatno Fotografiranje"}/>
