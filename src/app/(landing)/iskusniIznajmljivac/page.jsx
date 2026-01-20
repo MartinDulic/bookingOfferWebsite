@@ -27,16 +27,16 @@ const page = () => {
   (
     <div className='h-full w-4xl 2xl:w-full py-12 2xl:py-0 xs:mx-8 2xl:mx-0 2xl:mr-8 flex flex-col items-center gap-8 2xl:gap-0 2xl:justify-evenly'>
       <Testimonial 
-        className={"max-w-3xl min-[850px]:self-end"}
-        image={"/images/people/.avif"}
+        className={"max-w-3xl min-[850px]:self-start"}
+        image={"/images/people/Marija_L.avif"}
         alt={"Klijent"}
         name={"Marija L."}
         info={"Zadar"}
         text={"Nakon nekoliko sezona iznajmljivanja odlučila sam unajmiti agenciju jer je moj apartman skupio dosta loših recenzija, što je jako utjecalo na zaradu. Nakon što sam počela surađivati s PrimeBooker-om to se brzo popravilo i počela sam dobivati puno više rezervacija."}
       />
       <Testimonial 
-        className={"max-w-3xl min-[850px]:self-start"}
-        image={"/images/people/.avif"}
+        className={"max-w-3xl min-[850px]:self-end"}
+        image={"/images/people/Mira_K.avif"}
         alt={"Klijent"}
         name={"Mira K."}
         info={"Split"}
@@ -241,7 +241,7 @@ const page = () => {
             <div>Većina iznajmljivača cijene postavljaja “od oka” i onda naglo spušta cjene kada shvate da je ostalo par dana do praznog termina.</div>,
             <div>Radi toga ne znate koliki je stvarni potencijal vašeg apartmana, a niste sigurni što radite krivo. </div>,
             <div>Postoji bolji način od stalnog nagađanja i paničnih sniženja. Način gdje se cijene određuju smisleno, kalendar se puni strateški, način koji vam donosi veću zaradu.</div>,
-            <div>Mi upravljamo vašim smještajem kako bi ste ostvarili makismalnu zaradu, imali manje obaveza i stresa i konačno imali konretan plan.</div>
+            <div>Mi upravljamo vašim smještajem kako bi ste ostvarili makismalnu zaradu, imali manje obaveza i stresa i konačno imali konkretan plan.</div>
           ]
         }
         icon={<PiDiamondsFourFill className='text-primary-600 text-2xl'/>}
@@ -267,7 +267,14 @@ const page = () => {
         title={<><span className='text-primary-600'>Prestanite propuštati zaradu</span> i gubiti vrijeme</>}
         body={
           <>
-            <BodyText className='text-lg text-neutral-800 '></BodyText>
+            <BodyText className='text-lg text-neutral-800 '>
+              <div className='font-bold'>Zašto čekati još jednu sezonu da biste vidjeli rezultate?</div>
+              <div className='mt-4'>
+                Svaki period bez rezervacije ili sa preniskom cijenom je izgubljena zarada. Ne dopustite da vaš trud i kvaliteta smještaja ostanu neprimijećeni.
+                S nama imate partnera koji razumije tržište, brine o svakom detalju i radi za vaš maksimalni profit.
+              </div>
+              <div className='mt-4'>Kontaktirajte nas danas i osigurajte da svaki dan u sezoni radi u vašu korist!</div>
+            </BodyText>
             <div className='flex flex-col mt-8 xl:mt-12 '>
               <div className='flex flex-col gap-4 xl:gap-6'>
                 <IconedText icon={<IoCheckmarkDoneSharp className='text-2xl sm:text-3xl text-primary'/>} textClassName={"text-neutral-800 font-semibold text-lg md:text-xl xl:text-2xl"} text={"Besplatno Fotografiranje"}/>
