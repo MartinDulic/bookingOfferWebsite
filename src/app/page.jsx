@@ -1,9 +1,11 @@
-import RenterTypeSection from "@/sections/RenterTypeSection";
+import { redirect } from 'next/navigation';
 
-export default function Home() {
-  return (
-    <main>
-      <RenterTypeSection/>
-    </main>
-  );
+const Page = () => {
+  const language =
+    navigator.languages?.[0].split("-")[0] ||
+    navigator.language.split("-")[0] ||
+    'en';
+  language == "hr" ? redirect("/hr") : redirect("/en")
 }
+
+export default Page

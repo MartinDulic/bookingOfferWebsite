@@ -18,7 +18,7 @@ const RenterTypeSection = () => {
           <RenterTypeCard
             subtitleText={"Novi Iznajmljivač"}
             bodyText={"Želim iznajmiti svoj prvi smještaj."}
-            href={"/noviIznajmljivac"}
+            href={"/hr/noviIznajmljivac"}
             icon={<BsFillHouseFill/>}
             iconBgColor={"bg-green-200"}
             iconColor={"text-green-700"}
@@ -30,7 +30,7 @@ const RenterTypeSection = () => {
           <RenterTypeCard
             subtitleText={"Iskusni Iznajmljivač"}
             bodyText={"Već iznajmljujem smještaj i želim bolje rezultate."}
-            href={"/iskusniIznajmljivac"}
+            href={"/hr/iskusniIznajmljivac"}
             icon={<BsFillHousesFill/>}
             iconBgColor={"bg-blue-200"}
             iconColor={"text-blue-700"}
@@ -42,7 +42,7 @@ const RenterTypeSection = () => {
           <RenterTypeCard
             subtitleText={"Investitor"}
             bodyText={"Imam smještaj i ne želim nikakvu brigu o njemu."}
-            href={"/investitor"}
+            href={"/hr/investitor"}
             icon={<MdApartment />}
             iconBgColor={"bg-purple-200"}
             iconColor={"text-purple-700"}

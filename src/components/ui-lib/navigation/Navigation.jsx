@@ -9,7 +9,7 @@ import HeaderNavigationItem from "./HeaderNavigationItem";
 import HeaderLogo from "./HeaderLogo";
 import SmoothScrollLink from "./SmoothScrollLink";
 
-const Navigation = ({navigationData}) => {
+const Navigation = ({navigationData, language = "hr"}) => {
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -66,10 +66,10 @@ const Navigation = ({navigationData}) => {
           <div className="pr-16 w-full hidden lg:flex justify-center items-center gap-12 text-xl text-white ">
             {/* {desktopNavigation} */}
             
-            <SmoothScrollLink href={"#atf"}>Početna</SmoothScrollLink>
-            <SmoothScrollLink href={"#valueprop"}>Što Nudimo?</SmoothScrollLink>
-            <SmoothScrollLink href={"#whyus"}>Zašto Mi?</SmoothScrollLink>
-            <SmoothScrollLink href={"#faq"}>Česta Pitanja</SmoothScrollLink>
+            <SmoothScrollLink href={"#atf"}>{language == "hr" ? "Početna" : "Home"}</SmoothScrollLink>
+            <SmoothScrollLink href={"#valueprop"}>{language == "hr" ? "Što Nudimo?" : "Our Offer"}</SmoothScrollLink>
+            <SmoothScrollLink href={"#whyus"}>{language == "hr" ? "Zašto Mi?" : "Why Us?"}</SmoothScrollLink>
+            <SmoothScrollLink href={"#faq"}>{language == "hr" ? "Česta Pitanja" : "FAQ"}</SmoothScrollLink>
           </div>
 
           <HeaderCta className={"mx-6 "}/>
