@@ -70,10 +70,10 @@ const GoogleSheetsLeadForm = ({ className, inputClassName, invalidPhoneText, inv
 
   const inputGroupClassname = "flex flex-col mb-12"
   const labelClassname = "text-neutral-800 mb-2"
-  const inputGeneralClassname = "outline-none border-b  py-2";
+  const inputGeneralClassname = "outline-none border-b py-2";
   const errorClassName = "text-red-500 text-sm pt-1"
   return (
-    <div className={`flex flex-col font-default px-4 py-8 rounded-sm ${className}`}>
+    <div className={`flex flex-col items-center font-default px-4 py-8 rounded-sm ${className}`}>
       <form
         method="POST"
         action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdWjRNWFuYK3T6T0cBT2Y7VTa04qsKlnyM70Cm7nWYq2xNX1Q/formResponse"
@@ -83,16 +83,16 @@ const GoogleSheetsLeadForm = ({ className, inputClassName, invalidPhoneText, inv
       >
         <div className="mb-12 text-center text-neutral-800 font-bold text-xl 2xl:text-2xl font-title">Zatražite besplatno savjetovanje</div>
 
-        <div  className={inputGroupClassname}>
+        <div className={inputGroupClassname}>
           <label className={labelClassname}>Telefon:</label>
-          <input type="text" name="entry.1939143989" placeholder="Unesite telefon*" 
+          <input type="tel" name="entry.1939143989" placeholder="Unesite telefon*" 
             className={`${phoneError ? " border-red-500" : " border-primary-600"} + ${inputGeneralClassname + inputClassName}`}
             onChange={() => setHasUserTyped(true)}
           />
           <p className={`${phoneError ? "" :" hidden"} ${errorClassName}`}>{invalidPhoneText}</p>
         </div>
 
-        <div className={`flex flex-col transition-all duration-500 ease-in-out overflow-hidden ${
+        <div className={`flex flex-col transition-all duration-700 ease-in-out overflow-hidden ${
           hasUserTyped ? "max-h-[500px]" : "max-h-0"
         }`}>
           <div className={inputGroupClassname}>
@@ -113,10 +113,13 @@ const GoogleSheetsLeadForm = ({ className, inputClassName, invalidPhoneText, inv
           </div>
         </div>
         <button type="submit"
-          className="mt-4 bg-primary font-semibold text-white py-2 px-4 rounded-xs hover:bg-primary-dark"
+          className="mt-4 py-2 px-4 bg-primary font-semibold text-white shadow-md rounded-xs hover:bg-primary-dark hover:scale-105 transition-transform duration-200"
         >
           Razgovarajmo
         </button>
+        <p className="mt-4 text-sm text-center text-neutral-500">
+          🔒 Vaši podaci su sigurni, ne dijelimo ih.
+        </p>
       </form>
 
       {/* hidden iframe to prevent page reload */}

@@ -18,7 +18,8 @@ import FaqItem from '@/components/ui-lib/common/FaqItem';
 import { GoDotFill } from "react-icons/go";
 import IconedText from '@/components/ui-lib/common/IconedText';
 import RecapSection from '@/sections/landing/RecapSection';
-
+import BodyText from '@/components/ui-lib/common/BodyText';
+import { IoCheckmarkDoneSharp } from "react-icons/io5";
 
 const page = () => {
 
@@ -102,7 +103,7 @@ const page = () => {
       text={"Kontinuiranom analizom tržišta svakodnevno unaprijeđujemo strategiju iznajmljivanja smještaja kako bi iskoristili sve vaše kapacitete i povećali zaradu."} //To uključuje optimizaciju cijena, promjenu restrikcija (npr. min. noćenja po rezervaciji) i naplatu dodatnih usluga (npr. čišćenje, raniji ulazak).
       imageClassName={"object-left"}
     >
-      Ostvarite <span className='text-primary-600'>Maksimalnu Popunjenost </span>
+      Ostvarite <span className='text-primary-600'>Maksimalnu Popunjenost </span> i Zaradu
     </ValuePropWithImage>,
     <ValuePropWithImage
       key={2}
@@ -110,73 +111,55 @@ const page = () => {
       desktopImageSrc={"/images/general/ManAtPool_w1920.avif"}
       alt={"A Relaxed Host"}
       summary={"Prepustite svu brigu nama"}
-      text={"Tu smo kako bi vam pomogli u svemu, od kategorizacije i fotografiranja do oglašavanja i komunikacije s gostima. Nudimo vam kompletnu uslugu kako biste bili potpuno bezbrižni."}
+      text={"Tu smo kako bi vam pomogli u svemu, od kategorizacije i fotografiranja do oglašavanja i čišćenja. Nudimo vam kompletnu uslugu kako biste bili potpuno bezbrižni."}
       reverse = {true}
       imageClassName={"object-right"}
     >
-      Riješite se obveza, <span className='text-primary-600'> Uštedite Vrijeme</span>
+      Iznajmite bez truda i <span className='text-primary-600'> Ostvarite pasivne prihode</span>
     </ValuePropWithImage>,
     <ValuePropWithImage
-      key={3}
-      mobileImageSrc={"/images/general/FamilyEntering-w800.avif"}
-      desktopImageSrc={"/images/general/FamilyEntering_w1100.avif"}
-      alt={"Excited family at a house"}
-      summary={"Poslujte Profesionalno"}
-      text={"Zadovoljni gosti promoviraju smještaj, vraćaju se i plaćaju više. Mi poznajemo očekivanja i želje gostiju i znamo kako ih nadmašiti."}
-      imageClassName={"object-top"}
+    key={3}
+    mobileImageSrc={"/images/general/FamilyEntering-w800.avif"}
+    desktopImageSrc={"/images/general/FamilyEntering_w1100.avif"}
+    alt={"Excited family at a house"}
+    summary={"Poslujte Profesionalno"}
+    text={"Zadovoljni gosti promoviraju smještaj, vraćaju se i plaćaju više. Mi poznajemo očekivanja i želje gostiju i znamo kako ih nadmašiti."}
+    imageClassName={"object-top"}
     >
       <span className='text-primary-600'>Osigurajte idealno iskustvo</span> svojim gostima
     </ValuePropWithImage>
   ];
-
+  
   const dot = <GoDotFill />;
-
+  
   const faqItems = [
-    <FaqItem
-      key={1}
-      question={"Zarađujem već sasvim dovoljno. Što možete poboljšati?"} 
+    <FaqItem 
+      key={0}
+      question={"Mogu li i dalje koristiti svoj smještaj za sebe?"}
       text={
         <>
-          Većini vlasnika poboljšamo prihode 20% - 50% uz smanjenje obaveza vlasnika! Najčešće optimiziramo:
-
-          <div className='py-4 flex flex-col gap-2'>
-            <IconedText icon={dot} text="Cijene" />
-            <IconedText icon={dot} text="Vidljivost oglasa" />
-            <IconedText icon={dot} text="Broj direktinh rezervacija" />
-            <IconedText icon={dot} text="Zaradu od dodatnih usluga" />
-          </div>
-          Čak i ako ste zadovoljni sadašnjim rezultatima, postoji vrlo velika šansa da možete zarađivati više i istovremeno znatno smanjti količinu obveza.
+          Naravno! I dalje možete koristiti svoj smještaj kad god želite, a mi ćemo vam osigurati maksimalnu zaradu kada vi ne koristite smještaj.
         </>
       }
     />,
     <FaqItem 
-      key={2}
-      question={"Je li ovo dobra opcija ako tek počinjem?"}
-      text={
-        <>
-          Da — novim iznajmljivačima je najviše potrebna profesionalna pomoć.
-          Bez znanja i prave strategije, većina novih iznajmljivača gubi novac.
-        </>
-      }
-    />,
-    <FaqItem 
-      key={3}
-      question={"Hoću li izgubiti kontrolu nad svojim smještajem?"}
-      text={
-        <>
-          Ne. Vi ste i dalje vlasnik smještaja i imate puni uvid u sve: 
+    key={1}
+    question={"Hoću li izgubiti kontrolu nad svojim smještajem?"}
+    text={
+      <>
+          Ne. Vi ste i dalje vlasnik smještaja možete doći u njega kada želite i imate potpuni uvid u sve: 
           <span className='py-4 flex flex-col gap-2'>
             <IconedText icon={dot} text="Raspored rezervacija" />
             <IconedText icon={dot} text="Cijene" />
             <IconedText icon={dot} text="Troškove i prihode" />
             <IconedText icon={dot} text="Statistiku popunjenosti" />
           </span>
-          Naša uloga je samo da radimo ono što vam štedi vrijeme i donosi više zarade.
+          Mi smo tu kako bi vam ostvarili zaradu kada vi ne korisite smještaj.
         </>
       }
     />,
     <FaqItem 
-      key={4}
+      key={2}
       question={"Koliko vaša usluga košta?"}
       text={
         <>
@@ -187,7 +170,7 @@ const page = () => {
       }
     />,
     <FaqItem 
-      key={5}
+      key={3}
       question={"Kako funkcioniraju isplate?"}
       text={
         <>
@@ -196,30 +179,21 @@ const page = () => {
       }
     />,
     <FaqItem 
-      key={6}
-      question={"Moram li se brinuti o čišćenju i održavanju?"}
-      text={
-        <>
-          Ne morate — osim ako želite.
-          Surađujemo s provjerenim partnerima i organiziramo sve za vas kako bi vaš smještaj uvijek bio spreman za goste.
-        </>
-      }
-    />,
-    <FaqItem 
-      key={7}
+      key={4}
       question={"Koliko vremena je potrebno za početak suradnje?"}
       text={
         <>
-          Ukoliko je smještaj spreman za iznajmljivanje potrebno je nekoliko dana za fotografiranje, uređivanje fotografija i objavu oglasa.
+          Ukoliko je smještaj spreman za iznajmljivanje potrebno je nekoliko dana za fotografiranje, uređivanje fotografija i objavu oglasa. Ako je smještaj potrebno kategorizirati onda će to potrajati duže, ovisno o brzini procesa kategorizacije.
         </>
       }
-    />
+    />,
+
   ];
   return (
     <main className="font-default">
       <HeroSection
-        titleText={"Ostvarite makismalnu zaradu od svog smještaja"}
-        subtitleText={" "}
+        titleText={"Iznajmite smještaj bez stresa i obveza"}
+        subtitleText={"Imate smještaj koji vam stoji prazan? Želite zaradite od njega, ali ne želite nikakve obveze? Nudimo sveobuhvatnu uslugu upravljanja smještajem koja vam ostvaruje makismalnu zaradu bez da išta radite."}
         mobileImgSrc="/images/general/HeroImage_w1920.avif"
         desktopImgSrc="/images/general/HeroImage_w1920.avif"
         imgAlt="Hero Background"
@@ -227,12 +201,20 @@ const page = () => {
         children={heroTestimonialsElement}
       />
       <PainPointSection
-        title={<>Želite iznajmiti smještaj ali ne znate gdje početi? <div className='text-primary-600 mt-2'>Osigurajte si jednostavan i lagan početak.</div></>}
-        boldedText={"Imate nekretninu koju želite iznajmiti, ali ne znate ništa o kategorizaciji, oglašavanju, porezima i naknadama?"}
+        title={<>Želite zaraditi od smještaja ali ne želite se baviti iznajmljivanjem? <div className='text-primary-600 mt-2'>Prepustite obveze nama i počnite zarađivati.</div></>}
+        boldedText={"Imate nekretninu u kojoj ljetujete? U njoj ste samo par tjedana godišnje? Gledate druge kako zarađuju od svojih apartmana dok vaš stoji prazan... ali:"}
         bodyText={
           [
-            "Informacije su često zbunjujuće i teško ih je pronaći, što čini početak iznajmljivanja stresnim i kompliciranim. Dok pokušavate razumjeti sve te informacije, vrijeme prolazi, a vi GUBITE potencijalnu zaradu.",
-            "Tu smo da vam pomognemo! Naš jedinstveni sistem vodi vas kroz sve korake, od opremanja i kategorizacije do oglašavanja i poreza, kako biste bezbrižno započeli svoje iznajmljivanje."
+            <div className='flex flex-col gap-4'>
+              <div><PiDiamondsFourFill className='text-primary-600 text-2xl inline mr-2'/>Niste tu tijekom cijele godine</div>
+              <div><PiDiamondsFourFill className='text-primary-600 text-2xl inline mr-2'/>Ne znate ništa o iznajmljivanu</div>
+              <div><PiDiamondsFourFill className='text-primary-600 text-2xl inline mr-2'/>Nemate vremena baviti se s gostima, čišćenjem i pravnim obvezama</div> 
+            </div>,
+            <div>Na kraju odustanete od svega jer vam iznajmljivanje izgleda neizvedivo.</div>,
+            <div>Radi toga gubite tisuće eura iz godine u godinu dok drugi zarađuju lako.</div>,
+            <div>Postoji rješenje koje vam omogućava da iznajmljujete bez ikakvih obveza i odgovornosti. Rješenje koje iskorištava puni potencijal vašeg smještaja, a vama osigurava bezbrižnost.</div>,
+            <div>Mi upravljamo vašim smještajem kako bi ste ostvarili makismalnu zaradu. </div>
+
           ]
         }
         icon={<PiDiamondsFourFill className='text-primary-600 text-2xl'/>}
@@ -254,7 +236,28 @@ const page = () => {
       <HowItWorkSection />
       <ToolsSection />
       <FaqSection faqItems={faqItems} />
-      <RecapSection />
+      <RecapSection
+        title={<><span className='text-primary-600'>Prestanite propuštati zaradu</span> i osigurajte uspjeh</>}
+        body={
+          <>
+            <BodyText className='text-lg text-neutral-800 '>
+              <div className='font-bold'>Nemojte dopustiti da još jedna godina prođe u premišljanu.</div>
+              <div className='mt-4'>
+                Svakim danom kojim vaš apartman ostaje prazan gubite laku zaradu.  
+                S nama imate partnera koji razumije tržište, brine o svakom detalju i radi za vaš maksimalni profit.
+              </div>
+              <div className='mt-4'>Kontaktirajte nas danas i osigurajte da svaki dan u sezoni radi u vašu korist!</div>
+            </BodyText>
+            <div className='flex flex-col mt-8 xl:mt-12 '>
+              <div className='flex flex-col gap-4 xl:gap-6'>
+                <IconedText icon={<IoCheckmarkDoneSharp className='text-2xl sm:text-3xl text-primary'/>} textClassName={"text-neutral-800 font-semibold text-lg md:text-xl xl:text-2xl"} text={"Besplatno Fotografiranje"}/>
+                <IconedText icon={<IoCheckmarkDoneSharp className='text-2xl sm:text-3xl text-primary'/>} textClassName={"text-neutral-800 font-semibold text-lg md:text-xl xl:text-2xl"} text={"100% Transparentno"}/>
+                <IconedText icon={<IoCheckmarkDoneSharp className='text-2xl sm:text-3xl text-primary'/>} textClassName={"text-neutral-800 font-semibold text-lg md:text-xl xl:text-2xl"} text={"Sveobuhvatna Usluga"}/>
+              </div>
+            </div>
+          </>
+        }  
+      />
     </main>
   )
 }

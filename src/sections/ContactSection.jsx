@@ -1,11 +1,10 @@
 import GoogleSheetsLeadForm from '@/components/GoogleSheetsLeadForm'
 import BodyText from '@/components/ui-lib/common/BodyText'
 import Section from '@/components/ui-lib/common/Section'
-import Subtitle from '@/components/ui-lib/common/Subtitle'
 import Title from '@/components/ui-lib/common/Title'
 import React from 'react'
 
-const Contact = () => {
+const ContactSection = () => {
   return (
     <Section className={"min-h-dvh bg-neutral-100 flex flex-col items-center"}>
       <Title className={"text-center text-primary-600"}>Kontaktirajte nas</Title>
@@ -23,4 +22,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default ContactSection
