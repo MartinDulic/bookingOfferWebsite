@@ -20,10 +20,10 @@ import IconedText from '@/components/ui-lib/common/IconedText';
 import RecapSection from '@/sections/landing/RecapSection';
 import { IoCheckmarkDoneSharp } from 'react-icons/io5'
 import BodyText from '@/components/ui-lib/common/BodyText';
-
+import { clarity } from '@microsoft/clarity';
 
 const page = () => {
-
+  clarity.tag("page_type", "hr_novi_iznajmljivac");
   const heroTestimonialsElement = 
   (
     <div className='h-full w-4xl 2xl:w-full py-12 2xl:py-0 xs:mx-8 2xl:mx-0 2xl:mr-8 flex flex-col items-center gap-8 2xl:gap-0 2xl:justify-evenly'>

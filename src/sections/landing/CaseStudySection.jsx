@@ -8,7 +8,7 @@ import Title from '@/components/ui-lib/common/Title'
 import React from 'react'
 import { FaLongArrowAltRight } from "react-icons/fa";
 
-const CaseStudySection = () => {
+const CaseStudySection = ({title, }) => {
   return (
     <Section className={"bg-neutral-100 flex flex-col items-center"}>
       <Title className={"text-center"}>

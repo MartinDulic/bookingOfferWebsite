@@ -19,7 +19,7 @@ const DifferentiatorsSection = () => {
             />
             <Differentiator 
               title={"Kompletna Usluga"} 
-              text={"Nudimo sveobuhvatnu uslugu upravljanja smještajem koju prilagođavamo vašim potrebama. Nudimo pomoć pri kategorizaciji, oglašavanje, čišćenje, organizaciju sadržaja za goste i još mnogo toga."}
+              text={"Nudimo sveobuhvatnu uslugu upravljanja smještajem koja odgovara vašim potrebama. Nudimo pomoć pri kategorizaciji, oglašavanje, čišćenje, organizaciju sadržaja za goste i još mnogo toga."}
             />
             <Differentiator 
               title={"Direktne Rezervacije"} 
