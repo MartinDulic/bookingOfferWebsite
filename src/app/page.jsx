@@ -1,11 +1,23 @@
-import { redirect } from 'next/navigation';
+"use client";
+
+import { useEffect } from 'react';
 
 const Page = () => {
-  const language =
-    navigator.languages?.[0].split("-")[0] ||
-    navigator.language.split("-")[0] ||
-    'en';
-  language == "hr" ? redirect("/hr") : redirect("/en")
+  useEffect(() => {
+    const language =
+      navigator.languages?.[0]?.split("-")[0] ||
+      navigator.language?.split("-")[0] ||
+      'en';
+      
+    if (language === "hr") {
+      window.location.href = "/hr";
+    } else {
+      window.location.href = "/en";
+    }
+  }, []);
+
+  // Optional: Show loading message
+  return <div>Detecting language...</div>;
 }
 
-export default Page
+export default Page;

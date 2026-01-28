@@ -26,6 +26,9 @@ jobs:
       - name: Add .nojekyll
         run: touch out/.nojekyll
 
+      - name: Add CNAME
+        run: echo "primebooker.com" > out/CNAME
+        
       - name: Copy index to 404
         run: cp out/index.html out/404.html
 
