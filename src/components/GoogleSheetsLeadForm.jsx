@@ -2,10 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
 import IconedText from "./ui-lib/common/IconedText";
-import { useRouter } from "next/navigation"; // Change this import
 
 const GoogleSheetsLeadForm = ({ className, inputClassName, invalidPhoneText, invalidNameText, invalidEmailText}) => {
-  const router = useRouter();
   const [submitted, setSubmitted] = useState(false);
   const [hasUserTyped, setHasUserTyped] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
@@ -63,7 +61,7 @@ const GoogleSheetsLeadForm = ({ className, inputClassName, invalidPhoneText, inv
 
   useEffect(()=> {
     if(submitted) {
-      router.push("/");
+      window.location.href = "/";
     }
   }, [submitted])
 

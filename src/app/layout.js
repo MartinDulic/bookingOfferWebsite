@@ -1,7 +1,7 @@
 import { Libre_Franklin, Merriweather_Sans, Radio_Canada, Rethink_Sans } from "next/font/google";
 import "./globals.css";
-import { clarity } from '@microsoft/clarity';
 import GoogleAnalytics from "@/lib/integrations/googleAnalytics";
+import MicrosofClarity from "@/lib/integrations/microsofClarity";
 
 // const libreFranklin = Libre_Franklin({
 //   variable: "--font-libre-franklin",
@@ -31,10 +31,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  clarity.init("v8nubzutzz")
   return (
     <html lang="en">
       <head>
+        <MicrosofClarity />
         <GoogleAnalytics />
       </head>
       <body
