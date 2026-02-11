@@ -20,6 +20,12 @@ import IconedText from '@/components/ui-lib/common/IconedText';
 import RecapSection from '@/sections/landing/RecapSection';
 import { IoCheckmarkDoneSharp } from 'react-icons/io5'
 import BodyText from '@/components/ui-lib/common/BodyText';
+import AbTest from '@/lib/abTest';
+
+export const metadata = {
+  title: "Agencija za Upravljanje Apartmanima | Od Kategorizacije do Zarade",
+  description: "Ne znate ništa o kategorizaciji, porezima i oglašavanju? PrimeBooker vas vodi kroz cijeli proces. Prepustite nam administraciju, opremanje i goste te bezbrižno počnite zarađivati.",
+};
 
 const page = () => {
   const heroTestimonialsElement = 
@@ -202,7 +208,7 @@ const page = () => {
   return (
     <>
       <HeroSection
-        titleText={"Pokrenite iznajmljivanje bez stresa i gubitka vremena"}
+        titleText={<AbTest featureKey="ni-hero-title-test" fallback="Pokrenite iznajmljivanje bez stresa i gubitka vremena" />}
         // subtitleText={"Sve što ti treba za uspješan početak iznajmljivanja nalazi se na jednom mjestu — mi radimo, ti zarađuješ."}
         // subtitleText={"Neznate kako funkcioniraju kategorizacija, porezi i online oglašavanje? Naš jedinstveni sistem osigurava jednostavan i bezbrižan početak iznajmljivanja."}
         subtitleText={"Naš jedinstveni sistem vodi vas kroz sve, od kategorizacije do poreza i oglašavanja, za bezbrižan početak."}

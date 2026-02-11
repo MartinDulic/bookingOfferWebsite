@@ -1,3 +1,5 @@
+"use client";
+import { trackCTAClick } from '@/lib/trackCtaClickGa';
 import Link from 'next/link'
 import React from 'react'
 import { RiArrowRightLine } from "react-icons/ri";
@@ -5,7 +7,7 @@ import { RiArrowRightLine } from "react-icons/ri";
 
 const Cta = ({className, language = "hr"}) => {
   return (
-    <Link href={language == "hr" ? "/hr/kontakt" : "/en/contact"} className={`${className} flex 
+    <Link onClick={() => trackCTAClick("standardCta")} href={language == "hr" ? "/hr/kontakt" : "/en/contact"} className={`${className} flex 
       text-xl xs:text-2xl sm:text-3xl text-white font-semibold bg-primary rounded-xs
       hover:scale-105 transition-transform duration-300 ease-in-out`}
     >

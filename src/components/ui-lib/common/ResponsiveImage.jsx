@@ -6,8 +6,9 @@ const ResponsiveImage = ({
   desktopSrc,
   fallbackSrc,
   className = "",
-  type = "image/webp",
-  loading="lazy"
+  type = "image/avif",
+  loading="lazy",
+  priority = false
 }) => {
   return (
     <picture>
@@ -25,7 +26,11 @@ const ResponsiveImage = ({
         src={fallbackSrc ?? desktopSrc}
         alt={alt}
         className={`absolute w-full h-full object-cover ${className}`}
-        loading={loading}
+        // If priority is true, we set loading to "eager" and use fetchpriority
+        loading={priority ? "eager" : loading}
+        fetchPriority={priority ? "high" : "auto"}
+        // This is crucial for Speed Index
+        decoding={priority ? "sync" : "async"}
       />
     </picture>
   );

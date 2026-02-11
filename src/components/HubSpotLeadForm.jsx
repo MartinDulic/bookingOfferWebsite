@@ -1,11 +1,12 @@
-"use client";
-import React, { useEffect, useState } from "react";
+"use client"; 
+import React from 'react'
+import { useState, useEffect } from 'react';
+import { trackLead } from "@/lib/trackLeadGa";
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
 import IconedText from "./ui-lib/common/IconedText";
-import { trackLead } from "@/lib/trackLeadGa";
 
-const GoogleSheetsLeadForm = ({ className, inputClassName, invalidPhoneText, invalidNameText, invalidEmailText}) => {
-  const [submitted, setSubmitted] = useState(false);
+const HubSpotLeadForm = ({ className, inputClassName, invalidPhoneText, invalidNameText, invalidEmailText}) => {
+ const [submitted, setSubmitted] = useState(false);
   const [hasUserTyped, setHasUserTyped] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
   const [emailError, setEmailError] = useState(false);
@@ -27,14 +28,18 @@ const GoogleSheetsLeadForm = ({ className, inputClassName, invalidPhoneText, inv
     return phoneRegex.test(value);
   }
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault()
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    const portalId = '147789375'; 
+    const formId = '5e2f47be-d242-422e-80e5-27c29f0d125a';
+    const url = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
+
     const form = e.target;
     const formData = new FormData(form);
     
-    const phone = formData.get("entry.1939143989");
-    const name = formData.get("entry.670102158");
-    const email = formData.get("entry.1965763834");
+    const phone = formData.get("phone");
+    const name = formData.get("name");
+    const email = formData.get("email");
 
     const phoneErr = !validatePhone(phone);
     setPhoneError(phoneErr);
@@ -48,17 +53,41 @@ const GoogleSheetsLeadForm = ({ className, inputClassName, invalidPhoneText, inv
       setNameErorr(nameErr);
     }
 
-    console.log(phoneErr, emailErr, nameErr);
-
     // Check the local error variables, not the state
     if(phoneErr || emailErr || nameErr) {
       return;
     }
+    // Split Name safely
+    const nameParts = name.trim().split(' ');
+    const firstName = nameParts[0];
+    const lastName = nameParts.length > 1 ? nameParts.slice(1).join(' ') : '';
 
-    form.submit();
-    trackLead(); // Track the lead in GA4
-    setSubmitted(true);
+    const payload = {
+      fields: [
+        { name: 'email', value: email },
+        { name: 'firstname', value: firstName },
+        { name: 'lastname', value: lastName }, // HubSpot default is 'lastname'
+        { name: 'phone', value: phone }
+      ],
+      context: {
+        pageUri: window.location.href,
+        pageName: document.title
+      }
+    };
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (response.ok) {
+      console.log("Lead captured in HubSpot!");
+      trackLead(); // Track the lead in GA4
+      setSubmitted(true);
+    }
   };
+
 
 
   useEffect(()=> {
@@ -75,9 +104,6 @@ const GoogleSheetsLeadForm = ({ className, inputClassName, invalidPhoneText, inv
   return (
     <div className={`flex flex-col items-center font-default px-4 py-8 rounded-sm ${className}`}>
       <form
-        method="POST"
-        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdWjRNWFuYK3T6T0cBT2Y7VTa04qsKlnyM70Cm7nWYq2xNX1Q/formResponse"
-        target="hidden_iframe"
         className={`flex flex-col px-4 w-full max-w-md text-xl`}
         onSubmit={handleFormSubmit}
       >
@@ -85,7 +111,7 @@ const GoogleSheetsLeadForm = ({ className, inputClassName, invalidPhoneText, inv
 
         <div className={inputGroupClassname}>
           <label className={labelClassname}>Telefon:</label>
-          <input type="tel" name="entry.1939143989" placeholder="Unesite telefon*" 
+          <input type="tel" name="phone" placeholder="Unesite telefon*" 
             className={`${phoneError ? " border-red-500" : " border-primary-600"} + ${inputGeneralClassname + inputClassName}`}
             onChange={() => setHasUserTyped(true)}
           />
@@ -96,8 +122,8 @@ const GoogleSheetsLeadForm = ({ className, inputClassName, invalidPhoneText, inv
           hasUserTyped ? "max-h-[500px]" : "max-h-0"
         }`}>
           <div className={inputGroupClassname}>
-            <label className={labelClassname}>Ime</label>
-            <input type="text" name="entry.670102158" placeholder="Unesite ime*" 
+            <label className={labelClassname}>Ime i Prezime</label>
+            <input type="text" name="name" placeholder="Unesite ime i prezime*" 
               className={`${nameErorr ? " border-red-500" : " border-primary-600"} + ${inputGeneralClassname + inputClassName}`}
             />
             <p className={`${nameErorr ? "" :" hidden"} ${errorClassName}`}>{invalidNameText}</p>
@@ -106,7 +132,7 @@ const GoogleSheetsLeadForm = ({ className, inputClassName, invalidPhoneText, inv
           {/*Opens when user types*/}
           <div  className={inputGroupClassname}>
             <label className={labelClassname}>E-Mail:</label>
-            <input type="email" name="entry.1965763834" placeholder="Unesite email*" 
+            <input type="email" name="email" placeholder="Unesite email*" 
               className={`${emailError ? " border-red-500" : " border-primary-600"} + ${inputGeneralClassname + inputClassName}`}
             />
             <p className={`${emailError ? "" :" hidden"} ${errorClassName}`}>{invalidEmailText}</p>
@@ -122,12 +148,6 @@ const GoogleSheetsLeadForm = ({ className, inputClassName, invalidPhoneText, inv
         </p>
       </form>
 
-      {/* hidden iframe to prevent page reload */}
-      <iframe
-        name="hidden_iframe"
-        style={{ display: "none" }}
-      />
-
       {submitted && (
         <div className="mt-4 text-green-600 font-semibold text-center flex justify-center">
           <IconedText 
@@ -140,6 +160,6 @@ const GoogleSheetsLeadForm = ({ className, inputClassName, invalidPhoneText, inv
       )}
     </div>
   );
-};
+}
 
-export default GoogleSheetsLeadForm;
+export default HubSpotLeadForm

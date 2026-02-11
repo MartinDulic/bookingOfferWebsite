@@ -20,6 +20,12 @@ import IconedText from '@/components/ui-lib/common/IconedText';
 import RecapSection from '@/sections/landing/RecapSection';
 import BodyText from '@/components/ui-lib/common/BodyText';
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
+import AbTest from '@/lib/abTest';
+
+export const metadata = {
+  title: "PrimeBooker | Profesionalno Upravljanje Apartmanima i Kućama",
+  description: "Ne dopustite da Vam apartman stoji prazan. Nudimo potpunu uslugu vođenja smještaja za vlasnike koji nemaju vremena ili nisu u blizini. PrimeBooker preuzima sve: od oglasa i gostiju do čišćenja.",
+};
 
 const page = () => {
 
@@ -192,7 +198,7 @@ const page = () => {
   return (
     <main className="font-default">
       <HeroSection
-        titleText={"Iznajmite smještaj bez stresa i obveza"}
+        titleText={<AbTest featureKey={"inv-hero-title"} fallBack={"Iznajmite smještaj bez stresa i obveza!!"}/>}
         subtitleText={"Imate smještaj koji vam stoji prazan? Želite zaradite od njega, ali ne želite nikakve obveze? Nudimo sveobuhvatnu uslugu upravljanja smještajem koja vam ostvaruje makismalnu zaradu bez da išta radite."}
         mobileImgSrc="/images/general/HeroImage_w1920.avif"
         desktopImgSrc="/images/general/HeroImage_w1920.avif"
