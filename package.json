@@ -5,12 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "fetch-features": "node fetch-features.js",
-    "build": "node fetch-features.js && next build",
+    "build": "node fetch-features.js && next build && partytown copylib public/~partytown",
     "start": "next start",
     "lint": "next lint",
     "deploy": "echo.>out\\.nojekyll && gh-pages -d out --dotfiles"
   },
   "dependencies": {
+    "@growthbook/growthbook-react": "^1.6.4",
     "@microsoft/clarity": "^1.0.2",
     "next": "15.4.7",
     "react": "19.1.0",
@@ -19,6 +20,7 @@
     "react-intersection-observer": "^9.16.0"
   },
   "devDependencies": {
+    "@builder.io/partytown": "^0.10.3",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "eslint": "^9",

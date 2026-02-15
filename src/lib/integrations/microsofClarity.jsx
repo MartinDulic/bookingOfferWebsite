@@ -2,7 +2,7 @@ import Script from 'next/script';
 
 const MicrosoftClarity = () => {
   return (
-    <Script id="ms-clarity" strategy="lazyOnload">
+    <Script id="ms-clarity" strategy="worker">
       {`
         (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

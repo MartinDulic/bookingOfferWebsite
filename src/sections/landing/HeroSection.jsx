@@ -16,7 +16,7 @@ const HeroSection = ({titleText, subtitleText, mobileImgSrc, desktopImgSrc, imgA
           loading="eager"
           imgClassName={imgClassName}
           className={``}
-          priority={"high"}
+          priority={true}
         />
         <div className='flex flex-row h-full relative'>
           <div className='w-full 2xl:w-auto'>

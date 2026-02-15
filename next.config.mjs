@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
+  experimental: {
+    nextScriptWorkers: true,
+  },
 };
 
 export default nextConfig;

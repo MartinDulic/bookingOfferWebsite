@@ -22,3 +22,7 @@
   --color-primary-900: #000000;
   
 }
+
+@utility content-auto {
+  content-visibility: auto;
+}

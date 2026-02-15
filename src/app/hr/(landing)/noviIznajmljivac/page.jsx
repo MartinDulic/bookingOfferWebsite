@@ -212,7 +212,7 @@ const page = () => {
         // subtitleText={"Sve što ti treba za uspješan početak iznajmljivanja nalazi se na jednom mjestu — mi radimo, ti zarađuješ."}
         // subtitleText={"Neznate kako funkcioniraju kategorizacija, porezi i online oglašavanje? Naš jedinstveni sistem osigurava jednostavan i bezbrižan početak iznajmljivanja."}
         subtitleText={"Naš jedinstveni sistem vodi vas kroz sve, od kategorizacije do poreza i oglašavanja, za bezbrižan početak."}
-        mobileImgSrc="/images/general/HeroImage_w1920.avif"
+        mobileImgSrc="/images/general/HeroImage_w1000.avif"
         desktopImgSrc="/images/general/HeroImage_w1920.avif"
         imgAlt="Hero Background"
         imgClassName="object-[51%-50%] md:object-[65%_50%] lg:object-center "

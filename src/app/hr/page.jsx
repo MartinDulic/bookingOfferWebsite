@@ -227,7 +227,7 @@ const Page = () => {
       <HeroSection
         titleText={<AbTest featureKey={"ii-hero-title-test"} fallBack={"Ostvarite maksimalnu zaradu od svog smještaja"} />}
         subtitleText={"Imate prazne termine? Nagađate cijene? Stalno ste dostupni gostima? Naš sustav, vođen kontinuiranom analizom tržišta, povećava vašu zaradu i oslobađa vas svakodnevnih obveza. "}
-        mobileImgSrc="/images/general/HeroImage_w1920.avif"
+        mobileImgSrc="/images/general/HeroImage_w1000.avif"
         desktopImgSrc="/images/general/HeroImage_w1920.avif"
         imgAlt="Hero Background"
         imgClassName="object-[51%-50%] md:object-[65%_50%] lg:object-center "

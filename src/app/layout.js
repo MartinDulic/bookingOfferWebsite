@@ -62,12 +62,10 @@ export default function RootLayout({ children }) {
         {/* Helps with some "Best Practice" checks */}
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         
-        <link rel="preconnect" href="https://cdn.growthbook.io" />
-        <link rel="dns-prefetch" href="https://cdn.growthbook.io" />
         {/* Add other external integrations too */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        {/* <link rel="preconnect" href="https://www.googletagmanager.com" /> */}
         
-        <AntiFlicker />
+        {/* <AntiFlicker /> */}
         <MicrosoftClarity />
         <GoogleAnalytics />
       </head>

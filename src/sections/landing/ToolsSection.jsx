@@ -3,6 +3,7 @@ import MarketingProof from '@/components/ui-lib/common/MarketingProof'
 import Section from '@/components/ui-lib/common/Section'
 import Title from '@/components/ui-lib/common/Title'
 import logos from '@/constants/ToolsLogos'
+import Image from 'next/image'
 import React from 'react'
 
 const ToolsSection = () => {
@@ -11,14 +12,16 @@ const ToolsSection = () => {
       <Title className={"text-center mb-12 md:mb-16"}>
         Neka vaš <span className='text-primary-600'>smještaj vide milijuni</span>
       </Title>
-      <HorizontalScroller speed={1} pauseOnHover={false} pauseOnClick={false} className={"py-4 mb-12 md:mb-16"} >
+      <HorizontalScroller speed={1} pauseOnHover={false} pauseOnClick={false} className={"py-4 mb-12 md:mb-16 content-auto"} >
         {
           logos.map((logo, index) => (
             <div key={index} className="flex items-center justify-center mx-6 md:mx-8 lg:mx-12">
-              <img 
+              <Image 
                 src={logo.src}
                 alt={logo.alt}
                 className="h-8 md:h-10 lg:h-12 object-contain"
+                width={160} 
+                height={48}
               />
             </div>
           ))
