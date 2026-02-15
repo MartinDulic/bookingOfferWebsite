@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "fetch-features": "node fetch-features.js",
+    "build": "node fetch-features.js && next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export",
     "deploy": "echo.>out\\.nojekyll && gh-pages -d out --dotfiles"
   },
   "dependencies": {

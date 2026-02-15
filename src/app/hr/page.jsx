@@ -125,7 +125,7 @@ const Page = () => {
     </ValuePropWithImage>,
     <ValuePropWithImage
       key={3}
-      mobileImageSrc={"/images/general/FamilyEntering-w800.avif"}
+      mobileImageSrc={"/images/general/FamilyEntering_w800.avif"}
       desktopImageSrc={"/images/general/FamilyEntering_w1100.avif"}
       alt={"Excited family at a house"}
       summary={"Poslujte Profesionalno"}

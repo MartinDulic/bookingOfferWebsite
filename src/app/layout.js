@@ -40,8 +40,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{
+            __html: `
+              if (window.location.pathname === '/' || window.location.pathname === '') {
+                window.location.replace('/hr');
+              }
+            `
+          }} />
         {/* <LanguageRedirectScript/> */}
-        <Script  id="language-redirect" strategy="beforeInteractive">
+        {/* <Script  id="language-redirect" strategy="beforeInteractive">
           {`try {
               if (window.location.pathname === '/') {
                 window.location.replace("/hr");
@@ -50,10 +57,8 @@ export default function RootLayout({ children }) {
               console.error("Language redirect failed:", e);
             }
           `}
-        </Script>
+        </Script> */}
 
-        <AntiFlicker />
-        
         {/* Helps with some "Best Practice" checks */}
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         
@@ -61,6 +66,8 @@ export default function RootLayout({ children }) {
         <link rel="dns-prefetch" href="https://cdn.growthbook.io" />
         {/* Add other external integrations too */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+        
+        <AntiFlicker />
         <MicrosoftClarity />
         <GoogleAnalytics />
       </head>

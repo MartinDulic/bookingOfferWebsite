@@ -8,7 +8,7 @@ const AntiFlicker = () => {
         {`
           (function(w,i,d){
             d.classList.add(i);
-            setTimeout(function(){d.classList.remove(i)}, 2000);
+            setTimeout(function(){d.classList.remove(i)}, 500);
           })(window,'gb-flicker-control',document.documentElement);
         `}
       </Script>
