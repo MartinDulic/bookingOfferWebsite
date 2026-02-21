@@ -208,7 +208,8 @@ const page = () => {
   return (
     <>
       <HeroSection
-        titleText={<AbTest featureKey="ni-hero-title-test" fallBack="Pokrenite iznajmljivanje bez stresa i gubitka vremena" />}
+        titleText={"Pokrenite iznajmljivanje bez stresa i gubitka vremena"}
+        // titleText={<AbTest featureKey="ni-hero-title-test" fallBack="Pokrenite iznajmljivanje bez stresa i gubitka vremena" />}
         // subtitleText={"Sve što ti treba za uspješan početak iznajmljivanja nalazi se na jednom mjestu — mi radimo, ti zarađuješ."}
         // subtitleText={"Neznate kako funkcioniraju kategorizacija, porezi i online oglašavanje? Naš jedinstveni sistem osigurava jednostavan i bezbrižan početak iznajmljivanja."}
         subtitleText={"Naš jedinstveni sistem vodi vas kroz sve, od kategorizacije do poreza i oglašavanja, za bezbrižan početak."}

@@ -198,7 +198,8 @@ const page = () => {
   return (
     <main className="font-default">
       <HeroSection
-        titleText={<AbTest featureKey={"inv-hero-title"} fallBack={"Iznajmite smještaj bez stresa i obveza!!"}/>}
+        titleText={"Iznajmite smještaj bez stresa i obveza"}
+        // titleText={<AbTest featureKey={"inv-hero-title"} fallBack={"Iznajmite smještaj bez stresa i obveza!!"}/>}
         subtitleText={"Imate smještaj koji vam stoji prazan? Želite zaradite od njega, ali ne želite nikakve obveze? Nudimo sveobuhvatnu uslugu upravljanja smještajem koja vam ostvaruje makismalnu zaradu bez da išta radite."}
         mobileImgSrc="/images/general/HeroImage_w1000.avif"
         desktopImgSrc="/images/general/HeroImage_w1920.avif"

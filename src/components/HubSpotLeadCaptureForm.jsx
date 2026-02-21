@@ -1,12 +1,9 @@
 "use client"; 
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { trackLead } from "@/lib/trackLeadGa";
-import { IoCheckmarkDoneSharp } from "react-icons/io5";
-import IconedText from "./ui-lib/common/IconedText";
 
-const HubSpotLeadForm = ({ className, inputClassName, invalidPhoneText, invalidNameText, invalidEmailText}) => {
- const [submitted, setSubmitted] = useState(false);
+const HubSpotLeadCaptureForm = ({ className, inputClassName, invalidPhoneText, invalidNameText, invalidEmailText}) => {
   const [hasUserTyped, setHasUserTyped] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
   const [emailError, setEmailError] = useState(false);
@@ -82,19 +79,23 @@ const HubSpotLeadForm = ({ className, inputClassName, invalidPhoneText, invalidN
     });
 
     if (response.ok) {
-      console.log("Lead captured in HubSpot!");
       trackLead(); // Track the lead in GA4
-      setSubmitted(true);
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 500);
+    } else {
+      console.error("HubSpot API Error:", await response.json());
+      alert("Došlo je do pogreške prilikom slanja obrasca. Molimo pokušajte ponovno.");
     }
   };
 
 
 
-  useEffect(()=> {
-    if(submitted) {
-      window.location.href = "/";
-    }
-  }, [submitted])
+  // useEffect(()=> {
+  //   if(submitted) {
+  //     window.location.href = "/";
+  //   }
+  // }, [submitted])
 
 
   const inputGroupClassname = "flex flex-col mb-12"
@@ -147,19 +148,8 @@ const HubSpotLeadForm = ({ className, inputClassName, invalidPhoneText, invalidN
           🔒 Vaši podaci su sigurni, ne dijelimo ih.
         </p>
       </form>
-
-      {submitted && (
-        <div className="mt-4 text-green-600 font-semibold text-center flex justify-center">
-          <IconedText 
-            icon={<IoCheckmarkDoneSharp className='text-xl sm:text-3xl'/>} 
-            text="Vaša prijava je uspješno poslana." 
-            className={"items-center"} 
-            textClassName={"text-green-600"}
-          />
-        </div>
-      )}
     </div>
   );
 }
 
-export default HubSpotLeadForm
+export default HubSpotLeadCaptureForm
