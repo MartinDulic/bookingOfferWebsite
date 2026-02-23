@@ -33,7 +33,7 @@ const page = () => {
   (
     <div className='h-full w-4xl 2xl:w-full py-12 2xl:py-0 xs:mx-8 2xl:mx-0 2xl:mr-8 flex flex-col items-center gap-8 2xl:gap-0 2xl:justify-evenly'>
       <Testimonial 
-        className={"max-w-3xl min-[850px]:self-start"}
+        className={"max-w-3xl min-[850px]:self-start bg-gradient-to-br from-neutral-100 to-white border"}
         image={"/images/people/Matija_T.avif"}
         alt={"Klijent"}
         name={"Matija T."}
@@ -41,7 +41,7 @@ const page = () => {
         text={"Moj apartman u Istri godinama je stajao prazan jer jednostavno nisam imao vremena baviti se iznajmljivanjem. Tek kad sam angažirao PrimeBooker shvatio sam koliko sam zarade propuštao. Od početka umjesto mene rade sve i skoro pa nemam nikakvog posla oko iznajmljivanja."}
       />
       <Testimonial 
-        className={"max-w-3xl min-[850px]:self-end"}
+        className={"max-w-3xl min-[850px]:self-end bg-gradient-to-br from-neutral-100 to-white border"}
         image={"/images/people/Ana_V.avif"}
         alt={"User 1"}
         name={"Ana V."}
@@ -49,7 +49,7 @@ const page = () => {
         text={"Nakon što sam umjesto podstanara odlučila prijeći na kratkoročni najam, shvatila sam da mi treba pomoć. Nisam imala pojma odakle krenuti – trebalo je renovirati stan,  rješiti papire i napraviti kategorizaciju, sve mi je to bilo novo. PrimeBooker me vodio kroz sve korake i stvarno mi olakšao početak."}
       />
       <Testimonial
-        className={"max-w-3xl  min-[850px]:self-start"}
+        className={"max-w-3xl  min-[850px]:self-start bg-gradient-to-br from-neutral-100 to-white border"}
         image={"/images/people/Tihomir_J.webp"}
         alt={"Klijent"}
         name={"Tihomir J."}
@@ -106,7 +106,7 @@ const page = () => {
       desktopImageSrc={"/images/general/Calendar_w1274.avif"}
       alt={"Filled Calendar"}
       summary={"Zaradite Više"}
-      text={"Kontinuiranom analizom tržišta svakodnevno unaprijeđujemo strategiju iznajmljivanja smještaja kako bi iskoristili sve vaše kapacitete i povećali zaradu."} //To uključuje optimizaciju cijena, promjenu restrikcija (npr. min. noćenja po rezervaciji) i naplatu dodatnih usluga (npr. čišćenje, raniji ulazak).
+      text={"Kontinuiranom analizom tržišta svakodnevno unaprijeđujemo strategiju iznajmljivanja smještaja kako bi iskoristili sve Vaše kapacitete i povećali zaradu."} //To uključuje optimizaciju cijena, promjenu restrikcija (npr. min. noćenja po rezervaciji) i naplatu dodatnih usluga (npr. čišćenje, raniji ulazak).
       imageClassName={"object-left"}
     >
       Ostvarite <span className='text-primary-600'>Maksimalnu Popunjenost </span> i Zaradu
@@ -166,7 +166,7 @@ const page = () => {
     />,
     <FaqItem 
       key={2}
-      question={"Koliko vaša usluga košta?"}
+      question={"Koliko Vaša usluga košta?"}
       text={
         <>
           Naša usluga se naplaćuje kao postotak od ostvarene zarade. 
@@ -180,7 +180,7 @@ const page = () => {
       question={"Kako funkcioniraju isplate?"}
       text={
         <>
-          Mi obavljamo sve računovodstvene obveze i plaćamo sve naknade, a Vi svaki mjesec dobivate detaljan izvještaj o prihodima i troškovima. Isplata zarade na vaš račun se vrši do 5. dana u mjesecu za prethodni mjesec.
+          Mi obavljamo sve računovodstvene obveze i plaćamo sve naknade, a Vi svaki mjesec dobivate detaljan izvještaj o prihodima i troškovima. Isplata zarade na Vaš račun se vrši do 5. dana u mjesecu za prethodni mjesec.
         </>
       }
     />,
@@ -209,7 +209,7 @@ const page = () => {
       />
       <PainPointSection
         title={<>Želite zaraditi od smještaja ali ne želite se baviti iznajmljivanjem? <div className='text-primary-600 mt-2'>Prepustite obveze nama i počnite zarađivati.</div></>}
-        boldedText={"Imate nekretninu u kojoj ljetujete? U njoj ste samo par tjedana godišnje? Gledate druge kako zarađuju od svojih apartmana dok vaš stoji prazan... ali:"}
+        boldedText={"Imate nekretninu u kojoj ljetujete? U njoj ste samo par tjedana godišnje? Gledate druge kako zarađuju od svojih apartmana dok Vaš stoji prazan... ali:"}
         bodyText={
           [
             <div className='flex flex-col gap-4'>
@@ -219,8 +219,8 @@ const page = () => {
             </div>,
             <div>Na kraju odustanete od svega jer vam iznajmljivanje izgleda neizvedivo.</div>,
             <div>Radi toga gubite tisuće eura iz godine u godinu dok drugi zarađuju lako.</div>,
-            <div>Postoji rješenje koje vam omogućava da iznajmljujete bez ikakvih obveza i odgovornosti. Rješenje koje iskorištava puni potencijal vašeg smještaja, a vama osigurava bezbrižnost.</div>,
-            <div>Mi upravljamo vašim smještajem kako bi ste ostvarili makismalnu zaradu. </div>
+            <div>Postoji rješenje koje vam omogućava da iznajmljujete bez ikakvih obveza i odgovornosti. Rješenje koje iskorištava puni potencijal Vašeg smještaja, a vama osigurava bezbrižnost.</div>,
+            <div>Mi upravljamo Vašim smještajem kako bi ste ostvarili makismalnu zaradu. </div>
 
           ]
         }
@@ -250,10 +250,10 @@ const page = () => {
             <BodyText className='text-lg text-neutral-800 '>
               <div className='font-bold'>Nemojte dopustiti da još jedna godina prođe u premišljanu.</div>
               <div className='mt-4'>
-                Svakim danom kojim vaš apartman ostaje prazan gubite laku zaradu.  
-                S nama imate partnera koji razumije tržište, brine o svakom detalju i radi za vaš maksimalni profit.
+                Svakim danom kojim Vaš apartman ostaje prazan gubite laku zaradu.  
+                S nama imate partnera koji razumije tržište, brine o svakom detalju i radi za Vaš maksimalni profit.
               </div>
-              <div className='mt-4'>Kontaktirajte nas danas i osigurajte da svaki dan u sezoni radi u vašu korist!</div>
+              <div className='mt-4'>Kontaktirajte nas danas i osigurajte da svaki dan u sezoni radi u Vašu korist!</div>
             </BodyText>
             <div className='flex flex-col mt-8 xl:mt-12 '>
               <div className='flex flex-col gap-4 xl:gap-6'>

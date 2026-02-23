@@ -15,19 +15,19 @@ const DifferentiatorsSection = () => {
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12'>
             <Differentiator 
               title={"Prilagođena Strategija"} 
-              text={"Svaki smještaj je jedinstven, stoga razvijamo prilagođenu strategiju upravljanja koja odgovaraja specifičnim karakteristikama i lokaciji vašeg smještaja."} 
+              text={"Svaki smještaj je jedinstven, stoga razvijamo prilagođenu strategiju upravljanja koja odgovaraja specifičnim karakteristikama i lokaciji Vašeg smještaja."} 
             />
             <Differentiator 
               title={"Kompletna Usluga"} 
-              text={"Nudimo sveobuhvatnu uslugu upravljanja smještajem koja odgovara vašim potrebama. Nudimo pomoć pri kategorizaciji, oglašavanje, čišćenje, organizaciju sadržaja za goste i još mnogo toga."}
+              text={"Nudimo sveobuhvatnu uslugu upravljanja smještajem koja odgovara Vašim potrebama. Nudimo pomoć pri kategorizaciji, oglašavanje, čišćenje, organizaciju sadržaja za goste i još mnogo toga."}
             />
             <Differentiator 
               title={"Direktne Rezervacije"} 
-              text={"Kako bi vam ostvarili veću dobit, stvorili smo portal za dirketne rezervacije s manjom provizijom. Gost plaća manju cijenu, a vi ostvarujete veću zaradu."} 
+              text={"Kako bi vam ostvarili veću dobit, stvorili smo portal za dirketne rezervacije s manjom provizijom. Gost plaća manju cijenu, a Vi ostvarujete veću zaradu."} 
             />
             <Differentiator 
               title={"Stalni Razvoj"} 
-              text={"Kontinuirano pratimo tržište i prilagođavamo strategiju cijena i uvjeta najma kako bismo osigurali maksimalnu popunjenost i profitabilnost vašeg smještaja."} 
+              text={"Kontinuirano pratimo tržište i prilagođavamo strategiju cijena i uvjeta najma kako bismo osigurali maksimalnu popunjenost i profitabilnost Vašeg smještaja."} 
             />
             <Differentiator 
               title={"Besplatno Fotografiranje"} 
@@ -35,7 +35,7 @@ const DifferentiatorsSection = () => {
             />
             <Differentiator 
               title={"Transparentnost"} 
-              text={"Vjerujemo u otvorenu komunikaciju i transparentnost. Putem naše aplikacije imate uvid u sve informacije i uvijek smo dostupni za sva vaša pitanja i potrebe."} 
+              text={"Vjerujemo u otvorenu komunikaciju i transparentnost. Putem naše aplikacije imate uvid u sve informacije i uvijek smo dostupni za sva Vaša pitanja i potrebe."} 
             />
           </div>
         </div>

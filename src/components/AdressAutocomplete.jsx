@@ -89,7 +89,7 @@ const AddressAutocomplete = forwardRef(({ labelText, errorMessage, placeholder, 
         type="text"
         autoComplete="off"
         placeholder={placeholder}
-        className={`${error && isTouched ? "border-red-500" : "border-primary-600"} outline-none border-b py-2 w-full transition-all focus:border-b-2`}
+        className={`${error && isTouched ? "border-red-500" : "border-primary-600"} outline-none border-b py-2 w-full transition-all`}
         value={query}
         onChange={handleInputChange}
       />

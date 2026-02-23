@@ -11,7 +11,7 @@ const Cta = ({className, language = "hr"}) => {
   const variant = gb.getFeatureValue("conversion-funnel", "contact"); 
   // const variant = useFeatureValue("conversion-funnel", "contact"); 
 
-  if(variant === "contact") {
+  if(variant == "contact") {
     return (
       <Link onClick={() => trackCTAClick("standardCta")} href={language == "hr" ? "/hr/kontakt" : "/en/contact"} className={`${className} flex 
         text-xl xs:text-2xl sm:text-3xl text-white font-semibold bg-primary rounded-xs

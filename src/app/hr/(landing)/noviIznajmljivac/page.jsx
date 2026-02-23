@@ -32,7 +32,7 @@ const page = () => {
   (
     <div className='h-full w-4xl 2xl:w-full py-12 2xl:py-0 xs:mx-8 2xl:mx-0 2xl:mr-8 flex flex-col items-center gap-8 2xl:gap-0 2xl:justify-evenly'>
       <Testimonial 
-        className={"max-w-3xl min-[850px]:self-start"}
+        className={"max-w-3xl min-[850px]:self-start bg-gradient-to-br from-neutral-100 to-white border"}
         image={"/images/people/Matija_T.avif"}
         alt={"Klijent"}
         name={"Matija T."}
@@ -40,7 +40,7 @@ const page = () => {
         text={"Moj apartman u Istri godinama je stajao prazan jer jednostavno nisam imao vremena baviti se iznajmljivanjem. Tek kad sam angažirao PrimeBooker shvatio sam koliko sam zarade propuštao. Od početka umjesto mene rade sve i skoro pa nemam nikakvog posla oko iznajmljivanja."}
       />
       <Testimonial 
-        className={"max-w-3xl min-[850px]:self-end"}
+        className={"max-w-3xl min-[850px]:self-end bg-gradient-to-br from-neutral-100 to-white border"}
         image={"/images/people/Ana_V.avif"}
         alt={"User 1"}
         name={"Ana V."}
@@ -48,7 +48,7 @@ const page = () => {
         text={"Nakon što sam umjesto podstanara odlučila prijeći na kratkoročni najam, shvatila sam da mi treba pomoć. Nisam imala pojma odakle krenuti – trebalo je renovirati stan,  rješiti papire i napraviti kategorizaciju, sve mi je to bilo novo. PrimeBooker me vodio kroz sve korake i stvarno mi olakšao početak."}
       />
       <Testimonial
-        className={"max-w-3xl  min-[850px]:self-start"}
+        className={"max-w-3xl  min-[850px]:self-start bg-gradient-to-br from-neutral-100 to-white border"}
         image={"/images/people/Tihomir_J.webp"}
         alt={"Klijent"}
         name={"Tihomir J."}
@@ -105,7 +105,7 @@ const page = () => {
       desktopImageSrc={"/images/general/Calendar_w1274.avif"}
       alt={"Filled Calendar"}
       summary={"Zaradite Više"}
-      text={"Kontinuiranom analizom tržišta svakodnevno unaprijeđujemo strategiju iznajmljivanja smještaja kako bi  iskoristili sve vaše kapacitete i povećali zaradu."} //To uključuje optimizaciju cijena, promjenu restrikcija (npr. min. noćenja po rezervaciji) i naplatu dodatnih usluga (npr. čišćenje, raniji ulazak).
+      text={"Kontinuiranom analizom tržišta svakodnevno unaprijeđujemo strategiju iznajmljivanja smještaja kako bi  iskoristili sve Vaše kapacitete i povećali zaradu."} //To uključuje optimizaciju cijena, promjenu restrikcija (npr. min. noćenja po rezervaciji) i naplatu dodatnih usluga (npr. čišćenje, raniji ulazak).
       imageClassName={"object-left"}
     >
       Ostvarite <span className='text-primary-600'>Maksimalnu Popunjenost </span> i Zaradu
@@ -166,7 +166,7 @@ const page = () => {
     />,
     <FaqItem 
       key={3}
-      question={"Koliko vaša usluga košta?"}
+      question={"Koliko Vaša usluga košta?"}
       text={
         <>
           Naša usluga se naplaćuje kao postotak od ostvarene zarade. 
@@ -180,7 +180,7 @@ const page = () => {
       question={"Kako funkcioniraju isplate?"}
       text={
         <>
-          Mi obavljamo sve računovodstvene obveze i plaćamo sve naknade, a Vi svaki mjesec dobivate detaljan izvještaj o prihodima i troškovima. Isplata zarade na vaš račun se vrši do 5. dana u mjesecu za prethodni mjesec.
+          Mi obavljamo sve računovodstvene obveze i plaćamo sve naknade, a Vi svaki mjesec dobivate detaljan izvještaj o prihodima i troškovima. Isplata zarade na Vaš račun se vrši do 5. dana u mjesecu za prethodni mjesec.
         </>
       }
     />,
@@ -190,7 +190,7 @@ const page = () => {
       text={
         <>
           Ne morate — osim ako želite.
-          Surađujemo s provjerenim partnerima i organiziramo sve za vas kako bi vaš smještaj uvijek bio spreman za goste.
+          Surađujemo s provjerenim partnerima i organiziramo sve za Vas kako bi Vaš smještaj uvijek bio spreman za goste.
         </>
       }
     />,
@@ -212,7 +212,7 @@ const page = () => {
         // titleText={<AbTest featureKey="ni-hero-title-test" fallBack="Pokrenite iznajmljivanje bez stresa i gubitka vremena" />}
         // subtitleText={"Sve što ti treba za uspješan početak iznajmljivanja nalazi se na jednom mjestu — mi radimo, ti zarađuješ."}
         // subtitleText={"Neznate kako funkcioniraju kategorizacija, porezi i online oglašavanje? Naš jedinstveni sistem osigurava jednostavan i bezbrižan početak iznajmljivanja."}
-        subtitleText={"Naš jedinstveni sistem vodi vas kroz sve, od kategorizacije do poreza i oglašavanja, za bezbrižan početak."}
+        subtitleText={"Naš jedinstveni sistem vodi Vas kroz sve, od kategorizacije do poreza i oglašavanja, za bezbrižan početak."}
         mobileImgSrc="/images/general/HeroImage_w1000.avif"
         desktopImgSrc="/images/general/HeroImage_w1920.avif"
         imgAlt="Hero Background"
@@ -225,7 +225,7 @@ const page = () => {
         bodyText={
           [
             "Informacije su često zbunjujuće i teško ih je pronaći, što čini početak iznajmljivanja stresnim i kompliciranim. Dok pokušavate razumjeti sve te informacije, vrijeme prolazi, a vi GUBITE potencijalnu zaradu.",
-            "Tu smo da vam pomognemo! Naš jedinstveni sistem vodi vas kroz sve korake, od opremanja i kategorizacije do oglašavanja i poreza, kako biste bezbrižno započeli svoje iznajmljivanje."
+            "Tu smo da vam pomognemo! Naš jedinstveni sistem vodi Vas kroz sve korake, od opremanja i kategorizacije do oglašavanja i poreza, kako biste bezbrižno započeli svoje iznajmljivanje."
           ]
         }
         icon={<PiDiamondsFourFill className='text-primary-600 text-2xl'/>}
@@ -251,7 +251,7 @@ const page = () => {
         title={<>Sve Na Jednom Mjestu za <span className='text-primary-600'>Bezbržno Iznajmljivanje</span></>}
         body={
           <>
-            <BodyText className='text-lg text-neutral-800 '>Pokretanje iznajmljivanja ne mora biti komplicirano. Naš sustav vodi vas kroz sve — od pripreme i kategorizacije do oglašavanja i komunikacije s gostima. Preuzimamo sve obveze kako biste bez stresa ostvarili maksimalnu popunjenost i zaradu. Vi imate potpuni uvid, a mi radimo sve ostalo.</BodyText>
+            <BodyText className='text-lg text-neutral-800 '>Pokretanje iznajmljivanja ne mora biti komplicirano. Naš sustav vodi Vas kroz sve — od pripreme i kategorizacije do oglašavanja i komunikacije s gostima. Preuzimamo sve obveze kako biste bez stresa ostvarili maksimalnu popunjenost i zaradu. Vi imate potpuni uvid, a mi radimo sve ostalo.</BodyText>
             <div className='flex flex-col mt-8 xl:mt-12 '>
               <div className='flex flex-col gap-4 xl:gap-6'>
                 <IconedText icon={<IoCheckmarkDoneSharp className='text-2xl sm:text-3xl text-primary'/>} textClassName={"text-neutral-800 font-semibold text-lg md:text-xl xl:text-2xl"} text={"Besplatno Fotografiranje"}/>

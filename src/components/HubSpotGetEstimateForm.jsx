@@ -5,8 +5,6 @@ import { trackLead } from "@/lib/trackLeadGa";
 import CostumFormInput from './CostumFormInput';
 import AddressAutocomplete from './AdressAutocomplete';
 
-
-
 const HubSpotGetEstimateForm = ({ className, inputClassName}) => {  
   const adressRef = useRef();
   const guestsRef = useRef();
@@ -122,9 +120,9 @@ const HubSpotGetEstimateForm = ({ className, inputClassName}) => {
     });
 
     if (response.ok) {
-      trackLead(); // Track the lead in GA4
+      trackLead("get_free_earings_estimate_form"); // Track the lead in GA4
       setTimeout(() => {
-        window.location.href = "/";
+        window.location.href = "/hr/hvala";
       }, 500);
     } else {
       console.error("HubSpot API Error:", await response.json());
@@ -138,8 +136,13 @@ const HubSpotGetEstimateForm = ({ className, inputClassName}) => {
         className={`flex flex-col px-4 w-full max-w-md text-xl`}
         onSubmit={handleFormSubmit}
       >
-        <div className="mb-12 text-center text-neutral-800 font-bold text-xl 2xl:text-2xl font-title">Zatražite besplatnu procjenu zarade za vaš smještaj</div>
-
+        <div className="mb-12 text-neutral-800 font-bold text-xl 2xl:text-2xl font-title">Zatražite besplatnu procjenu zarade za vaš smještaj</div>
+        {/* <div className="mb-6 ">
+          <div className='flex gap-2'>
+            <div className={`flex-1 min-h-1 ${step < 2 ? "bg-neutral-500" : "bg-green-600"}`}/>
+            <div className={`flex-1 min-h-1 ${step < 3 ? "bg-neutral-500" : "bg-green-600"}`}/>
+          </div>
+        </div> */}
         <div className="relative w-full overflow-hidden min-h-[320px]">
 
           {/* Step 1 */}

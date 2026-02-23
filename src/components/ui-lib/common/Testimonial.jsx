@@ -46,8 +46,8 @@ const Testimonial = ({ className = "", image, alt, name, info, text }) => {
   return (
     <div
       className={`${className} relative p-8 min-[1700px]:p-10 flex flex-col sm:flex-row items-center gap-8
-      bg-gradient-to-br from-neutral-100 to-white border border-neutral-200/70 
-      rounded shadow-lg hover:shadow-xl transition-shadow duration-300`}
+       border-neutral-200/70 
+      rounded shadow-lg  transition-shadow duration-300`}
     >
       {/* Image + Info */}
       <div className="flex flex-col items-center sm:items-center text-center sm:text-center ">

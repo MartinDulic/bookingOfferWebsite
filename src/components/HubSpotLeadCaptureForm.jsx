@@ -79,9 +79,9 @@ const HubSpotLeadCaptureForm = ({ className, inputClassName, invalidPhoneText, i
     });
 
     if (response.ok) {
-      trackLead(); // Track the lead in GA4
+      trackLead("contact_us_form"); // Track the lead in GA4
       setTimeout(() => {
-        window.location.href = "/";
+        window.location.href = "/hr/hvala";
       }, 500);
     } else {
       console.error("HubSpot API Error:", await response.json());

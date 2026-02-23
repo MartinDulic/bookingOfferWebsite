@@ -33,7 +33,7 @@ const Page = () => {
   (
     <div className='h-full w-4xl 2xl:w-full py-12 2xl:py-0 xs:mx-8 2xl:mx-0 2xl:mr-8 flex flex-col items-center gap-8 2xl:gap-0 2xl:justify-evenly'>
       <Testimonial 
-        className={"max-w-3xl min-[850px]:self-start"}
+        className={"max-w-3xl min-[850px]:self-start bg-gradient-to-br from-neutral-100 to-white border"}
         image={"/images/people/Marija_L.avif"}
         alt={"Klijent"}
         name={"Marija L."}
@@ -41,7 +41,7 @@ const Page = () => {
         text={"Nakon nekoliko sezona iznajmljivanja odlučila sam unajmiti agenciju jer je moj apartman skupio dosta loših recenzija, što je jako utjecalo na zaradu. Nakon što sam počela surađivati s PrimeBooker-om to se brzo popravilo i počela sam dobivati puno više rezervacija."}
       />
       <Testimonial 
-        className={"max-w-3xl min-[850px]:self-end"}
+        className={"max-w-3xl min-[850px]:self-end bg-gradient-to-br from-neutral-100 to-white border"}
         image={"/images/people/Mira_K.avif"}
         alt={"Klijent"}
         name={"Mira K."}
@@ -49,7 +49,7 @@ const Page = () => {
         text={"Godinama sam svoje apartmane iznajmljivala sama i to mi je oduzimalo puno vremena i energije. Odlučila sam iznajmljivanje prepustiti PrimeBooker-u kako bi imala više slobodnog vremena. Od tada zarađujem znatno više, a oko iznajmljivanja se uopće ne brinem. "}
       />
       <Testimonial
-        className={"max-w-3xl min-[850px]:self-start"}
+        className={"max-w-3xl min-[850px]:self-start bg-gradient-to-br from-neutral-100 to-white border"}
         image={"/images/people/Tihomir_J.webp"}
         alt={"Klijent"}
         name={"Tihomir J."}
@@ -106,7 +106,7 @@ const Page = () => {
       desktopImageSrc={"/images/general/Calendar_w1274.avif"}
       alt={"Filled Calendar"}
       summary={"Zaradite Više"}
-      text={"Kontinuiranom analizom tržišta, svakodnevno unaprijeđujemo strategiju iznajmljivanja vašeg smještaja, kako bi popunili sve vaše kapacitete po najvišoj mogućoj cijeni."} //To uključuje optimizaciju cijena, promjenu restrikcija (npr. min. noćenja po rezervaciji) i naplatu dodatnih usluga (npr. čišćenje, raniji ulazak).
+      text={"Kontinuiranom analizom tržišta, svakodnevno unaprijeđujemo strategiju iznajmljivanja Vašeg smještaja, kako bi popunili sve Vaše kapacitete po najvišoj mogućoj cijeni."} //To uključuje optimizaciju cijena, promjenu restrikcija (npr. min. noćenja po rezervaciji) i naplatu dodatnih usluga (npr. čišćenje, raniji ulazak).
       imageClassName={"object-left"}
     >
       Ostvarite <span className='text-primary-600'>Maksimalnu Popunjenost </span>
@@ -184,7 +184,7 @@ const Page = () => {
     />,
     <FaqItem 
       key={4}
-      question={"Koliko vaša usluga košta?"}
+      question={"Koliko Vaša usluga košta?"}
       text={
         <>
           Naša usluga se naplaćuje kao postotak od ostvarene zarade. 
@@ -198,7 +198,7 @@ const Page = () => {
       question={"Kako funkcioniraju isplate?"}
       text={
         <>
-          Mi obavljamo sve računovodstvene obveze i plaćamo sve naknade, a Vi svaki mjesec dobivate detaljan izvještaj o prihodima i troškovima. Isplata zarade na vaš račun se vrši do 5. dana u mjesecu za prethodni mjesec.
+          Mi obavljamo sve računovodstvene obveze i plaćamo sve naknade, a Vi svaki mjesec dobivate detaljan izvještaj o prihodima i troškovima. Isplata zarade na Vaš račun se vrši do 5. dana u mjesecu za prethodni mjesec.
         </>
       }
     />,
@@ -208,7 +208,7 @@ const Page = () => {
       text={
         <>
           Ne morate — osim ako želite.
-          Surađujemo s provjerenim partnerima i organiziramo sve za vas kako bi vaš smještaj uvijek bio spreman za goste.
+          Surađujemo s provjerenim partnerima i organiziramo sve za Vas kako bi Vaš smještaj uvijek bio spreman za goste.
         </>
       }
     />,
@@ -227,7 +227,7 @@ const Page = () => {
       <HeroSection
         // titleText={<AbTest featureKey={"ii-hero-title-test"} fallBack={"Ostvarite maksimalnu zaradu od svog smještaja"} />}
         titleText={"Ostvarite maksimalnu zaradu od svog smještaja"}
-        subtitleText={"Imate prazne termine? Nagađate cijene? Stalno ste dostupni gostima? Naš sustav, vođen kontinuiranom analizom tržišta, povećava vašu zaradu i oslobađa vas svakodnevnih obveza. "}
+        subtitleText={"Imate prazne termine? Nagađate cijene? Stalno ste dostupni gostima? Naš sustav, vođen kontinuiranom analizom tržišta, povećava Vašu zaradu i oslobađa Vas svakodnevnih obveza. "}
         mobileImgSrc="/images/general/HeroImage_w1000.avif"
         desktopImgSrc="/images/general/HeroImage_w1920.avif"
         imgAlt="Hero Background"
@@ -246,9 +246,9 @@ const Page = () => {
             </div>,
             <div>Na kraju se pitate: "<span className='font-bold'>Radim sve, a zarađujem li stvarno koliko bih mogao?</span>"</div>,
             <div>Većina iznajmljivača cijene postavljaja “od oka” i onda naglo spušta cjene kada shvate da je ostalo par dana do praznog termina.</div>,
-            <div>Radi toga ne znate koliki je stvarni potencijal vašeg apartmana, a niste sigurni što radite krivo. </div>,
+            <div>Radi toga ne znate koliki je stvarni potencijal Vašeg apartmana, a niste sigurni što radite krivo. </div>,
             <div>Postoji bolji način od stalnog nagađanja i paničnih sniženja. Način gdje se cijene određuju smisleno, kalendar se puni strateški, način koji vam donosi veću zaradu.</div>,
-            <div>Mi upravljamo vašim smještajem kako bi ste ostvarili maksimalnu zaradu, imali manje obaveza i stresa i konačno imali konkretan plan.</div>
+            <div>Mi upravljamo Vašim smještajem kako bi ste ostvarili maksimalnu zaradu, imali manje obaveza i stresa i konačno imali konkretan plan.</div>
           ]
         }
         icon={<PiDiamondsFourFill className='text-primary-600 text-2xl'/>}
@@ -277,10 +277,10 @@ const Page = () => {
             <BodyText className='text-lg text-neutral-800 '>
               <div className='font-bold'>Zašto čekati još jednu sezonu da biste vidjeli rezultate?</div>
               <div className='mt-4'>
-                Svaki period bez rezervacije ili sa preniskom cijenom je izgubljena zarada. Ne dopustite da vaš trud i kvaliteta smještaja ostanu neprimijećeni.
-                S nama imate partnera koji razumije tržište, brine o svakom detalju i radi za vaš maksimalni profit.
+                Svaki period bez rezervacije ili sa preniskom cijenom je izgubljena zarada. Ne dopustite da Vaš trud i kvaliteta smještaja ostanu neprimijećeni.
+                S nama imate partnera koji razumije tržište, brine o svakom detalju i radi za Vaš maksimalni profit.
               </div>
-              <div className='mt-4'>Kontaktirajte nas danas i osigurajte da svaki dan u sezoni radi u vašu korist!</div>
+              <div className='mt-4'>Kontaktirajte nas danas i osigurajte da svaki dan u sezoni radi u Vašu korist!</div>
             </BodyText>
             <div className='flex flex-col mt-8 xl:mt-12 '>
               <div className='flex flex-col gap-4 xl:gap-6'>
