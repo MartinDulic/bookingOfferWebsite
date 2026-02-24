@@ -7,9 +7,9 @@ import Testimonial from '@/components/ui-lib/common/Testimonial'
 import Title from '@/components/ui-lib/common/Title'
 import React from 'react'
 import { FaRegChartBar } from "react-icons/fa";
-import { GrPieChart } from "react-icons/gr";
 import { BiBuildingHouse } from "react-icons/bi";
 import { MdOutlineWatchLater } from "react-icons/md";
+import PhoneNumberLink from './PhoneNumberLink'
 
 const ContactSection = () => {
   return (
@@ -18,7 +18,7 @@ const ContactSection = () => {
         <Title className={" text-primary-600"}>Otkrijte potencijal svog smještaja</Title>
         <BodyText className={"my-8 text-neutral-800 w-full "}>
           <div className='mb-4 italic'>Nakon što ispunite obrazac, kontaktirat ćemo vas u najkraćem mogućem roku.</div>
-          <div className='mb-4 italic'>Također možete nas nazvati na broj: <a href='tel:+385992032607' className='font-bold text-primary underline'>+385 99 203 2607</a></div>
+          <div className='mb-4 italic'>Također možete nas nazvati na broj: <PhoneNumberLink /></div>
         </BodyText>
         <Testimonial 
           className='hidden xl:flex mt-16 bg-white'
