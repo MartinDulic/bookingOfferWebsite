@@ -1,7 +1,7 @@
 "use client"
 import React, { useRef } from 'react'
 import { useState} from 'react';
-import { trackLead } from "@/lib/trackLeadGa";
+import { trackLead } from '@/lib/analytics';
 import CostumFormInput from './CostumFormInput';
 import AddressAutocomplete from './AdressAutocomplete';
 

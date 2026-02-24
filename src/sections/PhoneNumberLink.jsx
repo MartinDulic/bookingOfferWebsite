@@ -1,5 +1,5 @@
 "use client"
-import { trackCallIntent } from '@/lib/trackCallIntent'
+import { trackCallIntent } from '@/lib/analytics';
 import React from 'react'
 
 const PhoneNumberLink = () => {

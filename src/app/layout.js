@@ -6,6 +6,8 @@ import GrowthBookProvider from "@/lib/integrations/growthBookProvider";
 import AntiFlicker from "@/lib/integrations/antiFlicker";
 import LanguageRedirectScript from "@/lib/langRedirectScript";
 import Script from "next/script";
+import GtmScript from "@/lib/integrations/gtmScript";
+import GtmNoscript from "@/lib/integrations/gtmNoscript";
 
 // const libreFranklin = Libre_Franklin({
 //   variable: "--font-libre-franklin",
@@ -62,16 +64,15 @@ export default function RootLayout({ children }) {
         {/* Helps with some "Best Practice" checks */}
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         
-        {/* Add other external integrations too */}
-        {/* <link rel="preconnect" href="https://www.googletagmanager.com" /> */}
-        
         {/* <AntiFlicker /> */}
+        <GtmScript />
         <MicrosoftClarity />
-        <GoogleAnalytics />
+        {/* <GoogleAnalytics /> */}
       </head>
       <body
         className={`${merriweatherSans.variable} ${radioCanada.variable} antialiased font-default`}
       >
+        <GtmNoscript />
         <GrowthBookProvider >
           {children}
         </GrowthBookProvider>

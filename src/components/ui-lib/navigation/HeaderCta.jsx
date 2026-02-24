@@ -1,12 +1,12 @@
 "use client";
-import { trackCTAClick } from '@/lib/trackCtaClickGa'
+import { trackCtaClick } from '@/lib/analytics';
 import Link from 'next/link'
 import React from 'react'
 
 const HeaderCta = ({className, language = "hr"}) => {
   return (
     <Link 
-      onClick={() => trackCTAClick("headerCta")} 
+      onClick={() => trackCtaClick("headerCta")} 
       href={language == "hr" ? "/hr/kontakt" : "/en/contact"}
       className={`${className} 
         text-xl text-white font-semibold bg-linear-to-br from-0% to-60% from-primary-600 to-primary rounded-xs border border-primary-600

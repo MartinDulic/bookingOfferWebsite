@@ -1,5 +1,5 @@
 "use client";
-import { trackCTAClick } from '@/lib/trackCtaClickGa';
+import { trackCtaClick } from '@/lib/analytics';
 import Link from 'next/link'
 import React from 'react'
 import { RiArrowRightLine } from "react-icons/ri";
@@ -13,7 +13,7 @@ const Cta = ({className, language = "hr"}) => {
 
   if(variant == "contact") {
     return (
-      <Link onClick={() => trackCTAClick("contactCta")} href={language == "hr" ? "/hr/kontakt" : "/en/contact"} className={`${className} flex 
+      <Link onClick={() => trackCtaClick("contactCta")} href={language == "hr" ? "/hr/kontakt" : "/en/contact"} className={`${className} flex 
         text-xl xs:text-2xl sm:text-3xl text-white font-semibold bg-primary rounded-xs
         hover:scale-105 transition-transform duration-300 ease-in-out`}
       >
@@ -26,7 +26,7 @@ const Cta = ({className, language = "hr"}) => {
   }
 
   return (
-    <Link onClick={() => trackCTAClick("estimateCta")} href={language == "hr" ? "/hr/procjena" : "/en/estimate"} className={`${className} flex w-fit
+    <Link onClick={() => trackCtaClick("estimateCta")} href={language == "hr" ? "/hr/procjena" : "/en/estimate"} className={`${className} flex w-fit
         text-xl xs:text-2xl sm:text-3xl text-white font-semibold bg-primary rounded-xs
         hover:scale-105 transition-transform duration-300 ease-in-out`}
     >

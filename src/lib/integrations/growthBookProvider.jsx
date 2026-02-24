@@ -123,9 +123,14 @@ const gb = new GrowthBook({
   subscribeToChanges: true,
   stickyBucketAssignment: true, 
   trackingCallback: (experiment, result) => {
-    window.gtag?.("event", "experiment_viewed", {
+    // window.gtag?.("event", "experiment_viewed", {
+    //   experiment_id: experiment.key,
+    //   variation_id: result.key,
+    // });
+    window.dataLayer?.push({
+      event: "experiment_viewed", // This matches a Trigger you'll create in GTM
       experiment_id: experiment.key,
-      variation_id: result.key,
+      variation_id: result.key
     });
     if (window.clarity) {
       window.clarity("set", experiment.key, result.key);

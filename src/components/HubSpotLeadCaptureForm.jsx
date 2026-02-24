@@ -1,7 +1,7 @@
 "use client"; 
 import React from 'react'
 import { useState } from 'react';
-import { trackLead } from "@/lib/trackLeadGa";
+import { trackLead } from '@/lib/analytics';
 
 const HubSpotLeadCaptureForm = ({ className, inputClassName, invalidPhoneText, invalidNameText, invalidEmailText}) => {
   const [hasUserTyped, setHasUserTyped] = useState(false);
