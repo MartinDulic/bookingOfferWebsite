@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
 import IconedText from "./ui-lib/common/IconedText";
-import { trackLead } from "@/lib/trackLeadGa";
 
 const GoogleSheetsLeadForm = ({ className, inputClassName, invalidPhoneText, invalidNameText, invalidEmailText}) => {
   const [submitted, setSubmitted] = useState(false);

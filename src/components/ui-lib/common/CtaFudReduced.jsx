@@ -3,13 +3,13 @@ import React from 'react'
 import Cta from '@/components/ui-lib/common/Cta'
 import IconedText from '@/components/ui-lib/common/IconedText'
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
-import { useGrowthBook } from "@growthbook/growthbook-react";
+import { useFeatureValue } from "@growthbook/growthbook-react";
 
 const CtaFudReduced = ({className, ctaClassName}) => {
-  const gb = useGrowthBook();
-  const variant = gb.getFeatureValue("conversion-funnel", "contact"); 
+  const variant = useFeatureValue("conversion-funnel", "contact"); 
+
   // console.log("CTA FUD variant:", variant);
-  const text = variant === "contact" ? "100% Besplatan Poziv" : "100% Besplatna Procjena";
+  const text = variant === "contact" ? "100% Besplatan Poziv" : "15 Godina Tržišnih Podataka";
   
 
   return (

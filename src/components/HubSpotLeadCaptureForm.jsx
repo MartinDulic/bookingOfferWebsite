@@ -1,7 +1,7 @@
 "use client"; 
 import React from 'react'
-import { useState } from 'react';
-import { trackLead } from '@/lib/analytics';
+import { useState, useEffect } from 'react';
+import { trackLead } from '@/lib/gtmUtils';
 
 const HubSpotLeadCaptureForm = ({ className, inputClassName, invalidPhoneText, invalidNameText, invalidEmailText}) => {
   const [hasUserTyped, setHasUserTyped] = useState(false);
@@ -9,6 +9,43 @@ const HubSpotLeadCaptureForm = ({ className, inputClassName, invalidPhoneText, i
   const [emailError, setEmailError] = useState(false);
   const [nameErorr, setNameErorr] = useState(false);
 
+  useEffect(() => {
+    // 1. The Browser-level alert (Refresh/Close Tab)
+    const handleBeforeUnload = (e) => {
+      if (hasUserTyped) {
+        e.preventDefault();
+        e.returnValue = '';
+      }
+    };
+
+
+    // 2. Intercepting Popstate (Back Button)
+    const handlePopState = (e) => {
+      if (hasUserTyped) {
+        // This is the tricky part: push the current state back so they don't actually leave
+        window.history.pushState(null, null, window.location.pathname);
+        const confirmLeave = window.confirm("Sigurni ste da želite napustiti stranicu? Podaci koje ste unijeli nisu poslani.");
+        if (confirmLeave) {
+          setHasUserTyped(false); // Disable flag
+          window.history.back();  // Now actually go back
+        }
+      }
+    };
+
+    // Attach listeners
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    window.addEventListener('popstate', handlePopState);
+
+    // Add a fake entry to the history so there is something to "pop" 
+    if (hasUserTyped) {
+      window.history.pushState(null, null, window.location.pathname);
+    }
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [hasUserTyped]);
 
   const validateEmail = (value)  => {
     const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
@@ -80,23 +117,15 @@ const HubSpotLeadCaptureForm = ({ className, inputClassName, invalidPhoneText, i
 
     if (response.ok) {
       trackLead("contact_us_form"); // Track the lead in GA4
+      setHasUserTyped(false); // Reset the flag so they can leave without prompt
       setTimeout(() => {
         window.location.href = "/hr/hvala";
-      }, 500);
+      }, 700);
     } else {
       console.error("HubSpot API Error:", await response.json());
       alert("Došlo je do pogreške prilikom slanja obrasca. Molimo pokušajte ponovno.");
     }
   };
-
-
-
-  // useEffect(()=> {
-  //   if(submitted) {
-  //     window.location.href = "/";
-  //   }
-  // }, [submitted])
-
 
   const inputGroupClassname = "flex flex-col mb-12"
   const labelClassname = "text-neutral-800 mb-2"
@@ -142,7 +171,7 @@ const HubSpotLeadCaptureForm = ({ className, inputClassName, invalidPhoneText, i
         <button type="submit"
           className="mt-4 py-2 px-4 bg-primary font-semibold text-white shadow-md rounded-xs hover:bg-primary-dark hover:scale-105 transition-transform duration-200"
         >
-          Razgovarajmo
+          Pošalji
         </button>
         <p className="mt-4 text-sm text-center text-neutral-500">
           🔒 Vaši podaci su sigurni, ne dijelimo ih.

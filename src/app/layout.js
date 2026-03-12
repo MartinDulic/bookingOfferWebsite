@@ -8,6 +8,7 @@ import LanguageRedirectScript from "@/lib/langRedirectScript";
 import Script from "next/script";
 import GtmScript from "@/lib/integrations/gtmScript";
 import GtmNoscript from "@/lib/integrations/gtmNoscript";
+import CookieConsentBanner from "@/components/CookieConsentBanner";
 
 // const libreFranklin = Libre_Franklin({
 //   variable: "--font-libre-franklin",
@@ -76,6 +77,7 @@ export default function RootLayout({ children }) {
         <GrowthBookProvider >
           {children}
         </GrowthBookProvider>
+        <CookieConsentBanner />
       </body>
     </html>
   );

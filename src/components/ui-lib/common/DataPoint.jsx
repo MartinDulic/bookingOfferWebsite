@@ -8,8 +8,8 @@ const DataPoint = ({
   numberSuffix, 
   text, 
   className, 
-  numberClassName = "text-3xl xs:text-4xl sm:text-5xl", 
-  textClassName = "text-md sm:text-2xl",
+  numberClassName = "text-3xl xs:text-4xl lg:text-5xl", 
+  textClassName = "text-md sm:text-xl md:text-2xl",
   animationOptions = {}
 }) => {
   const { count, ref } = useAnimatedCounter(number, animationOptions);
