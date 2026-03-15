@@ -3,14 +3,8 @@ import React from 'react'
 import Cta from '@/components/ui-lib/common/Cta'
 import IconedText from '@/components/ui-lib/common/IconedText'
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
-import { useFeatureValue } from "@growthbook/growthbook-react";
 
 const CtaFudReduced = ({className, ctaClassName}) => {
-  const variant = useFeatureValue("conversion-funnel", "contact"); 
-
-  // console.log("CTA FUD variant:", variant);
-  const text = variant === "contact" ? "100% Besplatan Poziv" : "15 Godina Tržišnih Podataka";
-  
 
   return (
     <div className={`${className} flex flex-col items-center`}>
@@ -30,7 +24,7 @@ const CtaFudReduced = ({className, ctaClassName}) => {
         /> */}
         <IconedText 
           icon={<IoCheckmarkDoneSharp className='text-xl sm:text-3xl'/>} 
-          text={text} 
+          text={"Besplatna Procjena Zarade"} 
           className={"font-semibold "} 
           textClassName={"sm:text-xl"}
         />
