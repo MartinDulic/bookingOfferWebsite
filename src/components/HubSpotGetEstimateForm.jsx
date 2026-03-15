@@ -50,20 +50,24 @@ const HubSpotGetEstimateForm = ({ className, inputClassName}) => {
 
 
   
-  const validateEmail = (value)  => {
-    const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-    return emailRegex.test(value);
-  }
+  // 1. Lighter Validation Functions
+  const validateEmail = (value) => {
+    // Simple check for @ and a dot. Don't over-engineer email regex.
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  };
 
   const validateName = (value) => {
-    const nameRegex = /^[a-zA-ZÀ-ÿ '-]{2,50}$/;
-    return nameRegex.test(value);
-  }
+    // Just check if it has at least 2 characters. 
+    // Avoid strict character restrictions to support all international names.
+    return value.trim().length >= 2;
+  };
 
   const validatePhone = (value) => {
-    const phoneRegex = /^[+]?[\d\s\-\(\)]+$/;
-    return phoneRegex.test(value);
-  }
+    // Check if it has at least 6 digits. 
+    // Users hate it when they can't use spaces or dashes.
+    const digits = value.replace(/\D/g, "");
+    return digits.length >= 6;
+  };
 
   const validateNumberRange = (value) => {
     const num = Number(value);

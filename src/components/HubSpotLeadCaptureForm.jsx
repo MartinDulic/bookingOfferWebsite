@@ -7,7 +7,7 @@ const HubSpotLeadCaptureForm = ({ className, inputClassName, invalidPhoneText, i
   const [hasUserTyped, setHasUserTyped] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
   const [emailError, setEmailError] = useState(false);
-  const [nameErorr, setNameErorr] = useState(false);
+  const [nameError, setNameError] = useState(false);
 
   useEffect(() => {
     // 1. The Browser-level alert (Refresh/Close Tab)
@@ -47,20 +47,29 @@ const HubSpotLeadCaptureForm = ({ className, inputClassName, invalidPhoneText, i
     };
   }, [hasUserTyped]);
 
-  const validateEmail = (value)  => {
-    const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-    return emailRegex.test(value);
-  }
+  // 1. Lighter Validation Functions
+  const validateEmail = (value) => {
+    // Simple check for @ and a dot. Don't over-engineer email regex.
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  };
 
   const validateName = (value) => {
-    const nameRegex = /^[a-zA-ZÀ-ÿ '-]{2,50}$/;
-    return nameRegex.test(value);
-  }
+    // Just check if it has at least 2 characters. 
+    // Avoid strict character restrictions to support all international names.
+    return value.trim().length >= 2;
+  };
 
   const validatePhone = (value) => {
-    const phoneRegex = /^[+]?[\d\s\-\(\)]+$/;
-    return phoneRegex.test(value);
-  }
+    // Check if it has at least 6 digits. 
+    // Users hate it when they can't use spaces or dashes.
+    const digits = value.replace(/\D/g, "");
+    return digits.length >= 6;
+  };
+
+  const handleInputChange = (e, setter) => {
+    setHasUserTyped(true);
+    setter(false); // Clear the error the moment they start typing again
+  };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -84,7 +93,7 @@ const HubSpotLeadCaptureForm = ({ className, inputClassName, invalidPhoneText, i
       emailErr = !validateEmail(email);
       nameErr = !validateName(name);
       setEmailError(emailErr);
-      setNameErorr(nameErr);
+      setNameError(nameErr);
     }
 
     // Check the local error variables, not the state
@@ -143,7 +152,7 @@ const HubSpotLeadCaptureForm = ({ className, inputClassName, invalidPhoneText, i
           <label className={labelClassname}>Telefon:</label>
           <input type="tel" name="phone" placeholder="Unesite telefon*" 
             className={`${phoneError ? " border-red-500" : " border-primary-600"} + ${inputGeneralClassname + inputClassName}`}
-            onChange={() => setHasUserTyped(true)}
+            onChange={(e) => handleInputChange(e, setPhoneError)}
           />
           <p className={`${phoneError ? "" :" hidden"} ${errorClassName}`}>{invalidPhoneText}</p>
         </div>
@@ -154,9 +163,10 @@ const HubSpotLeadCaptureForm = ({ className, inputClassName, invalidPhoneText, i
           <div className={inputGroupClassname}>
             <label className={labelClassname}>Ime i Prezime</label>
             <input type="text" name="name" placeholder="Unesite ime i prezime*" 
-              className={`${nameErorr ? " border-red-500" : " border-primary-600"} + ${inputGeneralClassname + inputClassName}`}
+              className={`${nameError ? " border-red-500" : " border-primary-600"} + ${inputGeneralClassname + inputClassName}`}
+              onChange={(e) => handleInputChange(e, setNameError)}
             />
-            <p className={`${nameErorr ? "" :" hidden"} ${errorClassName}`}>{invalidNameText}</p>
+            <p className={`${nameError ? "" :" hidden"} ${errorClassName}`}>{invalidNameText}</p>
           </div>
 
           {/*Opens when user types*/}
@@ -164,6 +174,7 @@ const HubSpotLeadCaptureForm = ({ className, inputClassName, invalidPhoneText, i
             <label className={labelClassname}>E-Mail:</label>
             <input type="email" name="email" placeholder="Unesite email*" 
               className={`${emailError ? " border-red-500" : " border-primary-600"} + ${inputGeneralClassname + inputClassName}`}
+              onChange={(e) => handleInputChange(e, setEmailError)}
             />
             <p className={`${emailError ? "" :" hidden"} ${errorClassName}`}>{invalidEmailText}</p>
           </div>
