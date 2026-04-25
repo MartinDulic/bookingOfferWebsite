@@ -1,5 +1,5 @@
 "use client"
-import { trackCallIntent } from '@/lib/gtmUtils';
+import { trackCallIntent } from '@/lib/trackingUtils';
 import React, { useRef } from 'react'
 
 const PhoneNumberLink = () => {

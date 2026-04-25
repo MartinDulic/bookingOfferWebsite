@@ -9,6 +9,7 @@ import Script from "next/script";
 import GtmScript from "@/lib/integrations/gtmScript";
 import GtmNoscript from "@/lib/integrations/gtmNoscript";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
+import MetaPixel from "@/lib/integrations/metaPixel";
 
 // const libreFranklin = Libre_Franklin({
 //   variable: "--font-libre-franklin",
@@ -69,6 +70,7 @@ export default function RootLayout({ children }) {
         <GtmScript />
         <MicrosoftClarity />
         {/* <GoogleAnalytics /> */}
+        <MetaPixel />
       </head>
       <body
         className={`${merriweatherSans.variable} ${radioCanada.variable} antialiased font-default`}

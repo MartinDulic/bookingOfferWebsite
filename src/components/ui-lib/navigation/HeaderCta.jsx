@@ -1,5 +1,5 @@
 "use client";
-import { trackCtaClick } from '@/lib/gtmUtils';
+import { trackCtaClick } from '@/lib/trackingUtils';
 import Link from 'next/link'
 import React from 'react'
 

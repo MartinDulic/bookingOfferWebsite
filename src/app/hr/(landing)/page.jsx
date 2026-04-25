@@ -117,7 +117,7 @@ const Page = () => {
       desktopImageSrc={"/images/general/ManAtPool_w1920.avif"}
       alt={"A Relaxed Host"}
       summary={"Prepustite svu brigu nama"}
-      text={"Tu smo kako bi vam pomogli u svemu, od oglašavanja i komunikacije s gostima do prijave gostiju, računa i čišćenja. Nudimo vam kompletnu uslugu kako biste bili potpuno bezbrižni."}
+      text={"Tu smo kako bi vam pomogli u svemu, od oglašavanja i komunikacije s gostima do prijave gostiju, računa i čišćenja. Nudimo vam kompletnu uslugu upravljanja smještajem kako biste bili potpuno bezbrižni."}
       reverse = {true}
       imageClassName={"object-right"}
     >
