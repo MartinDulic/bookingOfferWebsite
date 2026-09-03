@@ -26,9 +26,9 @@ const CostumFormInput = forwardRef(({name, type, labelText, errorMessage, placeh
 
   return (
     <div className="flex flex-col mb-12">
-      <label className="text-neutral-800 mb-2">{labelText}</label>
+      <label className="text-neutral-300 text-base">{labelText}</label>
       <input type={type} name={name} placeholder={placeholder}
-        className={`${error ? " border-red-500" : " border-primary-600"} outline-none border-b py-2`}
+        className={`${error ? " border-red-500" : " border-primary-600"}  text-sm outline-none border-b py-1 text-white placeholder:text-neutral-400`}
         value={value || ""}
         onChange={(e) => setValue(e.target.value)}
       />

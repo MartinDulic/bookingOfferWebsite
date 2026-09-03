@@ -42,7 +42,7 @@ const Review = ({href, image=null, guestName, guestCountry, apartment, text, sou
         <div className='flex flex-col gap-2 items-center justify-center w-32 xs:w-36 '>
           <div className='flex gap-1 justify-center '>
             {/* <div className='text-xl'>{sourceIcon}</div> */}
-            <div className='flex gap-1 mt-1 -mb-1 text-amber-400 text-xl sm:text-2xl '>
+            <div className='flex gap-1 mt-1 -mb-1 text-amber-300 text-xl sm:text-2xl '>
               <FaStar />
               <FaStar />
               <FaStar />

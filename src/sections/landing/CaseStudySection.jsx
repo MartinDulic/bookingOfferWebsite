@@ -8,13 +8,13 @@ import Title from '@/components/ui-lib/common/Title'
 import React from 'react'
 import { FaLongArrowAltRight } from "react-icons/fa";
 
-const CaseStudySection = ({title, }) => {
+const CaseStudySection = () => {
   return (
     <Section className={"bg-neutral-100 flex flex-col items-center"}>
-      <Title className={"text-center"}>
+      <Title className={"sm:text-center"}>
         <div className='max-w-5xl mx-auto'>
-          <div className='text-primary-600'>Sa 11000 € na 25000 €</div> 
-          Optimizacija Jednosobnog Apartmana
+          <div className='text-primary-600'>Sa 11.000 € na 25.000 €</div> 
+          Kako smo udvostručili zaradu jednosobnog apartmana
         </div>
       </Title>
 
@@ -40,7 +40,7 @@ const CaseStudySection = ({title, }) => {
               className={"col-span-2"}
             />
             <StatBouble
-              stat={<div className='flex items-center justify-center text-lg sm:text-xl'>42 <FaLongArrowAltRight className='inline mx-1 sm:mx-2' />134</div>}
+              stat={<div className='flex items-center justify-center text-lg sm:text-xl'>72 <FaLongArrowAltRight className='inline mx-1 sm:mx-2' />134</div>}
               text={"Noćenja U Sezoni"}
               className={"col-span-1"}
             />
@@ -65,7 +65,7 @@ const CaseStudySection = ({title, }) => {
               Ispodprosječni Rezultati
             </div>
             <div className='text-neutral-800 mt-3 sm:mt-4 text-justify 2xl:text-lg'>
-              Usprkos svojoj poziciji na samoj plaži u centru Makarske, ovaj jednosobni apartman imao je iznimno nisku popunjenost. Bez razrađene strategije, bez optimizacije vidljivosti oglasa i nagađajući cijene vlasnik je reklamirao smještaj na više mjesta bezuspješno.
+              Iako se nalazi na samoj plaži u centru Makarske i moderno je uređen, ovaj jednosobni apartman je loše zarađivao. Bez oglašavanja na više portala i uz nagađanje cijena, vlasnik je gubio više od pola prihoda.
             </div>
           </div>
         </div>
@@ -82,28 +82,28 @@ const CaseStudySection = ({title, }) => {
             <LabeledBenefit 
               number={1} 
               subtitle={"Maksimalna Vidljivost"}
-              text={"Profesionalno fotografiranje, oglašavanje i optimizacija oglasa na svim portalima."}
+              text={"Profesionalno fotografiranje, oglašavanje i optimizacija oglasa na svim ključnim platformama."}
               className={"text-sm sm:text-base"}
               />
 
             <LabeledBenefit
               number={2}
               subtitle={"Maksimalna Popunjenost"}
-              text={"Stalna prilagodba cijena i uvjeta iznajmljivanja kako bi se popunili svi kapaciteti po najvišoj mogućoj cijeni."}
+              text={"Stalna prilagodba cijena i uvjeta iznajmljivanja kako bi se ostvarila maksimalna popunjenost i zarada."}
               className={"text-sm sm:text-base"}
               />
 
             <LabeledBenefit 
               number={3} 
-              subtitle={"Dostupnost Gostima 24/7"}
-              text={"Trenutačan odogovor na sve upite i zahtjeve gosta u svakom trenutku."}
+              subtitle={"Besprijekorno Iskustvo Gosta"}
+              text={"Trenutačan odogovor na sve upite i zahtjeve gosta od prvog upita do povratka kući. Digitalni vodič i preporuke."}
               className={"text-sm sm:text-base"}
               />
 
             <LabeledBenefit 
               number={4} 
-              subtitle={"Osiguranje Kvalitete"} 
-              text={"Suradnja sa provjerenim partenrima za čišćenje i održavanje smještaja kako bi osigurali besprijekornu čistoću i zadovoljstvo gostiju."}
+              subtitle={"Potpuna Transparentnost"} 
+              text={"Portal za vlasnike sa svima informacijama o rezervacijama, gostima, cijenama i statistici. "}
               className={"text-sm sm:text-base"}
               />
           </div>

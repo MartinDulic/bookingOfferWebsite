@@ -135,19 +135,21 @@ const HubSpotGetEstimateForm = ({ className, inputClassName}) => {
   };
 
   return (
-    <div className={`flex flex-col items-center font-default px-4 py-8 rounded-sm ${className}`}>
+    <div className={`max-w-md lg:min-w-md lg:max-w-lg flex flex-col items-center font-default px-4 py-8 lg:px-8 rounded-xs bg-neutral-900 ${className}`}>
       <form
-        className={`flex flex-col px-4 w-full max-w-md text-xl`}
+        className={`flex flex-col px-4 w-full text-xl`}
         onSubmit={handleFormSubmit}
       >
-        <div className="mb-12 text-neutral-800 font-bold text-xl 2xl:text-2xl font-title">Zatražite besplatnu procjenu zarade za vaš smještaj</div>
+        <div className="mb-4 mt-4 text-white font-bold text-xl 2xl:text-2xl font-title">Zatražite besplatnu analizu</div>
+        <div className="text-neutral-400 mb-12 text-base">Popunite obrazac - javimo vam se u roku od sat vremena.</div>
+
         {/* <div className="mb-6 ">
           <div className='flex gap-2'>
             <div className={`flex-1 min-h-1 ${step < 2 ? "bg-neutral-500" : "bg-green-600"}`}/>
             <div className={`flex-1 min-h-1 ${step < 3 ? "bg-neutral-500" : "bg-green-600"}`}/>
           </div>
         </div> */}
-        <div className="relative w-full overflow-hidden min-h-[320px]">
+        <div className="relative w-full overflow-hidden min-h-[320px] ">
 
           {/* Step 1 */}
           <div className={`flex flex-col transition-transform duration-700 ease-in-out overflow-hidden
@@ -156,8 +158,8 @@ const HubSpotGetEstimateForm = ({ className, inputClassName}) => {
             <AddressAutocomplete 
               ref={adressRef}
               labelText="Adresa smještaja"
-              placeholder="Unesite adresu smještaja*"
-              errorMessage="Molimo odaberite ispravnu adresu iz liste"
+              placeholder="npr. Šibenska 45, Split"
+              errorMessage="Molimo odaberite adresu iz liste"
               onValueChange={updateField("adress")}
             />
 
@@ -167,7 +169,7 @@ const HubSpotGetEstimateForm = ({ className, inputClassName}) => {
               type="number"
               labelText={"Broj gostiju"} 
               errorMessage={"Molimo unesite ispravan broj"} 
-              placeholder={"Unesite broj gostiju*"}
+              placeholder={"npr. 4*"}
               validatorFunction={validateNumberRange} 
               onValueChange={updateField("guests")} 
             />
@@ -176,7 +178,7 @@ const HubSpotGetEstimateForm = ({ className, inputClassName}) => {
               name="baths"
               type="number"
               labelText={"Broj kupaona"} 
-              placeholder={"Unesite broj kupaona*"}
+              placeholder={"npr. 1*"}
               errorMessage={"Molimo unesite ispravan broj"} 
               validatorFunction={validateNumberRange} 
               onValueChange={updateField("baths")} 
@@ -187,7 +189,7 @@ const HubSpotGetEstimateForm = ({ className, inputClassName}) => {
               type="number"
               labelText={"Broj kreveta"} 
               errorMessage={"Molimo unesite ispravan broj"} 
-              placeholder={"Unesite broj kreveta*"}
+              placeholder={"npr. 2*"}
               validatorFunction={validateNumberRange} 
               onValueChange={updateField("beds")} 
             />

@@ -8,14 +8,14 @@ import React from 'react'
 
 const ToolsSection = () => {
   return (
-    <Section className="">
-      <Title className={"text-center mb-12 md:mb-16"}>
-        Neka vaš <span className='text-primary-600'>smještaj vide milijuni</span>
-      </Title>
-      <HorizontalScroller speed={1} pauseOnHover={false} pauseOnClick={false} className={"py-4 mb-12 md:mb-16 content-auto"} >
+    <section className="w-full py-4 bg-neutral-200 h-40">
+      <div className={"text-center text-lg uppercase font-title "}>
+        <span className=''>Oglašavamo vas milijunima gostiju</span>
+      </div>
+      <HorizontalScroller speed={1} pauseOnHover={false} pauseOnClick={false} className={"mt-2 py-4 content-auto"} >
         {
           logos.map((logo, index) => (
-            <div key={index} className="flex items-center justify-center mx-6 md:mx-8 lg:mx-12">
+            <div key={index} className="flex items-center justify-center md:mx-8 lg:mx-12">
               <Image 
                 src={logo.src}
                 alt={logo.alt}
@@ -31,7 +31,7 @@ const ToolsSection = () => {
         <MarketingProof property="Dammi" viewsImg='/images/temp/SearchViews.PNG' rankingImg='/images/temp/RankingProof1Min.PNG' />
         <MarketingProof property="Big Blue" viewsImg='/images/temp/SearchViews2.PNG' rankingImg='/images/temp/RankingProof2Min.PNG' />
       </div> */}
-    </Section>
+    </section>
   )
 }
 

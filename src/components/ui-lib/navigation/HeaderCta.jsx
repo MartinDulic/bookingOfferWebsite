@@ -1,20 +1,18 @@
-"use client";
-import { trackCtaClick } from '@/lib/trackingUtils';
-import Link from 'next/link'
-import React from 'react'
+"use client"
+import Link from "next/link";
 
 const HeaderCta = ({className, language = "hr"}) => {
   return (
-    <Link 
-      onClick={() => trackCtaClick("headerCta")} 
+    <Link
       href={language == "hr" ? "/hr/kontakt" : "/en/contact"}
       className={`${className} 
-        text-xl text-white font-semibold bg-linear-to-br from-0% to-60% from-primary-600 to-primary rounded-xs border border-primary-600
-        hover:scale-105  hover:border-white transition-all duration-300 ease-in-out`}
+      flex items-center gap-2 bg-primary py-2 px-4
+      text-lg text-white font-semibold rounded-xs
+      hover:scale-105  hover:border-white transition-all duration-300 ease-in-out`}
     >
-      <div className='px-4 py-2'>Kontakt</div>
+      <div>Besplatna analiza</div>
     </Link>
-  )
+  );
 }
 
-export default HeaderCta
+export default HeaderCta;

@@ -15,12 +15,17 @@
   --color-primary-200: #7f88ff;
   --color-primary-300: #4c58ff;
   --color-primary-400: #1929ff;
-  --color-primary: #000cb2;
-  --color-primary-600: #00097f;
+  /* --color-primary: #000cb2; */
+  /* --color-primary-600: #00097f; */
   --color-primary-700: #00054c;
   --color-primary-800: #000219;
   --color-primary-900: #000000;
   
+  /* --color-primary: #F4D03F       ; */
+  --color-primary: #D4AF37           ;
+  --color-primary-accent: #E5C453;
+  --color-primary-600: #AA7C11;
+
 }
 
 @utility content-auto {

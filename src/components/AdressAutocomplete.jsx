@@ -82,14 +82,14 @@ const AddressAutocomplete = forwardRef(({ labelText, errorMessage, placeholder, 
 
   return (
     <div className="flex flex-col mb-12 relative" ref={containerRef}>
-      <label className="text-neutral-800 mb-2 text-default">{labelText}</label>
+      <label className="text-neutral-300 text-base">{labelText}</label>
       
       <input
         name='adress'
         type="text"
         autoComplete="off"
         placeholder={placeholder}
-        className={`${error && isTouched ? "border-red-500" : "border-primary-600"} outline-none border-b py-2 w-full transition-all`}
+        className={`${error && isTouched ? "border-red-500" : "border-primary-600"} text-sm outline-none border-b py-1 w-full transition-all text-white placeholder:text-neutral-400 `}
         value={query}
         onChange={handleInputChange}
       />

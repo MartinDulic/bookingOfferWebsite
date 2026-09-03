@@ -3,7 +3,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { trackLead } from '@/lib/trackingUtils';
 
-const HubSpotLeadCaptureForm = ({ className, inputClassName, invalidPhoneText, invalidNameText, invalidEmailText}) => {
+const HubSpotLeadCaptureForm = ({ className, inputClassName = "", invalidPhoneText, invalidNameText, invalidEmailText}) => {
   const [hasUserTyped, setHasUserTyped] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
   const [emailError, setEmailError] = useState(false);
@@ -137,21 +137,22 @@ const HubSpotLeadCaptureForm = ({ className, inputClassName, invalidPhoneText, i
   };
 
   const inputGroupClassname = "flex flex-col mb-12"
-  const labelClassname = "text-neutral-800 mb-2"
-  const inputGeneralClassname = "outline-none border-b py-2";
+  const labelClassname = "text-neutral-300 mb-2"
+  const inputGeneralClassname = "outline-none border-b py-2 text-white placeholder:text-neutral-400";
   const errorClassName = "text-red-500 text-sm pt-1"
   return (
-    <div className={`flex flex-col items-center font-default px-4 py-8 rounded-sm ${className}`}>
+    <div className={`max-w-md lg:min-w-md lg:max-w-lg flex flex-col items-center font-default px-4 py-8 rounded-sm bg-neutral-900 ${className}`}>
       <form
-        className={`flex flex-col px-4 w-full max-w-md text-xl`}
+        className={`flex flex-col px-4 text-xl`}
         onSubmit={handleFormSubmit}
       >
-        <div className="mb-12 text-center text-neutral-800 font-bold text-xl 2xl:text-2xl font-title">Zatražite besplatno savjetovanje</div>
+        <div className="mb-4 text-white font-bold text-xl 2xl:text-2xl font-title">Zatražite besplatnu analizu</div>
+        <div className="text-neutral-400 mb-12 text-base">Popunite obrazac - javimo vam se u roku od sat vremena.</div>
 
         <div className={inputGroupClassname}>
           <label className={labelClassname}>Telefon:</label>
           <input type="tel" name="phone" placeholder="Unesite telefon*" 
-            className={`${phoneError ? " border-red-500" : " border-primary-600"} + ${inputGeneralClassname + inputClassName}`}
+            className={`${phoneError ? "border-red-500" : "border-primary-600"} ${inputGeneralClassname} ${inputClassName}`}
             onChange={(e) => handleInputChange(e, setPhoneError)}
           />
           <p className={`${phoneError ? "" :" hidden"} ${errorClassName}`}>{invalidPhoneText}</p>
@@ -163,7 +164,7 @@ const HubSpotLeadCaptureForm = ({ className, inputClassName, invalidPhoneText, i
           <div className={inputGroupClassname}>
             <label className={labelClassname}>Ime i Prezime</label>
             <input type="text" name="name" placeholder="Unesite ime i prezime*" 
-              className={`${nameError ? " border-red-500" : " border-primary-600"} + ${inputGeneralClassname + inputClassName}`}
+              className={`${nameError ? "border-red-500" : "border-primary-600"} ${inputGeneralClassname} ${inputClassName}`}
               onChange={(e) => handleInputChange(e, setNameError)}
             />
             <p className={`${nameError ? "" :" hidden"} ${errorClassName}`}>{invalidNameText}</p>
