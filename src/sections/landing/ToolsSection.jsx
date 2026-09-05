@@ -3,7 +3,7 @@ import MarketingProof from '@/components/ui-lib/common/MarketingProof'
 import Section from '@/components/ui-lib/common/Section'
 import Title from '@/components/ui-lib/common/Title'
 import logos from '@/constants/ToolsLogos'
-import Image from 'next/image'
+import ResponsiveImage from '@/components/ui-lib/common/ResponsiveImage'
 import React from 'react'
 
 const ToolsSection = () => {
@@ -16,11 +16,13 @@ const ToolsSection = () => {
         {
           logos.map((logo, index) => (
             <div key={index} className="flex items-center justify-center md:mx-8 lg:mx-12">
-              <Image 
-                src={logo.src}
+              <ResponsiveImage
+                desktopSrc={logo.src}
                 alt={logo.alt}
+                type="image/svg+xml"
+                fill={false}
                 className="h-8 md:h-10 lg:h-12 object-contain"
-                width={160} 
+                width={160}
                 height={48}
               />
             </div>

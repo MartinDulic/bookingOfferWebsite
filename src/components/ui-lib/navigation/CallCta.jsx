@@ -4,19 +4,19 @@ import Link from 'next/link'
 import React from 'react'
 import { FaPhone } from "react-icons/fa";
 
-const CallCta = ({className, language = "hr"}) => {
+const CallCta = ({className = "", language = "hr"}) => {
   return (
-    <Link 
-      onClick={() => trackCtaClick("headerCta")} 
+    <Link
+      onClick={() => trackCtaClick("headerCta")}
       href={language == "hr" ? "/hr/kontakt" : "/en/contact"}
-      className={`${className} 
-        flex items-center gap-2 
-        text-lg text-white font-semibold rounded-xs
-        hover:scale-105  hover:border-white transition-all duration-300 ease-in-out`}
+      className={`${className}
+        flex items-center gap-2 text-sm font-medium text-cream
+        transition-colors duration-200 hover:text-white
+        lg:gap-[0.5625rem] lg:text-[0.9375rem]`}
     >
-      <FaPhone />
-      <div className='lg:hidden'>Nazovi</div>
-      <div className='hidden lg:inline underline'>+385 99 203 2607</div>
+      <FaPhone className="text-[0.875rem] text-gold lg:text-[0.9375rem]" />
+      <span className='lg:hidden'>Nazovi</span>
+      <span className='hidden lg:inline'>+385 99 203 2607</span>
     </Link>
   )
 }

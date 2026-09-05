@@ -56,17 +56,18 @@ const Navigation = ({navigationData, language = "hr"}) => {
       <div
         aria-label="Main navigation"
         className={`z-20 fixed top-0 w-full flex flex-col
-          transition-colors ease-out duration-150
-          ${isHeaderVisible ? "bg-neutral-900 shadow-md" : "bg-transparent "}
+          border-b border-white/10
+          transition-colors ease-out duration-200
+          ${isHeaderVisible ? "bg-ink-deep" : "bg-transparent"}
         `}
       >
         {/* <div className="flex items-center justify-center bg-neutral-white text-center text-neutral-50 h-12 text-xl font-bold">
           <FaPhone className="rounded-full bg-white text-neutral-900 p-1 size-7 mr-2" />
           <div>+385992032607</div>
         </div> */}
-        <div className="grid grid-cols-[auto_1fr_auto] items-center h-16 px-2 lg:px-4">
+        <div className="pb-gutter mx-auto w-full max-w-[81rem] grid grid-cols-[auto_1fr_auto] items-center h-16 lg:h-[4.75rem]">
           <HeaderLogo/>
-          <nav className="flex justify-end items-center gap-4">
+          <nav className="flex justify-end items-center gap-3.5 lg:gap-7">
             {/* Navigation links */}
             {/* <div className="pr-16 w-full hidden lg:flex justify-center items-center gap-12 text-xl text-white ">
           
@@ -76,8 +77,9 @@ const Navigation = ({navigationData, language = "hr"}) => {
               <SmoothScrollLink href={"#faq"}>{language == "hr" ? "Česta Pitanja" : "FAQ"}</SmoothScrollLink>
             </div> */}
 
-            <CallCta className={"mr-4 "}/>
-            <HeaderCta className={"hidden lg:block"}/>
+            <CallCta />
+            <span className="hidden h-5 w-px bg-white/15 lg:block" />
+            <HeaderCta />
           </nav>
           {/* Mobile menu icon */}
           {/* <MenuButton isOpen={isMenuOpen} onToggle={()=> {setIsMenuOpen(!isMenuOpen)}} ref={menuButtonRef}/> */}

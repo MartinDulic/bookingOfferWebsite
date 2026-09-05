@@ -1,7 +1,14 @@
 "use client";
 import React, { useState, useEffect, useRef, useImperativeHandle, forwardRef } from 'react';
 
-const AddressAutocomplete = forwardRef(({ labelText, errorMessage, placeholder, onValueChange }, ref) => {
+const AddressAutocomplete = forwardRef(({
+  labelText, errorMessage, placeholder, onValueChange,
+  wrapperClassName = "mb-12",
+  labelClassName = "text-neutral-300 text-base",
+  inputClassName = "text-sm outline-none border-b py-1 w-full transition-all text-white placeholder:text-neutral-400",
+  errorBorderClassName = "border-red-500",
+  borderClassName = "border-primary-600",
+}, ref) => {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [error, setError] = useState(true); // Start as true until selection
@@ -81,15 +88,15 @@ const AddressAutocomplete = forwardRef(({ labelText, errorMessage, placeholder, 
   };
 
   return (
-    <div className="flex flex-col mb-12 relative" ref={containerRef}>
-      <label className="text-neutral-300 text-base">{labelText}</label>
+    <div className={`flex flex-col relative ${wrapperClassName}`} ref={containerRef}>
+      <label className={labelClassName}>{labelText}</label>
       
       <input
         name='adress'
         type="text"
         autoComplete="off"
         placeholder={placeholder}
-        className={`${error && isTouched ? "border-red-500" : "border-primary-600"} text-sm outline-none border-b py-1 w-full transition-all text-white placeholder:text-neutral-400 `}
+        className={`${error && isTouched ? errorBorderClassName : borderClassName} ${inputClassName}`}
         value={query}
         onChange={handleInputChange}
       />

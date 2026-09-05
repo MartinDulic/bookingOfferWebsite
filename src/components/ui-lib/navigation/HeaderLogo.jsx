@@ -1,18 +1,19 @@
 import React from 'react'
-import Image from 'next/image'
+import ResponsiveImage from '@/components/ui-lib/common/ResponsiveImage'
 
 const HeaderLogo = () => {
   return (
-    <div className="flex items-center h-full ">
-      <div className="h-6 lg:h-8">
-        <Image
-          src="/images/logo/logo_white.svg"
-          alt="Logo"
-          width={0}
-          height={0}
-          className="object-contain h-full w-auto"
-        />
-      </div>
+    <div className="flex items-center">
+      <ResponsiveImage
+        desktopSrc="/images/logo/logo_white.svg"
+        alt="PrimeBooker"
+        type="image/svg+xml"
+        fill={false}
+        priority
+        width={2000}
+        height={264}
+        className="h-5 w-auto object-contain lg:h-[1.625rem]"
+      />
     </div>
   )
 }

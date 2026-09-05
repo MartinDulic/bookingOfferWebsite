@@ -1,17 +1,20 @@
 import BodyText from '@/components/ui-lib/common/BodyText'
 import Section from '@/components/ui-lib/common/Section'
 import Title from '@/components/ui-lib/common/Title'
-import Image from 'next/image'
+import ResponsiveImage from '@/components/ui-lib/common/ResponsiveImage'
 import React from 'react'
 
 const Page = () => {
   return (
     <Section className={"min-h-dvh bg-neutral-100  flex flex-col items-center justify-center"}>
-      <Image
-        src="/images/logo/logo_black.svg"
+      <ResponsiveImage
+        desktopSrc="/images/logo/logo_black.svg"
         alt="Hvala"
-        width={600}   // any number
-        height={200}  // keep correct ratio
+        type="image/svg+xml"
+        fill={false}
+        priority
+        width={2000}
+        height={264}
         className=" w-4/5 sm:w-3/5 xl:w-2/5 h-auto"
       />
       <div className="flex flex-col items-center xl:justify-evenly ">

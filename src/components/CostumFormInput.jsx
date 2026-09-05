@@ -1,7 +1,14 @@
 "use client"
 import React, { useImperativeHandle, forwardRef, useEffect, useState } from 'react'
 
-const CostumFormInput = forwardRef(({name, type, labelText, errorMessage, placeholder, validatorFunction, onValueChange}, ref) => {
+const CostumFormInput = forwardRef(({
+  name, type, labelText, errorMessage, placeholder, validatorFunction, onValueChange,
+  wrapperClassName = "mb-12",
+  labelClassName = "text-neutral-300 text-base",
+  inputClassName = "text-sm outline-none border-b py-1 text-white placeholder:text-neutral-400",
+  errorBorderClassName = "border-red-500",
+  borderClassName = "border-primary-600",
+}, ref) => {
   const [error, setError] = useState(false);
   const [value, setValue] = useState(null);
 
@@ -25,10 +32,10 @@ const CostumFormInput = forwardRef(({name, type, labelText, errorMessage, placeh
   }, [value]);
 
   return (
-    <div className="flex flex-col mb-12">
-      <label className="text-neutral-300 text-base">{labelText}</label>
+    <div className={`flex flex-col ${wrapperClassName}`}>
+      <label className={labelClassName}>{labelText}</label>
       <input type={type} name={name} placeholder={placeholder}
-        className={`${error ? " border-red-500" : " border-primary-600"}  text-sm outline-none border-b py-1 text-white placeholder:text-neutral-400`}
+        className={`${error ? errorBorderClassName : borderClassName} ${inputClassName}`}
         value={value || ""}
         onChange={(e) => setValue(e.target.value)}
       />

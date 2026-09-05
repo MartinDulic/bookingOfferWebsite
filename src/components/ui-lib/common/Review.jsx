@@ -1,15 +1,14 @@
 import React from 'react'
 import { FaStar } from "react-icons/fa6";
-import Image from 'next/image';
+import ResponsiveImage from '@/components/ui-lib/common/ResponsiveImage';
 
 const Review = ({href, image=null, guestName, guestCountry, apartment, text, sourceIcon, className}) => {
 
   const avatar = image ? 
-    <Image
-      src={image}
+    <ResponsiveImage
+      desktopSrc={image}
       alt="Guest Image"
-      width={0}
-      height={0}
+      fill={false}
       className="object-contain h-full w-auto rounded-full "
     /> :
     <div 

@@ -1,16 +1,18 @@
 "use client"
 import Link from "next/link";
 
-const HeaderCta = ({className, language = "hr"}) => {
+const HeaderCta = ({className = "", language = "hr"}) => {
   return (
     <Link
       href={language == "hr" ? "/hr/kontakt" : "/en/contact"}
-      className={`${className} 
-      flex items-center gap-2 bg-primary py-2 px-4
-      text-lg text-white font-semibold rounded-xs
-      hover:scale-105  hover:border-white transition-all duration-300 ease-in-out`}
+      className={`${className}
+      inline-flex items-center rounded-xs bg-gold px-3.5 py-2.5
+      text-[0.84375rem] font-bold text-ink
+      transition-colors duration-200 hover:bg-gold-dark
+      lg:px-5 lg:py-[0.6875rem] lg:text-[0.9375rem]`}
     >
-      <div>Besplatna analiza</div>
+      <span className="lg:hidden">Analiza</span>
+      <span className="hidden lg:inline">Besplatna analiza</span>
     </Link>
   );
 }
