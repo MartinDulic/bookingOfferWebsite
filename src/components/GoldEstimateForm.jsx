@@ -110,7 +110,7 @@ const GoldEstimateForm = ({ className = "" }) => {
     if (response.ok) {
       trackLead("get_free_earings_estimate_form");
       setTimeout(() => {
-        window.location.href = "/hr/hvala";
+        window.location.href = "/hr/daljnjikoraci";
       }, 500);
     } else {
       console.error("HubSpot API Error:", await response.json());

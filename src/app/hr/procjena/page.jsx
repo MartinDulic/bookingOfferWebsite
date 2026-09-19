@@ -4,7 +4,7 @@ import React from 'react'
 const Page = () => {
   return (
     <>
-      <EstimateSection/>
+      {/* <EstimateSection/> */}
     </>
   )
 }

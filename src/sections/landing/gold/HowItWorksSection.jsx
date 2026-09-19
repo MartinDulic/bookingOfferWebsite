@@ -15,7 +15,7 @@ const steps = [
     number: "02",
     icon: LuHandshake,
     title: "Dogovor o suradnji",
-    text: "Razgovaramo o vašim željama i potrebama, te dogovaramo suradnju.",
+    text: "Razgovaramo o vašim željama i potrebama, prolazimo kroz naš način rada, te dogovaramo suradnju.",
   },
   {
     number: "03",
@@ -86,13 +86,15 @@ const HowItWorksSection = () => (
             <Reveal
               key={step.number}
               delay={index * 110}
-              className={`grid grid-cols-[3.5rem_1fr] gap-x-5 ${isLast ? "" : "pb-9"}`}
+              className="grid grid-cols-[3.5rem_1fr] gap-x-5"
             >
+              {/* The gap between steps lives on the text column, so this column
+                  stretches over it and the line runs into the next icon. */}
               <div className="flex flex-col items-center">
                 <StepIcon icon={step.icon} isLast={isLast} size="mobile" />
                 {!isLast && <span className="w-0.5 flex-1 bg-gold" />}
               </div>
-              <div>
+              <div className={isLast ? "" : "pb-9"}>
                 <StepBody step={step} size="mobile" />
               </div>
             </Reveal>

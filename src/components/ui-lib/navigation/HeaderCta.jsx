@@ -1,10 +1,21 @@
 "use client"
-import Link from "next/link";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 const HeaderCta = ({className = "", language = "hr"}) => {
+  const smoothScrollTo = useSmoothScroll(0);
+  // href={language == "hr" ? "/hr/kontakt" : "/en/contact"}
+  const href = "#atf";
+
+  // See GoldCta: next/link no-ops on a hash click once the URL already has it.
+  const handleClick = (e) => {
+    e.preventDefault();
+    smoothScrollTo(href);
+  };
+
   return (
-    <Link
-      href={language == "hr" ? "/hr/kontakt" : "/en/contact"}
+    <a
+      href={href}
+      onClick={handleClick}
       className={`${className}
       inline-flex items-center rounded-xs bg-gold px-3.5 py-2.5
       text-[0.84375rem] font-bold text-ink
@@ -13,7 +24,7 @@ const HeaderCta = ({className = "", language = "hr"}) => {
     >
       <span className="lg:hidden">Analiza</span>
       <span className="hidden lg:inline">Besplatna analiza</span>
-    </Link>
+    </a>
   );
 }
 

@@ -4,40 +4,61 @@ import { FaStar } from "react-icons/fa6";
 import CtaWithFud from "@/components/ui-lib/gold/CtaWithFud";
 import Eyebrow from "@/components/ui-lib/gold/Eyebrow";
 import Reveal from "@/components/ui-lib/gold/Reveal";
+import { LuDot } from "react-icons/lu";
+
 
 const testimonials = [
   {
-    name: "Marija L.",
-    city: "Zadar",
-    image: "/images/people/Marija_L.avif",
+    name: "Julijana Prenkepalaj",
+    city: "Makarska",
+    accomodation: "Dvosobni apartman",
+    image: "/images/temp/Julijana_P.png",
+    headline: "„Brza podrška, veća zarada i gosti čak i zimi”",
     quoteBefore:
-      "Nakon nekoliko sezona iznajmljivanja odlučila sam unajmiti agenciju jer je moj apartman skupio dosta loših recenzija, što je jako utjecalo na zaradu. Nakon što sam počela surađivati s PrimeBooker-om to se brzo popravilo i ",
-    highlight: "počela sam dobivati puno više rezervacija.",
-    quoteAfter: "",
+      "Godinama sam radila s raznim agencijama. Zarada je bila prosječna, ali najviše me smetalo što bi bilo teško dobiti nekoga na telefon kada bi nastao problem. Nakon prošle sezone čula sam za PrimeBooker. Bila sam nesigurna oko suradnje s još jednom agencijom, ali odlučila sam pokušati jer nisam bila zadovoljna tadašnjom agencijom. ",
+    highlight: "Prve goste očekivala sam tek u lipnju, a stigli su već u travnju. ",
+    quoteAfter: "Od tada imamo goste i zimi, zaradili smo više nego ikad, a oni su uvijek dostupni i sve rješavaju brzo.",
   },
   {
-    name: "Mira K.",
-    city: "Split",
-    image: "/images/people/Mira_K.avif",
+    name: "Laurentiu Dimitriu",
+    city: "Makarska",
+    accomodation: "Jednosobni apartman",
+    image: "/images/temp/Laurentiu_D.png",
+    headline: "„Nakon prve sezone s PrimeBookerom kupio sam još dva apartmana”",
     quoteBefore:
-      "Godinama sam svoje apartmane iznajmljivala sama i to mi je oduzimalo puno vremena i energije. Odlučila sam iznajmljivanje prepustiti PrimeBooker-u kako bi imala više slobodnog vremena. ",
-    highlight: "Od tada zarađujem znatno više",
-    quoteAfter: ", a oko iznajmljivanja se uopće ne brinem.",
+    //       "Prije par godina sam kupio apartman za iznajmljivanje i angažirao agenciju s kojom nisam bio zadovoljan. Zarada je bila loša, nedovoljna niti da pokrijem trošak kredita za apartman. Osjetio sam da trebam nešto promijeniti i čuo sam za PrimeBooker preko poznanika. Odlučio sam se za suradnju nakon što su mi objasnili kako rade i kako će povećati zaradu. ",
+      "Prije par godina sam kupio stan i počeo iznajmljivati. Zarada je bila loša, nedovoljna niti da pokrijem trošak kredita. Osjetio sam da trebam nešto promijeniti i čuo sam za PrimeBooker preko poznanika. Odlučio sam se za suradnju nakon što su mi objasnili kako rade i kako će povećati zaradu. ",
+    highlight: "Nakon uspješne prve sezone odlučio sam investirati u još 2 apartmana",
+    quoteAfter: " jer sam napokon vidio da se iznajmljivanje isplati. Sada se osjećam sigurno jer znam da ću imati prihod za penziju. Svima preporučujem PrimeBooker, prepustite im vaš smještaj i osjetit ćete pravu razliku u zaradi!",
   },
   {
-    name: "Tihomir J.",
-    city: "Zagreb",
-    image: "/images/people/Tihomir_J.webp",
+    name: "Darko Vrljičak",
+    city: "Makarska",
+    accomodation: "Dvosobni apartman",
+    image: "/images/temp/Darko_V.png",
+    headline: "„Transparentnost, odlična organizacija i veća zarada”",
     quoteBefore:
-      "Kada sam počinjao s iznajmljivanjem odlučio sam dati priliku PrimeBooker-u jer sam htio da netko stručan vodi brigu o oglašavanju moje kuće. Vidio sam da su novi na tržištu i da će dati sve od sebe. ",
-    highlight: "Prvi gosti su došli 2 dana nakon početka suradnje",
-    quoteAfter: " i tada sam znao da sam donio ispravnu odluku.",
+      "Kada smo supruga i ja odlučili iznajmljivati stan, uz redovan posao nismo imali vremena baviti se time. Angažirali smo agenciju i sve je bilo u redu dok naš agent nije otišao. Nakon toga je pala kvaliteta usluge i stvorio sam dojam da je iznajmljivanje postalo neisplativo. Tada smo čuli za PrimeBooker i odlučili im pružiti priliku. ",
+    highlight: "Od kada surađujemo s njima i više smo nego zadovoljni. ",
+    quoteAfter: "Najviše cijenim transparentnost i odličnu organizaciju, a zarada nam se osjetno povećala.",
   },
+  // {
+  //   name: "Tihomir Jakovov",
+  //   city: "Nova Bila",
+  //   accomodation: "A-frame kuća",
+  //   image: "/images/people/Tihomir_J.webp",
+  //   headline: "„Prvi gosti u samo dva dana.”",
+  //   quoteBefore:
+  //     // "Kada sam počinjao s iznajmljivanjem odlučio sam dati priliku PrimeBooker-u jer sam htio da netko stručan vodi brigu o oglašavanju moje kuće. Do tada nisam surađivao s agencijama i nisam znao što očekivati. ",
+  //     "Kada sam izgradio kuću za iznajmljivanje nisam imao iskustva u tom poslu i htio sam da netko stručan vodi brigu o oglašavanju. Do tada nisam surađivao s agencijama i nisam znao što očekivati. ",
+  //     highlight: "Prvi gosti su došli 2 dana nakon početka suradnje",
+  //   quoteAfter: " i tada sam znao da sam donio ispravnu odluku.",
+  // },
 ];
 
 const TestimonialsSection = () => (
   <section className="pb-gutter pb-block w-full bg-ink-deep">
-    <div className="mx-auto max-w-[81rem]">
+    <div className="mx-auto max-w-[90rem]">
       <Reveal>
         <Eyebrow tone="dark">Iskustva vlasnika</Eyebrow>
         <h2 className="pb-h2 mt-5 mb-9 max-w-[24em] font-title text-white text-pretty sm:mb-14">
@@ -58,27 +79,28 @@ const TestimonialsSection = () => (
                 alt=""
                 aria-hidden="true"
                 fill={false}
-                width={56}
-                height={56}
-                className="size-12 shrink-0 rounded-full object-cover lg:size-14"
+                className="size-12 shrink-0 rounded-full object-cover lg:size-16"
               />
               <div>
                 <div className="font-title text-[1.0625rem] font-bold tracking-[-0.02em] text-white lg:text-[1.125rem]">
                   {testimonial.name}
                 </div>
-                <div className="pb-eyebrow mt-1 text-[0.65625rem] tracking-[0.14em] text-ash-cool">
-                  {testimonial.city}
+                <div className="pb-eyebrow mt-1 flex text-[0.65625rem] tracking-[0.14em] text-ash-cool">
+                  <p>{testimonial.city}</p> <LuDot className="mt-0.5 " /> <p>{testimonial.accomodation}</p>
+                </div>
+                <div className="mt-1.5 flex gap-1 text-gold">
+                  {Array.from({ length: 5 }, (_, star) => (
+                    <FaStar key={star} className="text-[0.75rem]" />
+                  ))}
                 </div>
               </div>
             </div>
 
-            <div className="mt-5 flex gap-1 text-gold">
-              {Array.from({ length: 5 }, (_, star) => (
-                <FaStar key={star} className="text-[0.8125rem]" />
-              ))}
+            <div className="mt-[1.125rem] text-[clamp(1.15625rem,0.24vw+1.1rem,1.25rem)] leading-[1.35] tracking-[-0.025em] font-bold text-white text-pretty">
+              {testimonial.headline}
             </div>
 
-            <p className="mt-4 text-[clamp(0.96875rem,0.14vw+0.94rem,1.09375rem)] leading-[1.75] text-cream-dimmer text-pretty">
+            <p className="mt-3 text-[clamp(0.96875rem,0.14vw+0.94rem,1.09375rem)] leading-[1.75] text-cream-dimmer text-pretty">
               {testimonial.quoteBefore}
               <strong className="font-bold text-white">{testimonial.highlight}</strong>
               {testimonial.quoteAfter}

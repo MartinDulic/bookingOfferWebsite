@@ -27,27 +27,52 @@ const ratings = [
 ];
 
 /*
+ * The photo plus the scrim that keeps the copy legible on top of it. Rendered
+ * in two places — see the backdrop comments below — but only ever one of them
+ * is displayed, so the same file is fetched once and each instance only shows
+ * the gradient for its own breakpoint.
+ */
+const Backdrop = () => (
+  <>
+    <ResponsiveImage
+      mobileSrc="/images/general/HeroImage_w1000.avif"
+      desktopSrc="/images/general/HeroImage_w1920.avif"
+      alt="Pogled na obalu iz apartmana"
+      priority
+      className="object-[51%_50%] md:object-center"
+    />
+    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,14,16,.8)_0%,rgba(11,14,16,.66)_38%,rgba(13,16,18,.9)_80%,#0F1214_100%)] lg:bg-[linear-gradient(100deg,rgba(11,14,16,.93)_0%,rgba(11,14,16,.86)_34%,rgba(11,14,16,.62)_62%,rgba(11,14,16,.5)_100%)]" />
+  </>
+);
+
+/*
  * Deliberately not scroll-revealed: the hero is above the fold, so it paints at
  * full opacity on the first frame instead of waiting on the intersection
  * observer. Everything below the fold still fades in.
  */
 const HeroSection = () => (
-  <section id="atf" className="relative flex min-h-svh w-full flex-col overflow-hidden">
-    {/* Backdrop */}
-    <div className="absolute inset-0 overflow-hidden">
-      <ResponsiveImage
-        mobileSrc="/images/general/HeroImage_w1000.avif"
-        desktopSrc="/images/general/HeroImage_w1920.avif"
-        alt="Pogled na obalu iz apartmana"
-        priority
-        className="object-[51%_50%] md:object-center"
-      />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,14,16,.82)_0%,rgba(11,14,16,.72)_30%,rgba(11,14,16,.88)_68%,rgba(11,14,16,.96)_100%)] lg:bg-[linear-gradient(100deg,rgba(11,14,16,.93)_0%,rgba(11,14,16,.86)_34%,rgba(11,14,16,.62)_62%,rgba(11,14,16,.5)_100%)]" />
+  <section
+    id="atf"
+    className="relative flex min-h-svh w-full flex-col overflow-hidden bg-ink-deep"
+  >
+    {/* Backdrop, side-by-side layout: the form sits on the photo, so it covers
+        the whole section. */}
+    <div className="absolute inset-0 hidden overflow-hidden lg:block">
+      <Backdrop />
     </div>
 
     {/* Content — pt clears the fixed site header */}
-    <div className="pb-gutter relative z-10 mx-auto flex w-full max-w-[81rem] flex-1 flex-col justify-center gap-10 pt-[clamp(5.5rem,10vw,7.5rem)] pb-[clamp(2.5rem,5vw,4.5rem)] lg:flex-row lg:items-center lg:gap-20">
-      <div className="flex min-w-0 flex-col lg:flex-1">
+    <div className="pb-gutter relative z-10 mx-auto flex w-full max-w-[81rem] flex-1 flex-col justify-start gap-10 pt-[clamp(5.5rem,10vw,7.5rem)] pb-[clamp(2.5rem,5vw,4.5rem)] lg:flex-row lg:items-center lg:justify-center lg:gap-20">
+      <div className="relative flex min-w-0 flex-col lg:flex-1">
+        {/* Backdrop, stacked layout: tied to this column instead of the section
+            so it stops just above the form — covering the full column would
+            stretch the photo over a portrait box twice the viewport height. It
+            bleeds sideways to the viewport edges and up past the header
+            padding, and the scrim resolves into the section background. */}
+        <div className="absolute -bottom-5 left-1/2 top-[calc(clamp(5.5rem,10vw,7.5rem)*-1)] -z-10 w-screen -translate-x-1/2 overflow-hidden lg:hidden">
+          <Backdrop />
+        </div>
+
         <div className="flex items-center gap-3 self-start rounded-xs border border-gold/45 bg-ink-deep/50 px-3.5 py-3">
           <FaTrophy className="shrink-0 text-base text-gold" />
           <span className="text-[0.78125rem] leading-snug text-cream sm:text-[0.84375rem]">
@@ -96,9 +121,9 @@ const HeroSection = () => (
         </div>
 
         {/* On large screens the form sits beside this column, so the CTA takes over */}
-        <div className="mt-11 hidden lg:block">
+        {/* <div className="mt-11 hidden lg:block">
           <CtaWithFud tone="dark" event="atfCta" align="start" />
-        </div>
+        </div> */}
       </div>
 
       <div className="w-full lg:w-[28.25rem] lg:shrink-0">

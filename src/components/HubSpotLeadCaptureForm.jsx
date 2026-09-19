@@ -128,7 +128,7 @@ const HubSpotLeadCaptureForm = ({ className, inputClassName = "", invalidPhoneTe
       trackLead("contact_us_form"); // Track the lead in GA4
       setHasUserTyped(false); // Reset the flag so they can leave without prompt
       setTimeout(() => {
-        window.location.href = "/hr/hvala";
+        window.location.href = "/hr/daljnjikoraci";
       }, 700);
     } else {
       console.error("HubSpot API Error:", await response.json());

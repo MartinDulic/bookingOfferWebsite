@@ -28,17 +28,16 @@ const FaqSection = () => (
             ostvarene zarade. To znači da ne plaćate ništa dok vam ne zaradimo
             novac.
           </p>
+          {/* <p>
+            Nudimo više mogućnosti suradnje, od upravljanja bookingom do
+            kompletnog upravljanja apsolutno svime, ovisno o lokaciji smještaja.
+          </p> */}
+        </FaqAccordionItem>
+
+        <FaqAccordionItem question="Nudite li usluge čišćenja i održavanja?">
           <p>
             Nudimo više mogućnosti suradnje, od upravljanja bookingom do
             kompletnog upravljanja apsolutno svime, ovisno o lokaciji smještaja.
-          </p>
-        </FaqAccordionItem>
-
-        <FaqAccordionItem question="Moram li se brinuti o čišćenju i održavanju?">
-          <p>
-            Ne morate — osim ako želite. Surađujemo s provjerenim partnerima i
-            organiziramo sve za Vas kako bi Vaš smještaj uvijek bio spreman za
-            goste.
           </p>
         </FaqAccordionItem>
 
@@ -62,7 +61,7 @@ const FaqSection = () => (
 
         <FaqAccordionItem question="Kako funkcioniraju isplate?">
           <p>
-            Mi obavljamo sve računovodstvene obveze i plaćamo sve naknade, a Vi
+            Mi obavljamo sve računovodstvene obveze, naplatu i plaćamo sve naknade, a Vi
             svaki mjesec dobivate detaljan izvještaj o prihodima i troškovima.
             Isplata zarade na Vaš račun se vrši do 5. dana u mjesecu za
             prethodni mjesec.

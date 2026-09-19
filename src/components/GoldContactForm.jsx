@@ -89,7 +89,7 @@ const GoldContactForm = ({ className = "" }) => {
 
       trackLead("contact_us_form");
       setTimeout(() => {
-        window.location.href = "/hr/hvala";
+        window.location.href = "/hr/daljnjikoraci";
       }, 700);
     } catch (error) {
       console.error("HubSpot request failed:", error);
@@ -109,7 +109,7 @@ const GoldContactForm = ({ className = "" }) => {
           Zatražite besplatnu analizu
         </div>
         <p className="mt-2 text-[0.90625rem] leading-relaxed text-ash">
-          Popunite obrazac — javimo vam se u roku od sat vremena.
+          Popunite obrazac — javit ćemo vam se u najkraćem mogućem roku.
         </p>
 
         <div className="my-6 flex items-center gap-2 sm:my-7">

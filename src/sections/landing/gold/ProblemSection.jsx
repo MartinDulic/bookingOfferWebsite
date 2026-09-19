@@ -18,17 +18,20 @@ const remedies = [
 ];
 
 const sideStats = [
+  // {
+  //   label: "Ocjena gostiju",
+  //   value: (
+  //     <>
+  //       <CountUp to={4.91} decimals={2} />
+  //       <span className="text-base text-gold-deep">/5</span>
+  //     </>
+  //   ),
+  // },
+  { label: "Ušteđenih sati godišnje", value: <><CountUp to={80} /><span className="text-gold-deep">+</span></> },
+  { label: "Kanala oglašavanja", value: <><CountUp to={10} /><span className="text-gold-deep">+</span></> },
   {
-    label: "Ocjena gostiju",
-    value: (
-      <>
-        <CountUp to={4.91} decimals={2} />
-        <span className="text-base text-gold-deep">/5</span>
-      </>
-    ),
+    label: "Podrška", value: <><CountUp to={24} /><span className="text-gold-deep text-base">/7</span></> 
   },
-  { label: "Platformi oglašavanja", value: <CountUp to={9} /> },
-  { label: "Dana upravljanja cijenama", value: <CountUp to={365} /> },
 ];
 
 const CheckList = ({ items }) => (
@@ -67,7 +70,7 @@ const ProblemSection = () => (
         delay={100}
         className="mt-8 border-t-2 border-gold bg-sand px-6 py-7 lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:mt-0 lg:self-start lg:px-[2.125rem] lg:py-9 lg:sticky lg:top-24"
       >
-        <div className="pb-eyebrow text-gold-deep">Cijena neznanja</div>
+        <div className="pb-eyebrow text-gold-deep">Profesionalno upravljanje donosi</div>
         <div className="mt-4 font-title text-[clamp(2.375rem,1.1vw+2.1rem,3.25rem)] leading-none font-bold tracking-[-0.04em] text-ink tabular-nums lg:mt-5">
           <CountUp to={20} />–<CountUp to={80} />
           <span className="text-gold-deep">%</span>

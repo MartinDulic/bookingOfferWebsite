@@ -3,16 +3,38 @@ import ResponsiveImage from '@/components/ui-lib/common/ResponsiveImage'
 
 const HeaderLogo = () => {
   return (
-    <div className="flex items-center">
+    // <div className="flex items-center">
+    //   <ResponsiveImage
+    //     desktopSrc="/images/temp/logo/logo_white.svg"
+    //     alt="PrimeBooker"
+    //     type="image/svg+xml"
+    //     fill={false}
+    //     priority
+    //     width={2000}
+    //     height={264}
+    //     className="h-5 w-auto object-contain lg:h-[1.625rem]"
+    //   />
+    // </div>
+    <div className="flex items-center gap-2">
       <ResponsiveImage
-        desktopSrc="/images/logo/logo_white.svg"
+        desktopSrc="/images/temp/logo/pb_mark_light_golddoor.svg"
         alt="PrimeBooker"
         type="image/svg+xml"
         fill={false}
         priority
         width={2000}
         height={264}
-        className="h-5 w-auto object-contain lg:h-[1.625rem]"
+        className="h-6 w-auto object-contain lg:h-7"
+      />
+      <ResponsiveImage
+        desktopSrc="/images/temp/logo/logo_text_white.svg"
+        alt="PrimeBooker"
+        type="image/svg+xml"
+        fill={false}
+        priority
+        width={2000}
+        height={264}
+        className="h-3.5 w-auto object-contain lg:h-4"
       />
     </div>
   )
