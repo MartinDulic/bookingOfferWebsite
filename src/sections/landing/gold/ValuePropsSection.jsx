@@ -10,6 +10,7 @@ const valueProps = [
     eyebrow: "Zaradite više",
     title: "Ostvarite maksimalnu popunjenost",
     text: "Svakodnevno pratimo tržište i prilagođavamo strategiju kako bismo vaš smještaj popunili po najvišoj mogućoj cijeni u svakom dijelu godine, uključujući i tijekom zime.",
+    mobileImage: "/images/general/Kalendar_pun.avif",
     image: "/images/general/Kalendar_pun.avif",
     type: "image/png",
     alt: "Popunjen kalendar rezervacija",
