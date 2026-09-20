@@ -1,0 +1,15 @@
+1:"$Sreact.fragment"
+2:I[97367,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+7:I[97367,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"ViewportBoundary"]
+8:I[97367,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"MetadataBoundary"]
+9:I[27201,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"IconMark"]
+6:X
+0:{"buildId":"CocvhU3aQBC9YTjGkSb03","data":[{"rsc":["$","$1","c",{"children":["$undefined",null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":"$@5","staleTime":"$6","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$L7",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L8",null,{"children":["$","$3",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"PrimeBooker - Agencija za Iznajmljivanje i Upravljanje Smještajem"}],["$","meta","1",{"name":"description","content":"Iskoristite puni potencijal svog smještaja. Uz PrimeBooker ostvarite maksimalnu popunjenost i zaradu. Besplatan početak suradnje!"}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.3ox8q4xa0k-9q.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L9","3",{}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"isPartial":"$@a","staleTime":"$6","varyParams":null}],"isUpgradeableISRFallback":false,"a":"$@b","rootVaryParams":null,"needsRuntimeRequest":"$@c"}
+4:null
+c:true
+6:300
+6:C
+b:0
+a:"$undefined"
+5:"$undefined"

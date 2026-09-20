@@ -1,0 +1,116 @@
+1:"$Sreact.fragment"
+c:I[68027,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"default",1]
+:HL["/_next/static/chunks/11wuj1ne3v869.css","style"]
+2:["$","style",null,{"children":".pb-reveal{opacity:1!important;transform:none!important}"}]
+3:Te21,
+(function () {
+  try {
+    var FIRST = 'pb_attr_first';
+    var LAST = 'pb_attr_last';
+    var TTL = 90 * 24 * 60 * 60 * 1000;
+
+    var UTM = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_id'];
+    var CLICK = ['gclid','gbraid','wbraid','fbclid','ttclid','msclkid'];
+
+    var q = new URLSearchParams(window.location.search);
+    var host = window.location.hostname.replace(/^www\./, '');
+    var ref = document.referrer || '';
+    var refHost = '';
+    try { refHost = ref ? new URL(ref).hostname.replace(/^www\./, '') : ''; } catch (e) {}
+
+    function store(kind) { try { return window[kind]; } catch (e) { return null; } }
+    function read(s, k) { try { return s ? JSON.parse(s.getItem(k)) : null; } catch (e) { return null; } }
+    function write(s, k, v) { try { if (s) s.setItem(k, JSON.stringify(v)); } catch (e) {} }
+
+    var touch = { ts: Date.now() };
+    UTM.concat(CLICK).forEach(function (k) {
+      var v = q.get(k);
+      if (v) touch[k] = v;
+    });
+    var offline = q.get('pb_src');
+    if (offline) touch.pb_src = offline;
+    touch.landing_page = window.location.pathname + window.location.search;
+    touch.referrer = ref;
+
+    var src = (touch.utm_source || '').toLowerCase();
+    var med = (touch.utm_medium || '').toLowerCase();
+    var paid = /cpc|ppc|paid/.test(med);
+
+    var channel;
+    if (touch.pb_src) channel = 'offline';
+    else if (touch.gclid || touch.gbraid || touch.wbraid || (src === 'google' && paid)) channel = 'google_ads';
+    else if (touch.fbclid || /facebook|instagram|meta|^fb$|^ig$/.test(src)) channel = 'meta_ads';
+    else if (touch.msclkid) channel = 'microsoft_ads';
+    else if (touch.ttclid) channel = 'tiktok_ads';
+    else if (paid) channel = 'other_paid';
+    else if (src || med) channel = 'other_campaign';
+    else if (!refHost || refHost === host || refHost.indexOf(host) > -1) channel = 'direct';
+    else if (/google\.|bing\.|duckduckgo|yahoo\.|ecosia|yandex/.test(refHost)) channel = 'organic_search';
+    else if (/facebook|instagram|linkedin|t\.co|twitter|x\.com|tiktok|youtube|pinterest|reddit/.test(refHost)) channel = 'organic_social';
+    else channel = 'referral';
+    touch.channel = channel;
+
+    // A visit only overwrites last-touch when it actually carries campaign
+    // information. Otherwise an internal navigation or a direct return inside
+    // the same session would wipe the source that brought the visitor in.
+    var carriesSource = !!(touch.pb_src || touch.gclid || touch.gbraid || touch.wbraid ||
+      touch.fbclid || touch.msclkid || touch.ttclid || touch.utm_source ||
+      touch.utm_medium || touch.utm_campaign);
+
+    var session = store('sessionStorage');
+    var local = store('localStorage');
+
+    var last = read(session, LAST);
+    if (carriesSource || !last) {
+      last = touch;
+      write(session, LAST, last);
+    }
+
+    var first = read(local, FIRST);
+    if (!first || !first.ts || (Date.now() - first.ts) > TTL) {
+      first = last;
+      write(local, FIRST, first);
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      traffic_channel: last.channel,
+      campaign_source: last.utm_source || '',
+      campaign_medium: last.utm_medium || '',
+      campaign_name: last.utm_campaign || '',
+      campaign_content: last.utm_content || '',
+      campaign_term: last.utm_term || '',
+      offline_code: last.pb_src || '',
+      landing_page: last.landing_page || '',
+      first_touch_channel: first.channel || '',
+      first_touch_campaign: first.utm_campaign || ''
+    });
+  } catch (e) {
+    // Never let measurement break the page.
+  }
+})();
+a:X
+0:{"P":null,"c":["","_not-found"],"q":"","i":false,"f":[[["",{"children":["/_not-found",{"children":["__PAGE__",{},"$undefined","$undefined",4608]},"$undefined","$undefined",4608]},"$undefined","$undefined",4624],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/11wuj1ne3v869.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/3fntmmi971322.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2utwihta69p08.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              if (window.location.pathname === '/' || window.location.pathname === '') {\n                window.location.replace('/hr');\n              }\n            "}}],["$","meta",null,{"httpEquiv":"X-UA-Compatible","content":"IE=edge"}],["$","noscript",null,{"children":"$2"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],"$L4","$L5","$L6"]}],"$L7"]}]]}],{"children":["$L8",{"children":["$L9",{},null,false,null]},null,false,"$a"]},null,false,null],"$Lb",false]],"m":"$undefined","G":["$c",["$Ld"]],"S":true,"h":null,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"CocvhU3aQBC9YTjGkSb03"}
+e:I[79520,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],""]
+10:I[2980,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"default"]
+11:I[39756,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"default"]
+12:I[37457,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"default"]
+13:I[25842,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"default"]
+14:I[97367,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"OutletBoundary"]
+15:"$Sreact.suspense"
+17:I[97367,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"ViewportBoundary"]
+19:I[97367,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"MetadataBoundary"]
+4:["$","$Le",null,{"strategy":"afterInteractive","children":"\n      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\n      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n      })(window,document,'script','dataLayer','GTM-THWF68CR');\n    "}]
+5:["$","$Le",null,{"id":"ms-clarity","strategy":"afterInteractive","children":"\n        (function(c,l,a,r,i,t,y){\n          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\n          t=l.createElement(r);t.async=1;t.src=\"https://www.clarity.ms/tag/\"+i;\n          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\n\n          var consent = null;\n          try { consent = localStorage.getItem(\"cookie-consent\"); } catch (e) {}\n\n          if (consent === \"granted\") {\n            c[a](\"consentv2\", {\n              ad_Storage: \"granted\",\n              analytics_Storage: \"granted\"\n            });\n          }\n        })(window, document, \"clarity\", \"script\", \"v8nubzutzz\");\n      "}]
+6:["$","$Le",null,{"id":"hs-script-loader","src":"//js-eu1.hs-scripts.com/147789375.js","strategy":"afterInteractive","async":true,"defer":true}]
+f:["$","iframe",null,{"src":"https://www.googletagmanager.com/ns.html?id=GTM-THWF68CR","height":"0","width":"0","style":{"display":"none","visibility":"hidden"}}]
+7:["$","body",null,{"className":"radio_canada_80ddd5d3-module__SQL20q__variable libre_franklin_ecada62-module__3Y_Q6a__variable antialiased font-default","children":[["$","noscript",null,{"children":"$f"}],["$","$L10",null,{"children":["$","$L11",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L12",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L13",null,{}]]}]
+8:["$","$1","c",{"children":[null,["$","$L11",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L12",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+9:["$","$1","c",{"children":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":"$7:props:children:1:props:children:props:notFound:0:1:props:style","children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":"$7:props:children:1:props:children:props:notFound:0:1:props:children:props:children:1:props:style","children":404}],["$","div",null,{"style":"$7:props:children:1:props:children:props:notFound:0:1:props:children:props:children:2:props:style","children":["$","h2",null,{"style":"$7:props:children:1:props:children:props:notFound:0:1:props:children:props:children:2:props:children:props:style","children":"This page could not be found."}]}]]}]}]],null,["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]]}]
+b:["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L17",null,{"children":"$L18"}],["$","div",null,{"hidden":true,"children":["$","$L19",null,{"children":["$","$15",null,{"name":"Next.Metadata","children":"$L1a"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+d:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/11wuj1ne3v869.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+a:C
+18:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1b:I[27201,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"IconMark"]
+16:null
+1a:[["$","title","0",{"children":"PrimeBooker - Agencija za Iznajmljivanje i Upravljanje Smještajem"}],["$","meta","1",{"name":"description","content":"Iskoristite puni potencijal svog smještaja. Uz PrimeBooker ostvarite maksimalnu popunjenost i zaradu. Besplatan početak suradnje!"}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.3ox8q4xa0k-9q.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L1b","3",{}]]

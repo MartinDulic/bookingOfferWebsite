@@ -1,0 +1,134 @@
+1:"$Sreact.fragment"
+d:I[68027,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"default",1]
+:HL["/_next/static/chunks/11wuj1ne3v869.css","style"]
+:HL["/_next/static/media/2245c258b0d2c062-s.p.2eb4s6ll1afkj.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/4dcb1d458a9f0457-s.p.1si508koa-egn.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/8a4bb24664ac8500-s.p.2_7gz-nbwppeo.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+2:["$","style",null,{"children":".pb-reveal{opacity:1!important;transform:none!important}"}]
+3:Te21,
+(function () {
+  try {
+    var FIRST = 'pb_attr_first';
+    var LAST = 'pb_attr_last';
+    var TTL = 90 * 24 * 60 * 60 * 1000;
+
+    var UTM = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_id'];
+    var CLICK = ['gclid','gbraid','wbraid','fbclid','ttclid','msclkid'];
+
+    var q = new URLSearchParams(window.location.search);
+    var host = window.location.hostname.replace(/^www\./, '');
+    var ref = document.referrer || '';
+    var refHost = '';
+    try { refHost = ref ? new URL(ref).hostname.replace(/^www\./, '') : ''; } catch (e) {}
+
+    function store(kind) { try { return window[kind]; } catch (e) { return null; } }
+    function read(s, k) { try { return s ? JSON.parse(s.getItem(k)) : null; } catch (e) { return null; } }
+    function write(s, k, v) { try { if (s) s.setItem(k, JSON.stringify(v)); } catch (e) {} }
+
+    var touch = { ts: Date.now() };
+    UTM.concat(CLICK).forEach(function (k) {
+      var v = q.get(k);
+      if (v) touch[k] = v;
+    });
+    var offline = q.get('pb_src');
+    if (offline) touch.pb_src = offline;
+    touch.landing_page = window.location.pathname + window.location.search;
+    touch.referrer = ref;
+
+    var src = (touch.utm_source || '').toLowerCase();
+    var med = (touch.utm_medium || '').toLowerCase();
+    var paid = /cpc|ppc|paid/.test(med);
+
+    var channel;
+    if (touch.pb_src) channel = 'offline';
+    else if (touch.gclid || touch.gbraid || touch.wbraid || (src === 'google' && paid)) channel = 'google_ads';
+    else if (touch.fbclid || /facebook|instagram|meta|^fb$|^ig$/.test(src)) channel = 'meta_ads';
+    else if (touch.msclkid) channel = 'microsoft_ads';
+    else if (touch.ttclid) channel = 'tiktok_ads';
+    else if (paid) channel = 'other_paid';
+    else if (src || med) channel = 'other_campaign';
+    else if (!refHost || refHost === host || refHost.indexOf(host) > -1) channel = 'direct';
+    else if (/google\.|bing\.|duckduckgo|yahoo\.|ecosia|yandex/.test(refHost)) channel = 'organic_search';
+    else if (/facebook|instagram|linkedin|t\.co|twitter|x\.com|tiktok|youtube|pinterest|reddit/.test(refHost)) channel = 'organic_social';
+    else channel = 'referral';
+    touch.channel = channel;
+
+    // A visit only overwrites last-touch when it actually carries campaign
+    // information. Otherwise an internal navigation or a direct return inside
+    // the same session would wipe the source that brought the visitor in.
+    var carriesSource = !!(touch.pb_src || touch.gclid || touch.gbraid || touch.wbraid ||
+      touch.fbclid || touch.msclkid || touch.ttclid || touch.utm_source ||
+      touch.utm_medium || touch.utm_campaign);
+
+    var session = store('sessionStorage');
+    var local = store('localStorage');
+
+    var last = read(session, LAST);
+    if (carriesSource || !last) {
+      last = touch;
+      write(session, LAST, last);
+    }
+
+    var first = read(local, FIRST);
+    if (!first || !first.ts || (Date.now() - first.ts) > TTL) {
+      first = last;
+      write(local, FIRST, first);
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      traffic_channel: last.channel,
+      campaign_source: last.utm_source || '',
+      campaign_medium: last.utm_medium || '',
+      campaign_name: last.utm_campaign || '',
+      campaign_content: last.utm_content || '',
+      campaign_term: last.utm_term || '',
+      offline_code: last.pb_src || '',
+      landing_page: last.landing_page || '',
+      first_touch_channel: first.channel || '',
+      first_touch_campaign: first.utm_campaign || ''
+    });
+  } catch (e) {
+    // Never let measurement break the page.
+  }
+})();
+b:X
+0:{"P":null,"c":["","hr","daljnjikoraci"],"q":"","i":false,"f":[[["",{"children":["hr",{"children":["daljnjikoraci",{"children":["__PAGE__",{},"$undefined","$undefined",4608]},"$undefined","$undefined",4608]},"$undefined","$undefined",4608]},"$undefined","$undefined",4624],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/11wuj1ne3v869.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/3fntmmi971322.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/2utwihta69p08.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              if (window.location.pathname === '/' || window.location.pathname === '') {\n                window.location.replace('/hr');\n              }\n            "}}],["$","meta",null,{"httpEquiv":"X-UA-Compatible","content":"IE=edge"}],["$","noscript",null,{"children":"$2"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],"$L4","$L5","$L6"]}],"$L7"]}]]}],{"children":["$L8",{"children":["$L9",{"children":["$La",{},null,false,null]},null,false,"$b"]},null,false,"$b"]},null,false,null],"$Lc",false]],"m":"$undefined","G":["$d",["$Le"]],"S":true,"h":null,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"CocvhU3aQBC9YTjGkSb03"}
+f:I[79520,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],""]
+11:I[2980,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"default"]
+12:I[39756,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"default"]
+13:I[37457,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"default"]
+14:I[25842,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"default"]
+18:I[47462,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js","/_next/static/chunks/3x_iypvkj0599.js","/_next/static/chunks/2xp4hnvx4cdkx.js"],"default"]
+20:I[97367,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"ViewportBoundary"]
+22:I[97367,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"MetadataBoundary"]
+23:"$Sreact.suspense"
+4:["$","$Lf",null,{"strategy":"afterInteractive","children":"\n      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\n      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n      })(window,document,'script','dataLayer','GTM-THWF68CR');\n    "}]
+5:["$","$Lf",null,{"id":"ms-clarity","strategy":"afterInteractive","children":"\n        (function(c,l,a,r,i,t,y){\n          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\n          t=l.createElement(r);t.async=1;t.src=\"https://www.clarity.ms/tag/\"+i;\n          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\n\n          var consent = null;\n          try { consent = localStorage.getItem(\"cookie-consent\"); } catch (e) {}\n\n          if (consent === \"granted\") {\n            c[a](\"consentv2\", {\n              ad_Storage: \"granted\",\n              analytics_Storage: \"granted\"\n            });\n          }\n        })(window, document, \"clarity\", \"script\", \"v8nubzutzz\");\n      "}]
+6:["$","$Lf",null,{"id":"hs-script-loader","src":"//js-eu1.hs-scripts.com/147789375.js","strategy":"afterInteractive","async":true,"defer":true}]
+10:["$","iframe",null,{"src":"https://www.googletagmanager.com/ns.html?id=GTM-THWF68CR","height":"0","width":"0","style":{"display":"none","visibility":"hidden"}}]
+7:["$","body",null,{"className":"radio_canada_80ddd5d3-module__SQL20q__variable libre_franklin_ecada62-module__3Y_Q6a__variable antialiased font-default","children":[["$","noscript",null,{"children":"$10"}],["$","$L11",null,{"children":["$","$L12",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L13",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L14",null,{}]]}]
+8:["$","$1","c",{"children":[null,["$","$L12",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L13",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+9:["$","$1","c",{"children":[null,["$","$L12",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L13",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+15:[[["$","source",null,{"srcSet":"/images/general/Villa_with_pool_w1920.avif","media":"(min-width: 768px)","type":"image/avif"}],["$","source",null,{"srcSet":"/images/general/Villa_with_pool_w800.avif","media":"(max-width: 767px)","type":"image/avif"}]],["$","img",null,{"src":"/images/general/Villa_with_pool_w1920.avif","alt":"","width":"$undefined","height":"$undefined","className":"absolute h-full w-full object-cover object-[60%_50%] lg:object-center","loading":"eager","fetchPriority":"high","decoding":"sync","aria-hidden":"true"}]]
+16:[false,["$","img",null,{"src":"/images/logo/pb_mark_light_golddoor.svg","alt":"PrimeBooker","width":2000,"height":264,"className":"h-6 w-auto object-contain lg:h-7","loading":"eager","fetchPriority":"high","decoding":"sync"}]]
+17:[false,["$","img",null,{"src":"/images/logo/logo_text_white.svg","alt":"PrimeBooker","width":2000,"height":264,"className":"h-3.5 w-auto object-contain lg:h-4","loading":"eager","fetchPriority":"high","decoding":"sync"}]]
+a:["$","$1","c",{"children":[["$","section",null,{"className":"relative flex min-h-svh w-full flex-col overflow-hidden bg-ink-deep","children":[["$","div",null,{"className":"absolute inset-x-0 top-0 h-[72%] overflow-hidden lg:h-full","children":[["$","picture",null,{"children":"$15"}],["$","div",null,{"className":"absolute inset-0 bg-[linear-gradient(180deg,rgba(11,14,16,.8)_0%,rgba(11,14,16,.86)_45%,rgba(11,14,16,.93)_80%,#0F1214_100%)] lg:bg-[linear-gradient(100deg,rgba(11,14,16,.84)_0%,rgba(11,14,16,.87)_46%,rgba(11,14,16,.58)_100%)]"}]]}],["$","header",null,{"className":"relative z-10 shrink-0 border-b border-white/10","children":["$","div",null,{"className":"pb-gutter mx-auto flex h-16 w-full max-w-[81rem] items-center justify-between lg:h-[4.75rem]","children":[["$","div",null,{"className":"flex items-center gap-2","children":[["$","picture",null,{"children":"$16"}],["$","picture",null,{"children":"$17"}]]}],["$","$L18",null,{"alwaysShowNumber":true,"placement":"next_steps"}]]}]}],["$","div",null,{"className":"pb-gutter relative z-10 mx-auto grid w-full max-w-[81rem] flex-1 content-center gap-y-4 py-7 lg:grid-cols-[minmax(0,1fr)_28.25rem] lg:gap-x-18 lg:gap-y-[2.125rem] lg:py-10","children":[["$","div",null,{"className":"lg:col-start-1 lg:row-start-1","children":[["$","div",null,{"className":"flex w-fit items-center gap-2.5 rounded-xs border border-gold/45 bg-ink-deep/50 py-2 pr-4 pl-3 lg:py-[0.5625rem]","children":[["$","svg",null,{"stroke":"currentColor","fill":"currentColor","strokeWidth":"0","viewBox":"0 0 512 512","className":"shrink-0 text-base text-gold lg:text-[1.125rem]","children":["$undefined",[["$","path","0",{"d":"M170.718 216.482L141.6 245.6l93.6 93.6 208-208-29.118-29.118L235.2 279.918l-64.482-63.436zM422.4 256c0 91.518-74.883 166.4-166.4 166.4S89.6 347.518 89.6 256 164.482 89.6 256 89.6c15.6 0 31.2 2.082 45.764 6.241L334 63.6C310.082 53.2 284.082 48 256 48 141.6 48 48 141.6 48 256s93.6 208 208 208 208-93.6 208-208h-41.6z","children":[]}]]],"style":{"color":"$undefined"},"height":"1em","width":"1em","xmlns":"http://www.w3.org/2000/svg"}],["$","span",null,{"className":"text-[clamp(0.78125rem,0.1vw+0.76rem,0.84375rem)] text-cream","children":"Zaprimili smo vaš zahtjev"}]]}],["$","h1",null,{"className":"mt-4 max-w-[15em] font-title text-[clamp(1.8125rem,2.3vw+1.25rem,3.25rem)] leading-[1.08] font-bold tracking-[-0.035em] text-white text-pretty lg:mt-7","children":"Čestitamo, napravili ste prvi korak prema uspješnom poslovanju i većoj zaradi."}],["$","div",null,{"className":"my-4 h-0.5 w-13 bg-gold lg:my-7 lg:w-16"}],["$","p",null,{"className":"pb-lead max-w-[36em] text-cream-dim text-pretty","children":"Svi iznajmljivači kojima smo pomogli zaraditi više započeli su ovdje. Sljedeći korak je naš poziv: u kratkom razgovoru prikupljamo podatke o vašem smještaju koji su nam potrebni za temeljitu analizu na osnovu tržišnih podataka za vašu lokaciju i kategoriju."}]]}],["$","div",null,{"className":"border border-white/10 border-t-2 border-t-gold bg-ink-card px-[1.125rem] py-[1.0625rem] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center lg:px-[2.125rem] lg:py-9","children":[["$","div",null,{"className":"pb-eyebrow tracking-[0.14em] text-gold-soft","children":"Što slijedi"}],["$","ol",null,{"className":"mt-4 flex flex-col lg:mt-6","children":[["$","li","Zovemo vas",{"className":"flex gap-3.5 border-white/10 py-3.5 not-last:border-b first:pt-0 last:pb-0 lg:gap-[1.125rem] lg:py-[1.625rem]","children":[["$","span",null,{"aria-hidden":"true","className":"flex size-6 shrink-0 items-center justify-center rounded-xs bg-gold text-[0.78125rem] font-extrabold text-ink lg:size-[1.875rem] lg:text-sm","children":1}],["$","div",null,{"children":[["$","div",null,{"className":"font-title text-[clamp(0.9375rem,0.2vw+0.89rem,1.0625rem)] font-bold tracking-[-0.02em] text-white","children":"Zovemo vas"}],"$L19"]}]]}],"$L1a","$L1b"]}]]}],"$L1c"]}]]}],["$L1d","$L1e"],"$L1f"]}]
+c:["$","$1","h",{"children":[null,["$","$L20",null,{"children":"$L21"}],["$","div",null,{"hidden":true,"children":["$","$L22",null,{"children":["$","$23",null,{"name":"Next.Metadata","children":"$L24"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+e:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/11wuj1ne3v869.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+28:I[97367,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"OutletBoundary"]
+b:C
+19:["$","div",null,{"className":"mt-1 text-[clamp(0.8125rem,0.15vw+0.776rem,0.90625rem)] leading-relaxed text-ash lg:mt-1.5","children":"Kratak razgovor u kojem prikupljamo podatke o vašem smještaju koji su potrebni za analizu."}]
+1a:["$","li","Izrađujemo analizu",{"className":"flex gap-3.5 border-white/10 py-3.5 not-last:border-b first:pt-0 last:pb-0 lg:gap-[1.125rem] lg:py-[1.625rem]","children":[["$","span",null,{"aria-hidden":"true","className":"flex size-6 shrink-0 items-center justify-center rounded-xs bg-gold text-[0.78125rem] font-extrabold text-ink lg:size-[1.875rem] lg:text-sm","children":2}],["$","div",null,{"children":[["$","div",null,{"className":"font-title text-[clamp(0.9375rem,0.2vw+0.89rem,1.0625rem)] font-bold tracking-[-0.02em] text-white","children":"Izrađujemo analizu"}],["$","div",null,{"className":"mt-1 text-[clamp(0.8125rem,0.15vw+0.776rem,0.90625rem)] leading-relaxed text-ash lg:mt-1.5","children":"Na temelju prikupljenih podataka izrađujemo detaljnu analizu poslovanja vašeg smještaja."}]]}]]}]
+1b:["$","li","Predstavljamo plan za povećanje zarade",{"className":"flex gap-3.5 border-white/10 py-3.5 not-last:border-b first:pt-0 last:pb-0 lg:gap-[1.125rem] lg:py-[1.625rem]","children":[["$","span",null,{"aria-hidden":"true","className":"flex size-6 shrink-0 items-center justify-center rounded-xs bg-gold text-[0.78125rem] font-extrabold text-ink lg:size-[1.875rem] lg:text-sm","children":3}],["$","div",null,{"children":[["$","div",null,{"className":"font-title text-[clamp(0.9375rem,0.2vw+0.89rem,1.0625rem)] font-bold tracking-[-0.02em] text-white","children":"Predstavljamo plan za povećanje zarade"}],["$","div",null,{"className":"mt-1 text-[clamp(0.8125rem,0.15vw+0.776rem,0.90625rem)] leading-relaxed text-ash lg:mt-1.5","children":"Pokazujemo koliko zarade vaš smještaj može donijeti i što konkretno treba promijeniti. Bez obveze, besplatno."}]]}]]}]
+25:[false,["$","img",null,{"src":"/images/people/Mira_K.avif","alt":"","width":"$undefined","height":"$undefined","className":"size-9 shrink-0 rounded-full object-cover lg:size-10","loading":"lazy","fetchPriority":"auto","decoding":"async","aria-hidden":"true"}]]
+1c:["$","div",null,{"className":"lg:col-start-1 lg:row-start-2","children":[["$","figure",null,{"className":"max-w-[36em] border-l-2 border-gold pl-4 lg:pl-[1.375rem]","children":[["$","div",null,{"className":"text-[clamp(1.15625rem,0.24vw+1.1rem,1.25rem)] leading-[1.35] font-bold tracking-[-0.025em] text-white text-pretty","children":"„Više slobodnog vremena i znatno veća zarada”"}],["$","blockquote",null,{"className":"mt-3 text-[clamp(0.90625rem,0.3vw+0.83rem,1.09375rem)] leading-relaxed text-cream-dimmer text-pretty","children":["„Odlučila sam iznajmljivanje prepustiti PrimeBooker-u kako bi imala više slobodnog vremena."," ",["$","strong",null,{"className":"font-bold text-white","children":"Od tada zarađujem znatno više"}],", a oko iznajmljivanja se uopće ne brinem.”"]}],["$","figcaption",null,{"className":"mt-3 flex items-center gap-2.5 lg:mt-3.5 lg:gap-3","children":[["$","picture",null,{"children":"$25"}],["$","div",null,{"children":[["$","div",null,{"className":"flex items-center gap-2.5","children":[["$","div",null,{"className":"font-title text-[clamp(0.90625rem,0.1vw+0.887rem,0.96875rem)] font-bold tracking-[-0.02em] text-white","children":"Mira K."}],["$","div",null,{"aria-hidden":"true","className":"flex gap-1 text-[0.75rem] text-gold","children":[["$","svg","0",{"stroke":"currentColor","fill":"currentColor","strokeWidth":"0","viewBox":"0 0 576 512","children":["$undefined",[["$","path","0",{"d":"M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z","children":[]}]]],"className":"$undefined","style":{"color":"$undefined"},"height":"1em","width":"1em","xmlns":"http://www.w3.org/2000/svg"}],["$","svg","1",{"stroke":"currentColor","fill":"currentColor","strokeWidth":"0","viewBox":"0 0 576 512","children":["$undefined",[["$","path","0",{"d":"M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z","children":[]}]]],"className":"$undefined","style":{"color":"$undefined"},"height":"1em","width":"1em","xmlns":"http://www.w3.org/2000/svg"}],["$","svg","2",{"stroke":"currentColor","fill":"currentColor","strokeWidth":"0","viewBox":"0 0 576 512","children":["$undefined",[["$","path","0",{"d":"M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z","children":[]}]]],"className":"$undefined","style":{"color":"$undefined"},"height":"1em","width":"1em","xmlns":"http://www.w3.org/2000/svg"}],["$","svg","3",{"stroke":"currentColor","fill":"currentColor","strokeWidth":"0","viewBox":"0 0 576 512","children":["$undefined",[["$","path","0",{"d":"M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z","children":[]}]]],"className":"$undefined","style":{"color":"$undefined"},"height":"1em","width":"1em","xmlns":"http://www.w3.org/2000/svg"}],["$","svg","4",{"stroke":"currentColor","fill":"currentColor","strokeWidth":"0","viewBox":"0 0 576 512","children":["$undefined",[["$","path","0",{"d":"M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z","children":[]}]]],"className":"$undefined","style":{"color":"$undefined"},"height":"1em","width":"1em","xmlns":"http://www.w3.org/2000/svg"}]]}]]}],"$L26"]}]]}]]}],"$L27"]}]
+1d:["$","script","script-0",{"src":"/_next/static/chunks/3x_iypvkj0599.js","async":true,"nonce":"$undefined"}]
+1e:["$","script","script-1",{"src":"/_next/static/chunks/2xp4hnvx4cdkx.js","async":true,"nonce":"$undefined"}]
+1f:["$","$L28",null,{"children":["$","$23",null,{"name":"Next.MetadataOutlet","children":"$@29"}]}]
+26:["$","div",null,{"className":"pb-eyebrow mt-0.5 text-[0.65625rem] tracking-[0.14em] text-ash-cool","children":"Split · Dva apartmana"}]
+27:["$","div",null,{"className":"mt-[1.125rem] flex max-w-[36em] items-center gap-6 border-t border-white/15 pt-4 lg:mt-8 lg:justify-center lg:gap-9 lg:pt-[1.625rem] lg:text-center","children":[["$","$1","Makarska · do 4 osobe",{"children":[false,["$","div",null,{"children":[["$","div",null,{"className":"font-title text-[clamp(1.3125rem,0.5vw+1.19rem,1.625rem)] leading-none font-bold tracking-[-0.03em] text-white","children":["#1",["$","span",null,{"className":"text-gold","children":" po zaradi"}]]}],["$","div",null,{"className":"pb-eyebrow mt-1.5 text-[clamp(0.625rem,0.15vw+0.6rem,0.71875rem)] tracking-[0.14em] text-ash-cool","children":"Makarska · do 4 osobe"}]]}]]}],["$","$1","Ocjena gostiju",{"children":[["$","span",null,{"aria-hidden":"true","className":"h-[2.375rem] w-px shrink-0 bg-white/15 lg:h-11"}],["$","div",null,{"children":[["$","div",null,{"className":"font-title text-[clamp(1.3125rem,0.5vw+1.19rem,1.625rem)] leading-none font-bold tracking-[-0.03em] text-white","children":["9.7",["$","span",null,{"className":"text-[0.65em] text-gold","children":"/10"}]]}],["$","div",null,{"className":"pb-eyebrow mt-1.5 text-[clamp(0.625rem,0.15vw+0.6rem,0.71875rem)] tracking-[0.14em] text-ash-cool","children":"Ocjena gostiju"}]]}]]}]]}]
+21:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+2a:I[27201,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/2utwihta69p08.js"],"IconMark"]
+24:[["$","title","0",{"children":"Hvala na upitu — PrimeBooker"}],["$","meta","1",{"name":"description","content":"Vaš zahtjev je zaprimljen. Javljamo se telefonom, izrađujemo analizu na stvarnim tržišnim podacima i pokazujemo vam koliko zarade propuštate."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}],["$","link","3",{"rel":"icon","href":"/favicon.ico?favicon.3ox8q4xa0k-9q.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L2a","4",{}]]
+29:null
