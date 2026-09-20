@@ -1,23 +1,27 @@
 "use client"
 import { trackCallIntent } from '@/lib/trackingUtils';
-import React, { useRef } from 'react'
+import React from 'react'
 
-const PhoneNumberLink = () => {
-  // Ref persists for the duration of the component's lifecycle on the page
-  const hasTrackedThisVisit = useRef(false);
+/**
+ * The inline phone number used inside contact/estimate copy.
+ *
+ * Deduplication now lives in trackCallIntent and is keyed to the session, so a
+ * visitor who clicks the header button and then this link is counted once.
+ * The old per-mount ref reset on every route change.
+ */
+const PhoneNumberLink = ({ placement = "contact_section" }) => {
   const handleCallClick = (e) => {
-    if (!hasTrackedThisVisit.current) {
-      trackCallIntent();
-      hasTrackedThisVisit.current = true;
-    }
-    // 2. Check if the user is on a mobile device
-    const isMobile = /iPhone|Android/i.test(navigator.userAgent);
+    const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
 
-    // 3. If not on mobile, prevent the default 'tel:' behavior and open WhatsApp
+    trackCallIntent({ placement, method: isMobile ? "phone" : "whatsapp" });
+
     if (!isMobile) {
       e.preventDefault();
-      const whatsappUrl = "https://wa.me/385992032607?text=Pozdrav,%20zanimaju%20me%20vaše%20usluge.";
-      window.open(whatsappUrl, '_blank');
+      window.open(
+        "https://wa.me/385992032607?text=Pozdrav,%20zanimaju%20me%20vaše%20usluge.",
+        "_blank",
+        "noopener"
+      );
     }
   };
 

@@ -25,7 +25,7 @@ const RecapSection = () => (
       <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(15,18,20,.72)_0%,rgba(15,18,20,.46)_16%,rgba(15,18,20,.5)_100%)]" />
 
       <Reveal className="relative z-10 w-full max-w-[28.25rem]">
-        <GoldContactForm />
+        <GoldContactForm placement="recap" />
       </Reveal>
     </div>
 
@@ -38,8 +38,8 @@ const RecapSection = () => (
       <div className="relative xl:static">
         <div className="absolute inset-0 xl:hidden">
           <ResponsiveImage
-            mobileSrc="/images/temp/Villa_Pool.jpg"
-            desktopSrc="/images/temp/Villa_Pool.jpg"
+            mobileSrc="/images/general/Villa_Pool_w800.avif"
+            desktopSrc="/images/general/Villa_Pool_w1920.avif"
             alt="Vila s bazenom"
             className="inset-0 object-[50%_38%]"
           />
@@ -148,7 +148,7 @@ const RecapSection = () => (
           </Reveal>
 
           <Reveal className="mt-9 xl:hidden">
-            <GoldContactForm />
+            <GoldContactForm placement="recap" />
           </Reveal>
         </div>
       </div>

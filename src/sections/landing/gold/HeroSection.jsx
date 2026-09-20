@@ -83,7 +83,7 @@ const HeroSection = () => (
         </div>
 
         <h1 className="pb-h1 mt-7 font-title text-white text-pretty sm:mt-8">
-          Zaradite 40% više od iznajmljivanja bez ikakvih obveza
+          Zaradite 20% - 80% više od iznajmljivanja bez ikakvih obveza
         </h1>
 
         <div className="my-6 h-0.5 w-14 bg-gold sm:w-16" />
@@ -127,7 +127,7 @@ const HeroSection = () => (
       </div>
 
       <div className="w-full lg:w-[28.25rem] lg:shrink-0">
-        <GoldContactForm />
+        <GoldContactForm placement="hero" />
         <div className="mt-4 flex justify-center gap-5 lg:hidden">
           {["Neobvezujuće", "Konkretni savjeti"].map((note) => (
             <div

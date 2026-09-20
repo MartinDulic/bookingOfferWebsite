@@ -1,0 +1,459 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-09-20 00:00:00",
+  "containerVersion": {
+    "accountId": "6341024092",
+    "containerId": "244531626",
+    "containerVersionId": "0",
+    "container": {
+      "accountId": "6341024092",
+      "containerId": "244531626",
+      "name": "primebooker.com",
+      "publicId": "GTM-THWF68CR",
+      "usageContext": [
+        "WEB"
+      ]
+    },
+    "variable": [
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "DLV - traffic_channel",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "traffic_channel"
+          }
+        ]
+      },
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "DLV - campaign_source",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "campaign_source"
+          }
+        ]
+      },
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "DLV - campaign_medium",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "campaign_medium"
+          }
+        ]
+      },
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "DLV - campaign_name",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "campaign_name"
+          }
+        ]
+      },
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "DLV - campaign_content",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "campaign_content"
+          }
+        ]
+      },
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "DLV - campaign_term",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "campaign_term"
+          }
+        ]
+      },
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "DLV - offline_code",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "offline_code"
+          }
+        ]
+      },
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "DLV - landing_page",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "landing_page"
+          }
+        ]
+      },
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "DLV - first_touch_channel",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "first_touch_channel"
+          }
+        ]
+      },
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "DLV - first_touch_campaign",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "first_touch_campaign"
+          }
+        ]
+      },
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "DLV - lead_id",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "lead_id"
+          }
+        ]
+      },
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "DLV - value",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "value"
+          }
+        ]
+      },
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "DLV - currency",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "currency"
+          }
+        ]
+      },
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "DLV - call_method",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "call_method"
+          }
+        ]
+      },
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "DLV - call_placement",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "call_placement"
+          }
+        ]
+      },
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "DLV - cta_placement",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "cta_placement"
+          }
+        ]
+      },
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "DLV - form_placement",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "form_placement"
+          }
+        ]
+      },
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "DLV - attribution_dropped",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "attribution_dropped"
+          }
+        ]
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "6341024092",
+        "containerId": "244531626",
+        "name": "Event - Form Start",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "form_start_custom"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

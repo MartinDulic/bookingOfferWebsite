@@ -17,7 +17,7 @@ const HeaderLogo = () => {
     // </div>
     <div className="flex items-center gap-2">
       <ResponsiveImage
-        desktopSrc="/images/temp/logo/pb_mark_light_golddoor.svg"
+        desktopSrc="/images/logo/pb_mark_light_golddoor.svg"
         alt="PrimeBooker"
         type="image/svg+xml"
         fill={false}
@@ -27,7 +27,7 @@ const HeaderLogo = () => {
         className="h-6 w-auto object-contain lg:h-7"
       />
       <ResponsiveImage
-        desktopSrc="/images/temp/logo/logo_text_white.svg"
+        desktopSrc="/images/logo/logo_text_white.svg"
         alt="PrimeBooker"
         type="image/svg+xml"
         fill={false}

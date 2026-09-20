@@ -7,7 +7,7 @@ const stats = [
     label: "Prosječni rast zarade",
     value: (
       <>
-        +<CountUp to={40} />
+        +<CountUp to={42} />
         <span className="text-gold">%</span>
       </>
     ),

@@ -2,7 +2,9 @@
 import React, { useRef, useState } from "react";
 import { FiSend } from "react-icons/fi";
 import { LuLock } from "react-icons/lu";
-import { trackLead } from "@/lib/trackingUtils";
+import { trackLead, trackFormStart } from "@/lib/trackingUtils";
+import { attributionFields, getHubspotUtk, newLeadId } from "@/lib/attribution";
+import { submitHubspotForm } from "@/lib/hubspotSubmit";
 import CostumFormInput from "./CostumFormInput";
 import AddressAutocomplete from "./AdressAutocomplete";
 import inputStyles from "@/components/ui-lib/gold/goldFieldStyles";
@@ -45,6 +47,7 @@ const GoldEstimateForm = ({ className = "" }) => {
   });
 
   const updateField = (field) => (data) => {
+    trackFormStart("get_free_earings_estimate_form");
     setFormState((prev) => ({ ...prev, [field]: data }));
   };
 
@@ -76,44 +79,50 @@ const GoldEstimateForm = ({ className = "" }) => {
 
     const portalId = "147789375";
     const formId = "fe3c07de-c967-4b72-82a0-e7a71b893a21";
-    const url = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
 
     const formData = new FormData(e.target);
     const nameParts = formData.get("name").trim().split(" ");
 
-    const payload = {
-      fields: [
-        { name: "email", value: formData.get("email") },
-        { name: "firstname", value: nameParts[0] },
-        {
-          name: "lastname",
-          value: nameParts.length > 1 ? nameParts.slice(1).join(" ") : "",
-        },
-        { name: "phone", value: formData.get("phone") },
-        { name: "propertyadress", value: formData.get("adress") },
-        { name: "numberofbeds", value: formData.get("beds") },
-        { name: "numberofguests", value: formData.get("guests") },
-        { name: "numberofbaths", value: formData.get("baths") },
-      ],
+    // One id per submission, shared with GA4, Google Ads, Meta and HubSpot so
+    // this lead can be matched back to its click for offline import.
+    const leadId = newLeadId();
+
+    const coreFields = [
+      { name: "email", value: formData.get("email") },
+      { name: "firstname", value: nameParts[0] },
+      {
+        name: "lastname",
+        value: nameParts.length > 1 ? nameParts.slice(1).join(" ") : "",
+      },
+      { name: "phone", value: formData.get("phone") },
+      { name: "propertyadress", value: formData.get("adress") },
+      { name: "numberofbeds", value: formData.get("beds") },
+      { name: "numberofguests", value: formData.get("guests") },
+      { name: "numberofbaths", value: formData.get("baths") },
+    ];
+
+    const result = await submitHubspotForm({
+      portalId,
+      formId,
+      coreFields,
+      attributionExtras: attributionFields(leadId),
       context: {
+        // Without hutk HubSpot files the contact under Offline Sources.
+        hutk: getHubspotUtk() || undefined,
         pageUri: window.location.href,
         pageName: document.title,
       },
-    };
-
-    const response = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
     });
 
-    if (response.ok) {
-      trackLead("get_free_earings_estimate_form");
+    if (result.ok) {
+      trackLead("get_free_earings_estimate_form", leadId, {
+        attribution_dropped: result.attributionDropped ? "true" : "false",
+      });
       setTimeout(() => {
         window.location.href = "/hr/daljnjikoraci";
-      }, 500);
+      }, 700);
     } else {
-      console.error("HubSpot API Error:", await response.json());
+      console.error("HubSpot API Error:", result.error);
       alert(
         "Došlo je do pogreške prilikom slanja obrasca. Molimo pokušajte ponovno."
       );

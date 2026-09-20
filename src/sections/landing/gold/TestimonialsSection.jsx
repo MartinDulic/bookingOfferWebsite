@@ -12,7 +12,7 @@ const testimonials = [
     name: "Julijana Prenkepalaj",
     city: "Makarska",
     accomodation: "Dvosobni apartman",
-    image: "/images/temp/Julijana_P.png",
+    image: "/images/people/Julijana_P.webp",
     headline: "„Brza podrška, veća zarada i gosti čak i zimi”",
     quoteBefore:
       "Godinama sam radila s raznim agencijama. Zarada je bila prosječna, ali najviše me smetalo što bi bilo teško dobiti nekoga na telefon kada bi nastao problem. Nakon prošle sezone čula sam za PrimeBooker. Bila sam nesigurna oko suradnje s još jednom agencijom, ali odlučila sam pokušati jer nisam bila zadovoljna tadašnjom agencijom. ",
@@ -23,7 +23,7 @@ const testimonials = [
     name: "Laurentiu Dimitriu",
     city: "Makarska",
     accomodation: "Jednosobni apartman",
-    image: "/images/temp/Laurentiu_D.png",
+    image: "/images/people/Laurentiu_D.webp",
     headline: "„Nakon prve sezone s PrimeBookerom kupio sam još dva apartmana”",
     quoteBefore:
     //       "Prije par godina sam kupio apartman za iznajmljivanje i angažirao agenciju s kojom nisam bio zadovoljan. Zarada je bila loša, nedovoljna niti da pokrijem trošak kredita za apartman. Osjetio sam da trebam nešto promijeniti i čuo sam za PrimeBooker preko poznanika. Odlučio sam se za suradnju nakon što su mi objasnili kako rade i kako će povećati zaradu. ",
@@ -35,7 +35,7 @@ const testimonials = [
     name: "Darko Vrljičak",
     city: "Makarska",
     accomodation: "Dvosobni apartman",
-    image: "/images/temp/Darko_V.png",
+    image: "/images/people/Darko_V.webp",
     headline: "„Transparentnost, odlična organizacija i veća zarada”",
     quoteBefore:
       "Kada smo supruga i ja odlučili iznajmljivati stan, uz redovan posao nismo imali vremena baviti se time. Angažirali smo agenciju i sve je bilo u redu dok naš agent nije otišao. Nakon toga je pala kvaliteta usluge i stvorio sam dojam da je iznajmljivanje postalo neisplativo. Tada smo čuli za PrimeBooker i odlučili im pružiti priliku. ",

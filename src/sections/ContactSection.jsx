@@ -18,7 +18,7 @@ const ContactSection = () => {
         <Title className={" text-primary-600"}>Otkrijte potencijal svog smještaja</Title>
         <BodyText className={"my-8 text-neutral-800 w-full "}>
           <div className='mb-4 italic'>Nakon što ispunite obrazac, kontaktirat ćemo vas u najkraćem mogućem roku.</div>
-          <div className='mb-4 italic'>Također možete nas nazvati na broj: <PhoneNumberLink /></div>
+          <div className='mb-4 italic'>Također možete nas nazvati na broj: <PhoneNumberLink placement="contact_section" /></div>
         </BodyText>
         <Testimonial 
           className='hidden xl:flex mt-16 bg-white'

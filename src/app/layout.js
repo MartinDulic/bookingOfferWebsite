@@ -10,7 +10,8 @@ import Script from "next/script";
 import GtmScript from "@/lib/integrations/gtmScript";
 import GtmNoscript from "@/lib/integrations/gtmNoscript";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
-import MetaPixel from "@/lib/integrations/metaPixel";
+import AttributionScript from "@/lib/integrations/attributionScript";
+import HubSpotTracking from "@/lib/integrations/hubspotTracking";
 
 // Body copy, eyebrows, UI — everything that is not a title.
 const libreFranklin = Libre_Franklin({
@@ -48,8 +49,8 @@ const radioCanada = Radio_Canada({
 });
 
 export const metadata = {
-  title: "PrimeBooker - Agencija za Iznajmljivanje i Upravljanje Nekretninama",
-  description: "Iskoristite puni potencijal svog smještaja. Uz PrimeBooker ostvarite maksimalnu popunjenost i zaradu. Besplatno profesionalno fotografiranje za nove klijente!",
+  title: "PrimeBooker - Agencija za Iznajmljivanje i Upravljanje Smještajem",
+  description: "Iskoristite puni potencijal svog smještaja. Uz PrimeBooker ostvarite maksimalnu popunjenost i zaradu. Besplatan početak suradnje!",
 };
 
 export default function RootLayout({ children }) {
@@ -84,10 +85,15 @@ export default function RootLayout({ children }) {
         </noscript>
         
         {/* <AntiFlicker /> */}
+        {/* Order matters: attribution pushes to dataLayer before gtm.js loads,
+            so the values are in GTM's data model by the Initialization trigger. */}
+        <AttributionScript />
         <GtmScript />
         <MicrosoftClarity />
+        <HubSpotTracking />
+        {/* GA4 runs through GTM. The Meta pixel now lives only in the GTM
+            container — having it here as well fired every PageView twice. */}
         {/* <GoogleAnalytics /> */}
-        <MetaPixel />
       </head>
       <body
         className={`${radioCanada.variable} ${libreFranklin.variable} antialiased font-default`}

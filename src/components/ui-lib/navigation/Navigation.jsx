@@ -77,7 +77,7 @@ const Navigation = ({navigationData, language = "hr"}) => {
               <SmoothScrollLink href={"#faq"}>{language == "hr" ? "Česta Pitanja" : "FAQ"}</SmoothScrollLink>
             </div> */}
 
-            <CallCta />
+            <CallCta placement="header" />
             <span className="hidden h-5 w-px bg-white/15 lg:block" />
             <HeaderCta />
           </nav>

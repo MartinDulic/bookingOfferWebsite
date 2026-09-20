@@ -1,5 +1,6 @@
 "use client"
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
+import { trackCtaClick } from '@/lib/trackingUtils';
 
 const HeaderCta = ({className = "", language = "hr"}) => {
   const smoothScrollTo = useSmoothScroll(0);
@@ -9,6 +10,7 @@ const HeaderCta = ({className = "", language = "hr"}) => {
   // See GoldCta: next/link no-ops on a hash click once the URL already has it.
   const handleClick = (e) => {
     e.preventDefault();
+    trackCtaClick("headerCta")
     smoothScrollTo(href);
   };
 

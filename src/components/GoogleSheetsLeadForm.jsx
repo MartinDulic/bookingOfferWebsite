@@ -55,7 +55,7 @@ const GoogleSheetsLeadForm = ({ className, inputClassName, invalidPhoneText, inv
     }
 
     form.submit();
-    trackLead(); // Track the lead in GA4
+    trackLead("google_sheets_form"); // form_id was undefined before this
     setSubmitted(true);
   };
 

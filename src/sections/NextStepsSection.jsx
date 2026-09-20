@@ -54,16 +54,22 @@ const proofStats = [
  */
 const NextStepsSection = () => (
   <section className="relative flex min-h-svh w-full flex-col overflow-hidden bg-ink-deep">
-    <div className="absolute inset-0 overflow-hidden">
+    {/* Stacked, the photo covers only the intro and the steps card and resolves
+        into the section background before the testimonial — the last gradient
+        stop is fully opaque ink-deep, so wherever the copy reflows the cut-off
+        lands there is never a visible seam. Side by side it covers everything. */}
+    <div className="absolute inset-x-0 top-0 h-[72%] overflow-hidden lg:h-full">
       <ResponsiveImage
-        mobileSrc="/images/temp/Villa_with_pool.jpg"
-        desktopSrc="/images/temp/Villa_with_pool.jpg"
+        mobileSrc="/images/general/Villa_with_pool_w800.avif"
+        desktopSrc="/images/general/Villa_with_pool_w1920.avif"
         alt=""
         aria-hidden="true"
         priority
         className="object-[60%_50%] lg:object-center"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,14,16,.95)_0%,rgba(11,14,16,.92)_55%,rgba(11,14,16,.96)_100%)] lg:bg-[linear-gradient(100deg,rgba(11,14,16,.96)_0%,rgba(11,14,16,.91)_42%,rgba(11,14,16,.68)_100%)]" />
+      {/* Scrim deepens toward the stat labels (ash-cool on bright pool water),
+          the dimmest type sitting on the photo and the first thing to fail. */}
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,14,16,.8)_0%,rgba(11,14,16,.86)_45%,rgba(11,14,16,.93)_80%,#0F1214_100%)] lg:bg-[linear-gradient(100deg,rgba(11,14,16,.84)_0%,rgba(11,14,16,.87)_46%,rgba(11,14,16,.58)_100%)]" />
     </div>
 
     {/* Pared-back header: the visitor has already converted, so there is no nav
@@ -71,7 +77,7 @@ const NextStepsSection = () => (
     <header className="relative z-10 shrink-0 border-b border-white/10">
       <div className="pb-gutter mx-auto flex h-16 w-full max-w-[81rem] items-center justify-between lg:h-[4.75rem]">
         <HeaderLogo />
-        <CallCta alwaysShowNumber event="nextStepsCallCta" />
+        <CallCta alwaysShowNumber placement="next_steps" />
       </div>
     </header>
 
@@ -93,8 +99,8 @@ const NextStepsSection = () => (
         <div className="my-4 h-0.5 w-13 bg-gold lg:my-7 lg:w-16" />
 
         <p className="pb-lead max-w-[36em] text-cream-dim text-pretty">
-          Svaki vlasnik s kojim danas radimo započeo je na istom mjestu gdje ste
-          sada Vi. Sljedeći korak je naš poziv: u kratkom razgovoru prikupljamo
+          Svi iznajmljivači kojima smo pomogli zaraditi više započeli su ovdje.
+          Sljedeći korak je naš poziv: u kratkom razgovoru prikupljamo
           podatke o vašem smještaju koji su nam potrebni za temeljitu analizu na
           osnovu tržišnih podataka za vašu lokaciju i kategoriju.
         </p>

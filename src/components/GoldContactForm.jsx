@@ -2,7 +2,9 @@
 import React, { useRef, useState } from "react";
 import { FiSend } from "react-icons/fi";
 import { LuLock } from "react-icons/lu";
-import { trackLead } from "@/lib/trackingUtils";
+import { trackLead, trackFormStart } from "@/lib/trackingUtils";
+import { attributionFields, getHubspotUtk, newLeadId } from "@/lib/attribution";
+import { submitHubspotForm } from "@/lib/hubspotSubmit";
 import CostumFormInput from "./CostumFormInput";
 import goldFieldStyles from "@/components/ui-lib/gold/goldFieldStyles";
 
@@ -18,7 +20,12 @@ const validateEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 const validateName = (value) => value.trim().length >= 2;
 const validatePhone = (value) => value.replace(/\D/g, "").length >= 6;
 
-const GoldContactForm = ({ className = "" }) => {
+/**
+ * `placement` distinguishes the hero instance from the one in the recap
+ * section — both submit the same form, and without this GA4 cannot show
+ * which position on the page actually converts.
+ */
+const GoldContactForm = ({ className = "", placement = "unknown" }) => {
   const nameRef = useRef();
   const phoneRef = useRef();
   const emailRef = useRef();
@@ -31,6 +38,7 @@ const GoldContactForm = ({ className = "" }) => {
   });
 
   const updateField = (field) => (data) => {
+    trackFormStart("contact_us_form");
     setFormState((prev) => ({ ...prev, [field]: data }));
   };
 
@@ -50,36 +58,39 @@ const GoldContactForm = ({ className = "" }) => {
     const formData = new FormData(e.target);
     const nameParts = formData.get("name").trim().split(" ");
 
-    const payload = {
-      fields: [
-        { name: "email", value: formData.get("email") },
-        { name: "firstname", value: nameParts[0] },
-        {
-          name: "lastname",
-          value: nameParts.length > 1 ? nameParts.slice(1).join(" ") : "",
-        },
-        { name: "phone", value: formData.get("phone") },
-      ],
-      context: {
-        pageUri: window.location.href,
-        pageName: document.title,
+    // One id per submission, sent to GA4, Google Ads, Meta and HubSpot alike,
+    // so this lead can later be matched back to its click for offline import.
+    const leadId = newLeadId();
+
+    const coreFields = [
+      { name: "email", value: formData.get("email") },
+      { name: "firstname", value: nameParts[0] },
+      {
+        name: "lastname",
+        value: nameParts.length > 1 ? nameParts.slice(1).join(" ") : "",
       },
-    };
+      { name: "phone", value: formData.get("phone") },
+    ];
 
     setSubmitting(true);
 
     try {
-      const response = await fetch(
-        `https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_ID}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        }
-      );
+      const result = await submitHubspotForm({
+        portalId: PORTAL_ID,
+        formId: FORM_ID,
+        coreFields,
+        attributionExtras: attributionFields(leadId),
+        context: {
+          // hutk is what lets HubSpot attribute this contact to its own tracked
+          // session instead of filing it under Offline Sources.
+          hutk: getHubspotUtk() || undefined,
+          pageUri: window.location.href,
+          pageName: document.title,
+        },
+      });
 
-      if (!response.ok) {
-        console.error("HubSpot API Error:", await response.json());
+      if (!result.ok) {
+        console.error("HubSpot API Error:", result.error);
         alert(
           "Došlo je do pogreške prilikom slanja obrasca. Molimo pokušajte ponovno."
         );
@@ -87,7 +98,10 @@ const GoldContactForm = ({ className = "" }) => {
         return;
       }
 
-      trackLead("contact_us_form");
+      trackLead("contact_us_form", leadId, {
+        form_placement: placement,
+        attribution_dropped: result.attributionDropped ? "true" : "false",
+      });
       setTimeout(() => {
         window.location.href = "/hr/daljnjikoraci";
       }, 700);
