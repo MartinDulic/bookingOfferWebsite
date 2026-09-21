@@ -84,14 +84,14 @@ const NextStepsSection = () => (
     <div className="pb-gutter relative z-10 mx-auto grid w-full max-w-[81rem] flex-1 content-center gap-y-4 py-7 lg:grid-cols-[minmax(0,1fr)_28.25rem] lg:gap-x-18 lg:gap-y-[2.125rem] lg:py-10">
       {/* Confirmation, and what the call we are about to make is for */}
       <div className="lg:col-start-1 lg:row-start-1">
-        <div className="flex w-fit items-center gap-2.5 rounded-xs border border-gold/45 bg-ink-deep/50 py-2 pr-4 pl-3 lg:py-[0.5625rem]">
+        {/* <div className="flex w-fit items-center gap-2.5 rounded-xs border border-gold/45 bg-ink-deep/50 py-2 pr-4 pl-3 lg:py-[0.5625rem]">
           <IoMdCheckmarkCircleOutline className="shrink-0 text-base text-gold lg:text-[1.125rem]" />
           <span className="text-[clamp(0.78125rem,0.1vw+0.76rem,0.84375rem)] text-cream">
             Zaprimili smo vaš zahtjev
           </span>
-        </div>
+        </div> */}
 
-        <h1 className="mt-4 max-w-[15em] font-title text-[clamp(1.8125rem,2.3vw+1.25rem,3.25rem)] leading-[1.08] font-bold tracking-[-0.035em] text-white text-pretty lg:mt-7">
+        <h1 className="max-w-[15em] font-title text-[clamp(1.8125rem,2.3vw+1.25rem,3.25rem)] leading-[1.08] font-bold tracking-[-0.035em] text-white text-pretty lg:mt-7">
           Čestitamo, napravili ste prvi korak prema uspješnom poslovanju i većoj
           zaradi.
         </h1>
@@ -138,7 +138,7 @@ const NextStepsSection = () => (
 
       {/* Social proof */}
       <div className="lg:col-start-1 lg:row-start-2">
-        <figure className="max-w-[36em] border-l-2 border-gold pl-4 lg:pl-[1.375rem]">
+        {/* <figure className="max-w-[36em] border-l-2 border-gold pl-4 lg:pl-[1.375rem]">
           <div className="text-[clamp(1.15625rem,0.24vw+1.1rem,1.25rem)] leading-[1.35] font-bold tracking-[-0.025em] text-white text-pretty">
             „Više slobodnog vremena i znatno veća zarada”
           </div>
@@ -178,7 +178,7 @@ const NextStepsSection = () => (
               </div>
             </div>
           </figcaption>
-        </figure>
+        </figure> */}
 
         {/* Only two figures, so they read as a pair centred under the column
             rather than a row that trails off — see lg:justify-center. */}

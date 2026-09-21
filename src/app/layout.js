@@ -9,7 +9,10 @@ import LanguageRedirectScript from "@/lib/langRedirectScript";
 import Script from "next/script";
 import GtmScript from "@/lib/integrations/gtmScript";
 import GtmNoscript from "@/lib/integrations/gtmNoscript";
-import CookieConsentBanner from "@/components/CookieConsentBanner";
+// Consent banner disabled — see ConsentDefaultScript. The component and its
+// per-category logic (src/lib/consent.js) are kept for when it comes back.
+// import CookieConsentBanner from "@/components/CookieConsentBanner";
+import ConsentDefaultScript from "@/lib/integrations/consentDefaultScript";
 import AttributionScript from "@/lib/integrations/attributionScript";
 import HubSpotTracking from "@/lib/integrations/hubspotTracking";
 
@@ -59,8 +62,14 @@ export default function RootLayout({ children }) {
       <head>
         <script dangerouslySetInnerHTML={{
             __html: `
+              // Carry the query string and hash across the redirect. A bare
+              // replace('/hr') silently discards everything after the "?",
+              // which destroys gclid, fbclid, utm_* and our own pb_src flyer
+              // codes for anyone landing on the bare domain — the visit then
+              // looks like direct traffic and the ad that paid for it gets no
+              // credit.
               if (window.location.pathname === '/' || window.location.pathname === '') {
-                window.location.replace('/hr');
+                window.location.replace('/hr' + window.location.search + window.location.hash);
               }
             `
           }} />
@@ -85,8 +94,10 @@ export default function RootLayout({ children }) {
         </noscript>
         
         {/* <AntiFlicker /> */}
-        {/* Order matters: attribution pushes to dataLayer before gtm.js loads,
-            so the values are in GTM's data model by the Initialization trigger. */}
+        {/* Order matters: consent and attribution both push to dataLayer before
+            gtm.js loads, so the values are in GTM's data model by the
+            Initialization trigger. */}
+        <ConsentDefaultScript />
         <AttributionScript />
         <GtmScript />
         <MicrosoftClarity />
@@ -102,7 +113,7 @@ export default function RootLayout({ children }) {
         <GrowthBookProvider >
           {children}
         </GrowthBookProvider>
-        <CookieConsentBanner />
+        {/* <CookieConsentBanner /> */}
       </body>
     </html>
   );
