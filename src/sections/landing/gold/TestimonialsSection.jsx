@@ -29,7 +29,7 @@ const testimonials = [
     //       "Prije par godina sam kupio apartman za iznajmljivanje i angažirao agenciju s kojom nisam bio zadovoljan. Zarada je bila loša, nedovoljna niti da pokrijem trošak kredita za apartman. Osjetio sam da trebam nešto promijeniti i čuo sam za PrimeBooker preko poznanika. Odlučio sam se za suradnju nakon što su mi objasnili kako rade i kako će povećati zaradu. ",
       "Prije par godina sam kupio stan i počeo iznajmljivati. Zarada je bila loša, nedovoljna niti da pokrijem trošak kredita. Osjetio sam da trebam nešto promijeniti i čuo sam za PrimeBooker preko poznanika. Odlučio sam se za suradnju nakon što su mi objasnili kako rade i kako će povećati zaradu. ",
     highlight: "Nakon uspješne prve sezone odlučio sam investirati u još 2 apartmana",
-    quoteAfter: " jer sam napokon vidio da se iznajmljivanje isplati. Sada se osjećam sigurno jer znam da ću imati prihod za penziju. Svima preporučujem PrimeBooker, prepustite im vaš smještaj i osjetit ćete pravu razliku u zaradi!",
+    quoteAfter: " jer sam napokon vidio da se iznajmljivanje isplati. Sada se osjećam sigurno jer znam da ću imati prihod za penziju. Svima preporučujem PrimeBooker, prepustite im svoj smještaj i osjetit ćete pravu razliku u zaradi!",
   },
   {
     name: "Darko Vrljičak",

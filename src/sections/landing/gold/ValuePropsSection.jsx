@@ -20,7 +20,7 @@ const valueProps = [
   {
     eyebrow: "Prepustite sve nama",
     title: "Riješite se obveza, uštedite vrijeme",
-    text: "Tu smo kako bi vam pomogli u svemu, od oglašavanja i komunikacije s gostima do prijave gostiju, računa i naplate. Nudimo vam kompletnu uslugu upravljanja smještajem kako biste bili potpuno bezbrižni.",
+    text: "Tu smo kako bismo vam pomogli u svemu, od oglašavanja i komunikacije s gostima do prijave gostiju, računa i naplate. Nudimo vam kompletnu uslugu upravljanja smještajem kako biste bili potpuno bezbrižni.",
     mobileImage: "/images/general/ManAtPool_w800.avif",
     image: "/images/general/ManAtPool_w1920.avif",
     alt: "Opušteni vlasnik smještaja uz bazen",
@@ -30,7 +30,7 @@ const valueProps = [
   {
     eyebrow: "Poslujte profesionalno",
     title: "Osigurajte dugoročan uspjeh",
-    text: "Održavamo visoku razinu kvalitete usluge kako bi osigurali odlične recenzije i dugoročan rast zarade. Zadovoljni gosti promoviraju smještaj, vraćaju se i plaćaju više.",
+    text: "Održavamo visoku razinu kvalitete usluge kako bismo osigurali odlične recenzije i dugoročan rast zarade. Zadovoljni gosti promoviraju smještaj, vraćaju se i plaćaju više.",
     mobileImage: "/images/general/FriendsAtPool_w800.avif",
     image: "/images/general/FriendsAtPool_w1920.avif",
     type: "image/jpeg",
