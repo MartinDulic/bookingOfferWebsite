@@ -5,7 +5,7 @@ d:I[68027,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/0g3_uhw
 :HL["/_next/static/media/4dcb1d458a9f0457-s.p.1si508koa-egn.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/8a4bb24664ac8500-s.p.2_7gz-nbwppeo.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 2:["$","style",null,{"children":".pb-reveal{opacity:1!important;transform:none!important}"}]
-3:Te21,
+3:Te6e,
 (function () {
   try {
     var FIRST = 'pb_attr_first';
@@ -13,7 +13,7 @@ d:I[68027,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/0g3_uhw
     var TTL = 90 * 24 * 60 * 60 * 1000;
 
     var UTM = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_id'];
-    var CLICK = ['gclid','gbraid','wbraid','fbclid','ttclid','msclkid'];
+    var CLICK = ['gclid','gbraid','wbraid','fbclid','ttclid','msclkid','oppref'];
 
     var q = new URLSearchParams(window.location.search);
     var host = window.location.hostname.replace(/^www\./, '');
@@ -43,6 +43,7 @@ d:I[68027,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/0g3_uhw
     if (touch.pb_src) channel = 'offline';
     else if (touch.gclid || touch.gbraid || touch.wbraid || (src === 'google' && paid)) channel = 'google_ads';
     else if (touch.fbclid || /facebook|instagram|meta|^fb$|^ig$/.test(src)) channel = 'meta_ads';
+    else if (touch.oppref) channel = 'chatgpt_ads';
     else if (touch.msclkid) channel = 'microsoft_ads';
     else if (touch.ttclid) channel = 'tiktok_ads';
     else if (paid) channel = 'other_paid';
@@ -57,8 +58,8 @@ d:I[68027,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/0g3_uhw
     // information. Otherwise an internal navigation or a direct return inside
     // the same session would wipe the source that brought the visitor in.
     var carriesSource = !!(touch.pb_src || touch.gclid || touch.gbraid || touch.wbraid ||
-      touch.fbclid || touch.msclkid || touch.ttclid || touch.utm_source ||
-      touch.utm_medium || touch.utm_campaign);
+      touch.fbclid || touch.msclkid || touch.ttclid || touch.oppref ||
+      touch.utm_source || touch.utm_medium || touch.utm_campaign);
 
     var session = store('sessionStorage');
     var local = store('localStorage');
@@ -93,12 +94,12 @@ d:I[68027,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/0g3_uhw
   }
 })();
 b:X
-0:{"P":null,"c":["","hr","daljnjikoraci"],"q":"","i":false,"f":[[["",{"children":["hr",{"children":["daljnjikoraci",{"children":["__PAGE__",{},"$undefined","$undefined",4608]},"$undefined","$undefined",4608]},"$undefined","$undefined",4608]},"$undefined","$undefined",4624],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/3p-gakev1qfh0.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/3fntmmi971322.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/0g3_uhw5hkoas.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              // Carry the query string and hash across the redirect. A bare\n              // replace('/hr') silently discards everything after the \"?\",\n              // which destroys gclid, fbclid, utm_* and our own pb_src flyer\n              // codes for anyone landing on the bare domain — the visit then\n              // looks like direct traffic and the ad that paid for it gets no\n              // credit.\n              if (window.location.pathname === '/' || window.location.pathname === '') {\n                window.location.replace('/hr' + window.location.search + window.location.hash);\n              }\n            "}}],["$","meta",null,{"httpEquiv":"X-UA-Compatible","content":"IE=edge"}],["$","noscript",null,{"children":"$2"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n(function () {\n  try {\n    window.dataLayer = window.dataLayer || [];\n    function gtag() { window.dataLayer.push(arguments); }\n\n    gtag('consent', 'default', {\n      ad_storage: 'granted',\n      ad_user_data: 'granted',\n      ad_personalization: 'granted',\n      analytics_storage: 'granted',\n      functionality_storage: 'granted',\n      personalization_storage: 'granted',\n      security_storage: 'granted'\n    });\n\n    // Plain event as well, so tags that are not consent-aware have something\n    // to trigger on.\n    window.dataLayer.push({\n      event: 'cookie_consent_update',\n      consent_analytics: 'granted',\n      consent_ad_storage: 'granted',\n      consent_ad_user_data: 'granted',\n      consent_ad_personalization: 'granted'\n    });\n  } catch (e) {\n    // Never let measurement break the page.\n  }\n})();\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],"$L4","$L5","$L6"]}],"$L7"]}]]}],{"children":["$L8",{"children":["$L9",{"children":["$La",{},null,false,null]},null,false,"$b"]},null,false,"$b"]},null,false,null],"$Lc",false]],"m":"$undefined","G":["$d",["$Le"]],"S":true,"h":null,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"7GvkFNNOtXbir-pXjYmCI"}
+0:{"P":null,"c":["","hr","daljnjikoraci"],"q":"","i":false,"f":[[["",{"children":["hr",{"children":["daljnjikoraci",{"children":["__PAGE__",{},"$undefined","$undefined",4608]},"$undefined","$undefined",4608]},"$undefined","$undefined",4608]},"$undefined","$undefined",4624],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/3p-gakev1qfh0.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/3fntmmi971322.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/0g3_uhw5hkoas.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              // Carry the query string and hash across the redirect. A bare\n              // replace('/hr') silently discards everything after the \"?\",\n              // which destroys gclid, fbclid, utm_* and our own pb_src flyer\n              // codes for anyone landing on the bare domain — the visit then\n              // looks like direct traffic and the ad that paid for it gets no\n              // credit.\n              if (window.location.pathname === '/' || window.location.pathname === '') {\n                window.location.replace('/hr' + window.location.search + window.location.hash);\n              }\n            "}}],["$","meta",null,{"httpEquiv":"X-UA-Compatible","content":"IE=edge"}],["$","noscript",null,{"children":"$2"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n(function () {\n  try {\n    window.dataLayer = window.dataLayer || [];\n    function gtag() { window.dataLayer.push(arguments); }\n\n    gtag('consent', 'default', {\n      ad_storage: 'granted',\n      ad_user_data: 'granted',\n      ad_personalization: 'granted',\n      analytics_storage: 'granted',\n      functionality_storage: 'granted',\n      personalization_storage: 'granted',\n      security_storage: 'granted'\n    });\n\n    // Plain event as well, so tags that are not consent-aware have something\n    // to trigger on.\n    window.dataLayer.push({\n      event: 'cookie_consent_update',\n      consent_analytics: 'granted',\n      consent_ad_storage: 'granted',\n      consent_ad_user_data: 'granted',\n      consent_ad_personalization: 'granted'\n    });\n  } catch (e) {\n    // Never let measurement break the page.\n  }\n})();\n"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],"$L4","$L5","$L6"]}],"$L7"]}]]}],{"children":["$L8",{"children":["$L9",{"children":["$La",{},null,false,null]},null,false,"$b"]},null,false,"$b"]},null,false,null],"$Lc",false]],"m":"$undefined","G":["$d",["$Le"]],"S":true,"h":null,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"Di71xZBYJsX_TjrOzOMZe"}
 f:I[79520,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/0g3_uhw5hkoas.js"],""]
 12:I[2980,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/0g3_uhw5hkoas.js"],"default"]
 13:I[39756,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/0g3_uhw5hkoas.js"],"default"]
 14:I[37457,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/0g3_uhw5hkoas.js"],"default"]
-18:I[47462,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/0g3_uhw5hkoas.js","/_next/static/chunks/3x_iypvkj0599.js","/_next/static/chunks/2xp4hnvx4cdkx.js"],"default"]
+18:I[47462,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/0g3_uhw5hkoas.js","/_next/static/chunks/3a_qj53w6xv0j.js","/_next/static/chunks/2xp4hnvx4cdkx.js"],"default"]
 1e:I[97367,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/0g3_uhw5hkoas.js"],"ViewportBoundary"]
 20:I[97367,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/0g3_uhw5hkoas.js"],"MetadataBoundary"]
 21:"$Sreact.suspense"
@@ -152,7 +153,7 @@ e:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/3p-gakev1qfh0
 b:C
 19:["$","li","Predstavljamo plan za povećanje zarade",{"className":"flex gap-3.5 border-white/10 py-3.5 not-last:border-b first:pt-0 last:pb-0 lg:gap-[1.125rem] lg:py-[1.625rem]","children":[["$","span",null,{"aria-hidden":"true","className":"flex size-6 shrink-0 items-center justify-center rounded-xs bg-gold text-[0.78125rem] font-extrabold text-ink lg:size-[1.875rem] lg:text-sm","children":3}],["$","div",null,{"children":[["$","div",null,{"className":"font-title text-[clamp(0.9375rem,0.2vw+0.89rem,1.0625rem)] font-bold tracking-[-0.02em] text-white","children":"Predstavljamo plan za povećanje zarade"}],["$","div",null,{"className":"mt-1 text-[clamp(0.8125rem,0.15vw+0.776rem,0.90625rem)] leading-relaxed text-ash lg:mt-1.5","children":"Pokazujemo koliko zarade vaš smještaj može donijeti i što konkretno treba promijeniti. Bez obveze, besplatno."}]]}]]}]
 1a:["$","div",null,{"className":"lg:col-start-1 lg:row-start-2","children":["$","div",null,{"className":"mt-[1.125rem] flex max-w-[36em] items-center gap-6 border-t border-white/15 pt-4 lg:mt-8 lg:justify-center lg:gap-9 lg:pt-[1.625rem] lg:text-center","children":[["$","$1","Makarska · do 4 osobe",{"children":[false,["$","div",null,{"children":[["$","div",null,{"className":"font-title text-[clamp(1.3125rem,0.5vw+1.19rem,1.625rem)] leading-none font-bold tracking-[-0.03em] text-white","children":["#1",["$","span",null,{"className":"text-gold","children":" po zaradi"}]]}],["$","div",null,{"className":"pb-eyebrow mt-1.5 text-[clamp(0.625rem,0.15vw+0.6rem,0.71875rem)] tracking-[0.14em] text-ash-cool","children":"Makarska · do 4 osobe"}]]}]]}],["$","$1","Ocjena gostiju",{"children":[["$","span",null,{"aria-hidden":"true","className":"h-[2.375rem] w-px shrink-0 bg-white/15 lg:h-11"}],["$","div",null,{"children":[["$","div",null,{"className":"font-title text-[clamp(1.3125rem,0.5vw+1.19rem,1.625rem)] leading-none font-bold tracking-[-0.03em] text-white","children":["9.7",["$","span",null,{"className":"text-[0.65em] text-gold","children":"/10"}]]}],["$","div",null,{"className":"pb-eyebrow mt-1.5 text-[clamp(0.625rem,0.15vw+0.6rem,0.71875rem)] tracking-[0.14em] text-ash-cool","children":"Ocjena gostiju"}]]}]]}]]}]}]
-1b:["$","script","script-0",{"src":"/_next/static/chunks/3x_iypvkj0599.js","async":true,"nonce":"$undefined"}]
+1b:["$","script","script-0",{"src":"/_next/static/chunks/3a_qj53w6xv0j.js","async":true,"nonce":"$undefined"}]
 1c:["$","script","script-1",{"src":"/_next/static/chunks/2xp4hnvx4cdkx.js","async":true,"nonce":"$undefined"}]
 1d:["$","$L23",null,{"children":["$","$21",null,{"name":"Next.MetadataOutlet","children":"$@24"}]}]
 1f:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
