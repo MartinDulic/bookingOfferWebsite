@@ -92,6 +92,10 @@ export const attributionFields = (leadId) => {
     { name: "pb_utm_term", value: pick(source, "utm_term") },
     { name: "pb_gclid", value: pick(source, "gclid") },
     { name: "pb_fbclid", value: pick(source, "fbclid") },
+    // ChatGPT Ads click id. OpenAI's own SDK stores it in a __oppref
+    // cookie and HubSpot captures it natively as hs_chatgpt_click_id;
+    // this is the same belt-and-braces backup as pb_gclid.
+    { name: "pb_oppref", value: pick(source, "oppref") },
     { name: "pb_offline_code", value: pick(source, "pb_src") },
     { name: "pb_landing_page", value: pick(source, "landing_page") },
     { name: "pb_referrer", value: pick(source, "referrer") },

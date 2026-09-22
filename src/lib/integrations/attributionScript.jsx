@@ -18,7 +18,7 @@ const ATTRIBUTION_SCRIPT = `
     var TTL = 90 * 24 * 60 * 60 * 1000;
 
     var UTM = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_id'];
-    var CLICK = ['gclid','gbraid','wbraid','fbclid','ttclid','msclkid'];
+    var CLICK = ['gclid','gbraid','wbraid','fbclid','ttclid','msclkid','oppref'];
 
     var q = new URLSearchParams(window.location.search);
     var host = window.location.hostname.replace(/^www\\./, '');
@@ -48,6 +48,7 @@ const ATTRIBUTION_SCRIPT = `
     if (touch.pb_src) channel = 'offline';
     else if (touch.gclid || touch.gbraid || touch.wbraid || (src === 'google' && paid)) channel = 'google_ads';
     else if (touch.fbclid || /facebook|instagram|meta|^fb$|^ig$/.test(src)) channel = 'meta_ads';
+    else if (touch.oppref) channel = 'chatgpt_ads';
     else if (touch.msclkid) channel = 'microsoft_ads';
     else if (touch.ttclid) channel = 'tiktok_ads';
     else if (paid) channel = 'other_paid';
@@ -62,8 +63,8 @@ const ATTRIBUTION_SCRIPT = `
     // information. Otherwise an internal navigation or a direct return inside
     // the same session would wipe the source that brought the visitor in.
     var carriesSource = !!(touch.pb_src || touch.gclid || touch.gbraid || touch.wbraid ||
-      touch.fbclid || touch.msclkid || touch.ttclid || touch.utm_source ||
-      touch.utm_medium || touch.utm_campaign);
+      touch.fbclid || touch.msclkid || touch.ttclid || touch.oppref ||
+      touch.utm_source || touch.utm_medium || touch.utm_campaign);
 
     var session = store('sessionStorage');
     var local = store('localStorage');
