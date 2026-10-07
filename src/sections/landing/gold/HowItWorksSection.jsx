@@ -69,7 +69,7 @@ const StepBody = ({ step, size }) => (
 );
 
 const HowItWorksSection = () => (
-  <section className="pb-gutter pb-block w-full bg-white">
+  <section className="pb-gutter pb-block w-full bg-white" id="how-it-works">
     <div className="mx-auto max-w-[81rem]">
       <Reveal>
         <Eyebrow>Spremni ste za početak suradnje?</Eyebrow>

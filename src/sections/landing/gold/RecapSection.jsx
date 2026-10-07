@@ -13,7 +13,7 @@ const promises = [
 ];
 
 const RecapSection = () => (
-  <section className="grid w-full bg-ink-deep xl:min-h-svh xl:grid-cols-2">
+  <section className="grid w-full bg-ink-deep xl:min-h-svh xl:grid-cols-2" id="recap">
     {/* Desktop: photo + form column */}
     <div className="relative hidden overflow-hidden xl:order-2 xl:flex xl:h-auto xl:min-h-[43.75rem] xl:items-center xl:justify-center xl:p-[clamp(2.5rem,4vw,6rem)]">
       <ResponsiveImage

@@ -89,7 +89,7 @@ const leaderboard = [
 ];
 
 const TopEarningProofSection = () => (
-  <section className="pb-gutter pb-block w-full bg-ink-deep">
+  <section className="pb-gutter pb-block w-full bg-ink-deep" id="top-earning-proof">
     <div className="mx-auto max-w-[81rem]">
       <Reveal>
         <Eyebrow tone="dark">Dokaz iz tržišnih podataka</Eyebrow>

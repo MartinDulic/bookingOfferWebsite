@@ -36,7 +36,7 @@ const strategy = [
 ];
 
 const CaseStudySection = () => (
-  <section className="pb-gutter pb-block w-full bg-sand">
+  <section className="pb-gutter pb-block w-full bg-sand" id="case-study">
     <div className="mx-auto max-w-[81rem]">
       <Reveal>
         <Eyebrow>Primjer iz Makarske</Eyebrow>

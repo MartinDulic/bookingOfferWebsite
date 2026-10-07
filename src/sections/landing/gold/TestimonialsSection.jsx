@@ -57,7 +57,7 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => (
-  <section className="pb-gutter pb-block w-full bg-ink-deep">
+  <section className="pb-gutter pb-block w-full bg-ink-deep" id="testimonials">
     <div className="mx-auto max-w-[90rem]">
       <Reveal>
         <Eyebrow tone="dark">Iskustva vlasnika</Eyebrow>

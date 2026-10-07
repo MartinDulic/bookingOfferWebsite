@@ -32,7 +32,13 @@ ever has to be changed in one place.
   var f = d.getElementsByTagName(s)[0];
   f.parentNode.insertBefore(j, f);
 }(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
-oaiq("init", { pixelId: "{{Const - ChatGPT Pixel ID}}" });
+// This tag also runs as the setup tag for the lead and contact tags, so it
+// fires again before every conversion. Without this guard, init would run
+// several times per page.
+if (!window.oaiqInitDone) {
+  window.oaiqInitDone = 1;
+  oaiq("init", { pixelId: "{{Const - ChatGPT Pixel ID}}" });
+}
 </script>
 ```
 
