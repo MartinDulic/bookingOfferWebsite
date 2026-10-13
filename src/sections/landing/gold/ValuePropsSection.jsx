@@ -1,6 +1,6 @@
 import React from "react";
 import ResponsiveImage from "@/components/ui-lib/common/ResponsiveImage";
-import Link from "next/link";
+import SmoothScrollLink from "@/components/ui-lib/navigation/SmoothScrollLink";
 import { RiArrowRightLine } from "react-icons/ri";
 import Eyebrow from "@/components/ui-lib/gold/Eyebrow";
 import Reveal from "@/components/ui-lib/gold/Reveal";
@@ -81,13 +81,15 @@ const ValuePropsSection = () => (
               {prop.text}
             </Reveal>
             <Reveal delay={210} className="mt-7 sm:mt-9">
-              <Link
-                href="/hr/kontakt"
+              <SmoothScrollLink
+                href="#hero-form"
+                event="valuePropCta"
+                placement={`valueprop_${index + 1}`}
                 className="group inline-flex items-center gap-2.5 border-b-2 border-gold pb-1.5 text-[0.96875rem] font-bold text-ink transition-colors duration-200 hover:text-gold-deep sm:text-base"
               >
                 Zatražite besplatnu analizu
                 <RiArrowRightLine className="text-xl text-gold-deep transition-transform duration-200 group-hover:translate-x-1" />
-              </Link>
+              </SmoothScrollLink>
             </Reveal>
           </div>
         </div>

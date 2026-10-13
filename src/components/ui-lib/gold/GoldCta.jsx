@@ -12,12 +12,13 @@ import { useSmoothScroll } from "@/hooks/useSmoothScroll";
  */
 const GoldCta = ({
   // href = "/hr/kontakt",
-  href = "#atf",
+  // href = "#atf",
+  href = "#hero-form",
   label = "Zatražite besplatnu analizu",
   event = "contactCta",
   className = "",
 }) => {
-  const smoothScrollTo = useSmoothScroll(0);
+  const smoothScrollTo = useSmoothScroll();
   const isHash = href.startsWith("#");
 
   // next/link swallows a same-page hash click once the URL already carries that

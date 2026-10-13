@@ -71,10 +71,10 @@ const Navigation = ({navigationData, language = "hr"}) => {
             {/* Navigation links */}
             {/* <div className="pr-16 w-full hidden lg:flex justify-center items-center gap-12 text-xl text-white ">
           
-              <SmoothScrollLink href={"#atf"}>{language == "hr" ? "Početna" : "Home"}</SmoothScrollLink>
-              <SmoothScrollLink href={"#valueprop"}>{language == "hr" ? "Što Nudimo?" : "Our Offer"}</SmoothScrollLink>
-              <SmoothScrollLink href={"#whyus"}>{language == "hr" ? "Zašto Mi?" : "Why Us?"}</SmoothScrollLink>
-              <SmoothScrollLink href={"#faq"}>{language == "hr" ? "Česta Pitanja" : "FAQ"}</SmoothScrollLink>
+              <SmoothScrollLink href={"#atf"} className="cursor-pointer text-neutral-200 font-default transition-transform transform duration-300 hover:scale-110 hover:text-white">{language == "hr" ? "Početna" : "Home"}</SmoothScrollLink>
+              <SmoothScrollLink href={"#valueprop"} className="cursor-pointer text-neutral-200 font-default transition-transform transform duration-300 hover:scale-110 hover:text-white">{language == "hr" ? "Što Nudimo?" : "Our Offer"}</SmoothScrollLink>
+              <SmoothScrollLink href={"#whyus"} className="cursor-pointer text-neutral-200 font-default transition-transform transform duration-300 hover:scale-110 hover:text-white">{language == "hr" ? "Zašto Mi?" : "Why Us?"}</SmoothScrollLink>
+              <SmoothScrollLink href={"#faq"} className="cursor-pointer text-neutral-200 font-default transition-transform transform duration-300 hover:scale-110 hover:text-white">{language == "hr" ? "Česta Pitanja" : "FAQ"}</SmoothScrollLink>
             </div> */}
 
             <CallCta placement="header" />

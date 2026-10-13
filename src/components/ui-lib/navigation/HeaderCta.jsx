@@ -3,9 +3,9 @@ import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { trackCtaClick } from '@/lib/trackingUtils';
 
 const HeaderCta = ({className = "", language = "hr"}) => {
-  const smoothScrollTo = useSmoothScroll(0);
+  const smoothScrollTo = useSmoothScroll();
   // href={language == "hr" ? "/hr/kontakt" : "/en/contact"}
-  const href = "#atf";
+  const href = "#hero-form";
 
   // See GoldCta: next/link no-ops on a hash click once the URL already has it.
   const handleClick = (e) => {

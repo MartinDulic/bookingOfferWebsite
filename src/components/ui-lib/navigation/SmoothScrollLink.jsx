@@ -1,46 +1,32 @@
 "use client";
 import React from 'react';
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
+import { trackCtaClick } from "@/lib/trackingUtils";
 
-const SmoothScrollLink = ({ 
-  href, 
-  offset = 80, // Default offset (matches your header height)
+// Unstyled hash link that smooth-scrolls via useSmoothScroll (header offset
+// comes from scroll-padding-top in globals.css). Lets server components use it.
+// Pass `event` (and optionally `placement`) to track the click as a CTA.
+const SmoothScrollLink = ({
+  href,
+  event,
+  placement = '',
   children,
   className = '',
-  ...props 
+  ...props
 }) => {
+  const smoothScrollTo = useSmoothScroll();
+
   const handleClick = (e) => {
     e.preventDefault();
-    
-    // Remove hash if present (clean ID)
-    const targetId = href.replace(/^#/, '');
-    const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-      // Calculate scroll position with offset
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      // Smooth scroll
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-
-      // Update URL without page reload (Next.js compatible)
-      if (history.pushState) {
-        history.pushState(null, null, `#${targetId}`);
-      } else {
-        window.location.hash = `#${targetId}`;
-      }
-    }
+    if (event) trackCtaClick(event, placement);
+    smoothScrollTo(href);
   };
 
   return (
-    <a 
-      href={href} 
+    <a
+      href={href}
       onClick={handleClick}
-      className={`cursor-pointer text-neutral-200 font-default transition-transform transform duration-300
-        hover:scale-110 hover:text-white ${className}`}
+      className={className}
       {...props}
     >
       {children}

@@ -126,7 +126,7 @@ const HeroSection = () => (
         </div> */}
       </div>
 
-      <div className="w-full lg:w-[28.25rem] lg:shrink-0">
+      <div className="w-full lg:w-[28.25rem] lg:shrink-0" id="hero-form">
         <GoldContactForm placement="hero" />
         <div className="mt-4 flex justify-center gap-5 lg:hidden">
           {["Neobvezujuće", "Konkretni savjeti"].map((note) => (

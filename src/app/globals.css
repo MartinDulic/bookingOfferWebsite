@@ -66,6 +66,25 @@
   --color-danger: #B0382F;        /* "before us" marker */
 }
 
+/* --- Fixed header offset ------------------------------------------------- */
+/* Keep in sync with the header row height in Navigation.jsx (h-16 lg:h-[4.75rem]).
+   scroll-padding offsets every in-page jump — useSmoothScroll's scrollIntoView,
+   plain #hash links and direct loads of a URL with a hash. */
+
+:root {
+  --header-h: 4rem;
+}
+
+@media (width >= 64rem) {
+  :root {
+    --header-h: 4.75rem;
+  }
+}
+
+html {
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+}
+
 /* --- Fluid type scale: continuous from 350px to 1920px ------------------- */
 
 @utility pb-h1 {
