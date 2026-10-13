@@ -1,5 +1,5 @@
 "use client"
-import { trackCallIntent } from '@/lib/trackingUtils';
+import handleCallClick from '@/lib/handleCallClick';
 import React from 'react'
 
 /**
@@ -10,23 +10,8 @@ import React from 'react'
  * The old per-mount ref reset on every route change.
  */
 const PhoneNumberLink = ({ placement = "contact_section" }) => {
-  const handleCallClick = (e) => {
-    const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
-
-    trackCallIntent({ placement, method: isMobile ? "phone" : "whatsapp" });
-
-    if (!isMobile) {
-      e.preventDefault();
-      window.open(
-        "https://wa.me/385992032607?text=Pozdrav,%20zanimaju%20me%20vaše%20usluge.",
-        "_blank",
-        "noopener"
-      );
-    }
-  };
-
   return (
-    <a href='tel:+385992032607' onClick={handleCallClick} className='font-bold text-primary underline'>+385 99 203 2607</a>
+    <a href='tel:+385992032607' onClick={(e) => handleCallClick(e, placement)} className='font-bold text-primary underline'>+385 99 203 2607</a>
   )
 }
 

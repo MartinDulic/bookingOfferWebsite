@@ -1,5 +1,5 @@
 "use client";
-import { trackCallIntent } from '@/lib/trackingUtils';
+import handleCallClick from '@/lib/handleCallClick';
 import React from 'react'
 import { FaPhone } from "react-icons/fa";
 
@@ -23,27 +23,9 @@ const CallCta = ({
   placement = "header",
   alwaysShowNumber = false,
 }) => {
-  const handleClick = (e) => {
-    // A tel: link does nothing on a desktop browser, so counting a desktop
-    // click as a call would inflate the conversion. Send those to WhatsApp and
-    // record the method that was actually used.
-    const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
-
-    trackCallIntent({ placement, method: isMobile ? "phone" : "whatsapp" });
-
-    if (!isMobile) {
-      e.preventDefault();
-      window.open(
-        "https://wa.me/385992032607?text=Pozdrav,%20zanimaju%20me%20vaše%20usluge.",
-        "_blank",
-        "noopener"
-      );
-    }
-  };
-
   return (
     <a
-      onClick={handleClick}
+      onClick={(e) => handleCallClick(e, placement)}
       href={"tel:+385992032607"}
       className={`${className}
         flex items-center gap-2 text-sm font-medium text-cream

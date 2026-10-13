@@ -7,6 +7,7 @@ import { attributionFields, getHubspotUtk, newLeadId } from "@/lib/attribution";
 import { submitHubspotForm } from "@/lib/hubspotSubmit";
 import CostumFormInput from "./CostumFormInput";
 import goldFieldStyles from "@/components/ui-lib/gold/goldFieldStyles";
+import handleCallClick from "@/lib/handleCallClick";
 
 /*
  * Submits to the same HubSpot form as HubSpotLeadCaptureForm (contact us),
@@ -123,7 +124,7 @@ const GoldContactForm = ({ className = "", placement = "unknown" }) => {
           Zatražite besplatnu analizu
         </div>
         <p className="mt-2 text-[0.90625rem] leading-relaxed text-ash">
-          Popunite obrazac — javit ćemo vam se u najkraćem mogućem roku ili nas kontaktirajte direktno na <a href="tel:+385992032607" className="font-bold text-gold underline">+385 99 203 2607</a>.
+          Popunite obrazac — javit ćemo vam se u najkraćem mogućem roku ili nas kontaktirajte direktno na <a href="tel:+385992032607" onClick={(e) => handleCallClick(e, `${placement}_form`)} className="font-bold text-gold underline">+385 99 203 2607</a>.
         </p>
 
         <div className="my-6 flex items-center gap-2 sm:my-7">
